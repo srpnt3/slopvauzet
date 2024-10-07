@@ -1,0 +1,28 @@
+version: "3"
+services:
+  frontend:
+    image: traefik/whoami
+    container_name: frontend
+    expose:
+      - 80
+    labels:
+      traefik.enable: true
+      traefik.http.routers.frontend.entrypoints: web
+      traefik.http.routers.frontend.rule: PathPrefix(`/`)
+      traefik.http.services.frontend.loadbalancer.server.port: 80
+    restart: unless-stopped
+
+  traefik:
+    image: traefik
+    container_name: traefik
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command:
+      - --api.insecure=true
+      - --providers.docker=true
+      - --entrypoints.web.address=:80
+    ports:
+      - 80:80
+      - 8080:8080
+    restart: unless-stopped
+
