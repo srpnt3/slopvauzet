@@ -1,0 +1,20 @@
+.Todo {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+
+    table {
+        min-width: 500px;
+    }
+
+    table th,td {
+        border-bottom: 1px solid gray;
+        padding: 12px;
+        text-align: center;
+    }
+
+
+}
