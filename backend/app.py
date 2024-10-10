@@ -34,13 +34,13 @@ def create_todo():
     content = request.json
     todos.append({"id": nextIdx, "title": content["title"]})
     nextIdx += 1
-    pass
+    return "OK"
 
 @app.delete("/api/todos/<int:id>")
 def delete_todo(id):
     global todos
     todos = [todo for todo in todos if todo["id"] != int(id)]
-    pass
+    return "OK"
 
 if __name__ == "__main__":
     app.run(debug=True)
