@@ -5,9 +5,10 @@
     align-items: center;
     justify-content: center;
     color: black;
+    overflow-x: scroll;
 
     table {
-        min-width: 500px;
+        min-width: 400px;
     }
 
     table th,td {
