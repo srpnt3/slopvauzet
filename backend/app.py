@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-nextIdx = 4
+nextIdx = 5
 todos = [
     {
         "id": 1,
@@ -13,11 +13,11 @@ todos = [
         "title": "Choose a project",
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Interview people for need-finding",
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Come up with a lo-fi prototype",
     },
 ]
