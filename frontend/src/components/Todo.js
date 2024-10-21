@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 export default function Todo() {
     const [todos, setTodos] = useState([]);
     const [textField, setTextField] = useState('');
+    const [auth, setAuth] = useState(null);
 
     function updateTodos() {
         fetch(`/api/todos`)
@@ -30,9 +31,16 @@ export default function Todo() {
             });
     }
 
+    function updateAuth() {
+        fetch(`/api/auth/me`)
+            .then(response => response.json())
+            .then(data => setAuth(data));
+    }
+
 
     useEffect(() => {
         updateTodos();
+        updateAuth();
     }, []);
 
     return (
@@ -62,6 +70,11 @@ export default function Todo() {
                 ))}
                 </tbody>
             </table>
+
+            <div className="auth-box">
+                {auth && <p>Currently signed in as {auth.name} ({auth.email})!</p>}
+                {!auth && <p>Not signed in!</p>}
+            </div>
         </main>
     );
 }

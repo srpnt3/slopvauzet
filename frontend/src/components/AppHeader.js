@@ -2,9 +2,12 @@ import './AppHeader.css'
 import Scrolldown from "./Scrolldown";
 
 export default function AppHeader() {
+
+    const currentYear = new Date().getFullYear();
+
     return (
         <header className="App-Header">
-            <p className="Title">Welcome to VIScon 2024</p>
+            <p className="Title">Welcome to VIScon {currentYear}</p>
             <span className="Spacer"/>
             <img src="/hexagon.png" className="Logo" alt="logo"/>
             <span className="Spacer"/>

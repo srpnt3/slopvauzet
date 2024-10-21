@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -42,20 +42,11 @@ def delete_todo(id):
     todos = [todo for todo in todos if todo["id"] != int(id)]
     return "OK"
 
-
-# Serve static files from the 'static' folder
-@app.route('/<path:filename>')
-def static_files(filename):
-    return send_from_directory('../static', filename)
-
 @app.route('/api/auth/me')
 def auth_me():
-    # read X-authentik-username
-
     username = request.headers.get("X-authentik-username", None)
     email = request.headers.get("X-authentik-email", None)
     name = request.headers.get("X-authentik-name", None)
-
     return jsonify({"username": username, "email": email, "name": name})
 
 if __name__ == "__main__":
