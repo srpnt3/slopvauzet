@@ -2,10 +2,10 @@ FROM node:22-alpine AS base
 
 WORKDIR /app
 
+COPY package.json yarn.lock ./
 
-FROM base AS service
+RUN yarn install
 
-# Copy app source
 COPY . /app
 
 # Set startup command
