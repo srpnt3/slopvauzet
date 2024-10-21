@@ -16,6 +16,7 @@ services:
       traefik.http.routers.backend.entrypoints: web
       traefik.http.routers.backend.rule: PathPrefix(`/api`)
       traefik.http.services.backend.loadbalancer.server.port: 5000
+      traefik.http.routers.backend.middlewares: dummy-auth-header
     restart: unless-stopped
 
 
@@ -35,11 +36,12 @@ services:
       traefik.http.routers.frontend.entrypoints: web
       traefik.http.routers.frontend.rule: PathPrefix(`/`)
       traefik.http.services.frontend.loadbalancer.server.port: 3000
+      traefik.http.routers.frontend.middlewares: dummy-auth-header
     restart: unless-stopped
 
   traefik:
     image: traefik
-    container_name: traefik
+    container_name: hack-traefik
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     command:
@@ -47,6 +49,10 @@ services:
       - --providers.docker=true
       - --entrypoints.web.address=:80
     ports:
-      - 80:80
-      - 8080:8080
+      - 8000:80 # frontend & backend
+      - 8080:8080 # traefik dashboard
     restart: unless-stopped
+    labels:
+      - "traefik.http.middlewares.dummy-auth-header.headers.customrequestheaders.X-authentik-username=florina"
+      - "traefik.http.middlewares.dummy-auth-header.headers.customrequestheaders.X-authentik-email=florina@ethz.ch"
+      - "traefik.http.middlewares.dummy-auth-header.headers.customrequestheaders.X-authentik-name=Andri Florin"
