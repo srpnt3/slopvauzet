@@ -1,58 +1,39 @@
-version: "3"
 services:
-
   backend:
-    container_name: hack-backend
     build:
-      context: ./backend/
-      dockerfile: ./Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      USE_MOCK_AUTHENTICATION: false # Set to `true` to enable mock authentication
     expose:
-      - 5000
-    working_dir: /app
-    volumes:
-      - ./backend:/app
+      - 8000
     labels:
       traefik.enable: true
       traefik.http.routers.backend.entrypoints: web
       traefik.http.routers.backend.rule: PathPrefix(`/api`)
-      traefik.http.services.backend.loadbalancer.server.port: 5000
-      traefik.http.routers.backend.middlewares: dummy-auth-header
+      traefik.http.services.backend.loadbalancer.server.port: 8000
     restart: unless-stopped
 
-
   frontend:
-    container_name: hack-frontend
     build:
-      context: ./frontend/
-      dockerfile: ./Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     expose:
-      - 3000
-    command: [ "sh", "-c", "yarn start" ]
-    working_dir: /app
-    volumes:
-      - ./frontend:/app
+      - 80
     labels:
       traefik.enable: true
       traefik.http.routers.frontend.entrypoints: web
       traefik.http.routers.frontend.rule: PathPrefix(`/`)
-      traefik.http.services.frontend.loadbalancer.server.port: 3000
-      traefik.http.routers.frontend.middlewares: dummy-auth-header
+      traefik.http.services.frontend.loadbalancer.server.port: 80
     restart: unless-stopped
 
   traefik:
     image: traefik
-    container_name: hack-traefik
+    command:
+      - --providers.docker=true
+      - --entrypoints.web.address=:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    command:
-      - --api.insecure=true
-      - --providers.docker=true
-      - --entrypoints.web.address=:80
     ports:
-      - 8000:80 # frontend & backend
-      - 8080:8080 # traefik dashboard
+      - 8080:8080
     restart: unless-stopped
-    labels:
-      - "traefik.http.middlewares.dummy-auth-header.headers.customrequestheaders.X-authentik-username=florina"
-      - "traefik.http.middlewares.dummy-auth-header.headers.customrequestheaders.X-authentik-email=florina@ethz.ch"
-      - "traefik.http.middlewares.dummy-auth-header.headers.customrequestheaders.X-authentik-name=Andri Florin"

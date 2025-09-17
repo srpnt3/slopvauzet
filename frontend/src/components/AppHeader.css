@@ -1,50 +1,43 @@
-.App-Header {
-    text-align: center;
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 0 20px;
+.app-header {
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
 
-    .Logo {
-        height: 30vmin;
-        pointer-events: none;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    @media (prefers-reduced-motion: no-preference) {
-        .Logo {
-            animation: Header-logo-spin infinite 20s linear;
-        }
-    }
+  color: white;
+  background-color: #282c34;
 
-    .Spacer {
-        height: 40px;
-    }
+  p {
+    max-width: 600px;
+    text-align: left;
+  }
 
-    .Title {
-        font-size: calc(10px + 3vmin);
-    }
+  a {
+    color: #61dafb;
+    text-decoration: none;
+  }
 
-    .Text {
-        font-size: calc(10px + 1.3vmin);
-        max-width: 600px;
-        text-align: left;
-    }
+  .logo {
+    height: 30vmin;
+    pointer-events: none;
+  }
 
-    .Link {
-        color: #61dafb;
-        text-decoration: none;
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: logo-spin infinite 20s linear;
     }
+  }
 }
 
-@keyframes Header-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
