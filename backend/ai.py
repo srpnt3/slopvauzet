@@ -1,11 +1,10 @@
-import json
 from datetime import datetime, timedelta
 
 from litellm import _turn_on_debug, completion
-from models import TodoItem
+from models import TodoItem, TodoItemForCreate
 from pydantic import ValidationError
 
-# _turn_on_debug() # Uncomment for debugging litellm requests
+# _turn_on_debug()  # Uncomment for debugging litellm requests
 
 
 class AIService:
@@ -15,14 +14,17 @@ class AIService:
         self.api_model = api_model
 
     def _generate_todo_prompt(self, prompt: str) -> str:
-        today_iso = datetime.now().isoformat()
-        today_date = datetime.now()
-        weekday_name = datetime.now().strftime("%A")
+        today = datetime.now()
+        today_iso = today.isoformat()
+        today_weekday = datetime.now().strftime("%A")
+
+        next_week = today + timedelta(weeks=1)
+        next_monday = today + timedelta(days=(7 - today.weekday()) % 7 or 7)
 
         return [
             {
                 "role": "system",
-                "content": f"You are a personal assistant that converts user input into a concise todo item with description. Today is {today_iso} ({weekday_name}). ",
+                "content": f"You are a personal assistant that converts user input into a concise todo item with description. Today is {today_iso} ({today_weekday}).",
             },
             {
                 "role": "user",
@@ -30,13 +32,11 @@ class AIService:
             },
             {
                 "role": "assistant",
-                "content": json.dumps(
-                    {
-                        "title": "Clean room",
-                        "description": "Organize and tidy up living space",
-                        "deadline": today_iso,
-                    }
-                ),
+                "content": TodoItemForCreate(
+                    title="Clean room",
+                    description="Organize and tidy up living space",
+                    deadline=today,
+                ).model_dump_json(),
             },
             {
                 "role": "user",
@@ -44,29 +44,20 @@ class AIService:
             },
             {
                 "role": "assistant",
-                "content": json.dumps(
-                    {
-                        "title": "Finish project report",
-                        "description": "Complete final report and submit",
-                        "deadline": (today_date + timedelta(days=7)).strftime(
-                            "%Y-%m-%d"
-                        ),
-                    }
-                ),
+                "content": TodoItemForCreate(
+                    title="Finish project report",
+                    description="Complete final report and submit",
+                    deadline=next_week,
+                ).model_dump_json(),
             },
             {"role": "user", "content": "Call my mom next Monday"},
             {
                 "role": "assistant",
-                "content": json.dumps(
-                    {
-                        "title": "Call mom",
-                        "description": "Phone call with mother",
-                        "deadline": (
-                            today_date
-                            + timedelta(days=(7 - today_date.weekday()) % 7 or 7)
-                        ).strftime("%Y-%m-%d"),
-                    }
-                ),
+                "content": TodoItemForCreate(
+                    title="Call mom",
+                    description="Phone call with mother",
+                    deadline=next_monday,
+                ).model_dump_json(),
             },
             {
                 "role": "user",

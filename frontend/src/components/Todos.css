@@ -32,12 +32,14 @@
     vertical-align: top;
   }
 
-  td:nth-child(2) { /* Title column */
+  td:nth-child(2) {
+    /* Title column */
     max-width: 150px;
     overflow-wrap: break-word;
   }
 
-  td:nth-child(3) { /* Description column */
+  td:nth-child(3) {
+    /* Description column */
     max-width: 300px;
     overflow-wrap: break-word;
   }

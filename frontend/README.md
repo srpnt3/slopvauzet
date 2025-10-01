@@ -1,4 +1,3 @@
-
 # Frontend
 
 This is a simple frontend template built with React, Vite, and TypeScript.

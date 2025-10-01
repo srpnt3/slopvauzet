@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  createTodo,
-  generateTodo,
-  type TodoItemForCreate,
-} from "../apiClient";
+import { createTodo, generateTodo, type TodoItemForCreate } from "../apiClient";
 
 interface TodoFormProps {
   onTodoCreated: () => void;
@@ -32,7 +28,11 @@ const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
   const handleCreateTodo = async () => {
     if (!generatedTodo) return;
 
-    await createTodo(generatedTodo.title, generatedTodo.description, generatedTodo.deadline);
+    await createTodo(
+      generatedTodo.title,
+      generatedTodo.description,
+      generatedTodo.deadline,
+    );
     setGeneratedTodo(null);
     onTodoCreated();
   };
@@ -46,7 +46,7 @@ const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
             placeholder="Describe what you want to do (e.g., 'Plan a birthday party for next week')"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            onKeyUp={(e) => e.key === 'Enter' && generateTodoFromPrompt()}
+            onKeyUp={(e) => e.key === "Enter" && generateTodoFromPrompt()}
             disabled={isGenerating}
             className="prompt-input"
           />
@@ -69,15 +69,27 @@ const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
               <input
                 type="text"
                 value={generatedTodo?.title || ""}
-                onChange={(e) => setGeneratedTodo((prev) => prev ? { ...prev, title: e.target.value } : null)}
+                onChange={(e) =>
+                  setGeneratedTodo((prev) =>
+                    prev ? { ...prev, title: e.target.value } : null,
+                  )
+                }
               />
             </div>
             <div className="form-field">
               <label>Deadline</label>
               <input
                 type="date"
-                value={generatedTodo?.deadline || ""}
-                onChange={(e) => setGeneratedTodo((prev) => prev ? { ...prev, deadline: e.target.value } : null)}
+                value={
+                  generatedTodo?.deadline.toISOString().split("T")[0] || ""
+                }
+                onChange={(e) =>
+                  setGeneratedTodo((prev) =>
+                    prev
+                      ? { ...prev, deadline: new Date(e.target.value) }
+                      : null,
+                  )
+                }
               />
             </div>
           </div>
@@ -85,7 +97,11 @@ const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
             <label>Description</label>
             <textarea
               value={generatedTodo?.description || ""}
-              onChange={(e) => setGeneratedTodo((prev) => prev ? { ...prev, description: e.target.value } : null)}
+              onChange={(e) =>
+                setGeneratedTodo((prev) =>
+                  prev ? { ...prev, description: e.target.value } : null,
+                )
+              }
               rows={3}
             />
           </div>
@@ -93,7 +109,10 @@ const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
             <button onClick={handleCreateTodo} className="primary-button">
               Create Todo
             </button>
-            <button onClick={() => setGeneratedTodo(null)} className="secondary-button">
+            <button
+              onClick={() => setGeneratedTodo(null)}
+              className="secondary-button"
+            >
               Cancel
             </button>
           </div>

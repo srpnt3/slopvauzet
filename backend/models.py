@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 
 
@@ -11,10 +13,10 @@ class TodoItem(BaseModel):
     id: int
     title: str
     description: str
-    deadline: str
+    deadline: datetime
 
 
 class TodoItemForCreate(BaseModel):
     title: str
     description: str
-    deadline: str
+    deadline: datetime

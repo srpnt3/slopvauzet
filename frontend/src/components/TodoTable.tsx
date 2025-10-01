@@ -28,7 +28,11 @@ const TodoTable = ({ todos, onTodoDeleted }: TodoTableProps) => {
             <td>{index + 1}</td>
             <td>{todo.title}</td>
             <td>{todo.description}</td>
-            <td>{todo.deadline ? new Date(todo.deadline).toLocaleDateString() : 'No deadline'}</td>
+            <td>
+              {todo.deadline
+                ? new Date(todo.deadline).toLocaleDateString()
+                : "No deadline"}
+            </td>
             <td>
               <button onClick={() => handleDeleteTodo(todo.id)} title="Delete">
                 🗑️
