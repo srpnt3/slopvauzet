@@ -3,36 +3,46 @@ from copy import deepcopy
 from os import getenv
 
 import uvicorn
+from ai import AIService
 from fastapi import FastAPI, HTTPException, Request, status
-from pydantic import BaseModel, ValidationError
+from models import TodoItem, TodoItemForCreate, User
+from pydantic import ValidationError
 
-
+LITELLM_PROXY_API_KEY = getenv("LITELLM_PROXY_API_KEY")
+LITELLM_PROXY_API_BASE = getenv("LITELLM_PROXY_API_BASE")
 USE_MOCK_AUTHENTICATION = getenv("USE_MOCK_AUTHENTICATION", "true").lower() != "false"
-
-
-class User(BaseModel):
-    email: str
-    username: str
-    name: str
-
-
-class TodoItem(BaseModel):
-    id: int
-    title: str
-
-
-class TodoItemForCreate(BaseModel):
-    title: str
 
 
 class State:
     DEFAULT_TODOS: list[TodoItem] = [
-        TodoItem(id=1, title="Find a great team"),
-        TodoItem(id=2, title="Choose a project"),
-        TodoItem(id=3, title="Interview people for need-finding"),
-        TodoItem(id=4, title="Come up with a lo-fi prototype"),
+        TodoItem(
+            id=1,
+            title="Find a great team",
+            description="Find a great team to work with",
+            deadline="2025-01-01",
+        ),
+        TodoItem(
+            id=2,
+            title="Choose a project",
+            description="Choose a project to work on",
+            deadline="2025-01-01",
+        ),
+        TodoItem(
+            id=3,
+            title="Interview people for need-finding",
+            description="Interview people for need-finding",
+            deadline="2025-01-01",
+        ),
+        TodoItem(
+            id=4,
+            title="Come up with a lo-fi prototype",
+            description="Come up with a lo-fi prototype",
+            deadline="2025-01-01",
+        ),
     ]
 
+    # Mapping from user email to their todo items
+    # When a new email is seen, initialize with a fresh copy of DEFAULT_TODOS
     todos_by_email: defaultdict[str, list[TodoItem]] = defaultdict(
         lambda: deepcopy(State.DEFAULT_TODOS)
     )
@@ -43,7 +53,12 @@ class State:
     def create_todo(self, email: str, item: TodoItemForCreate) -> TodoItem:
         todos = self.todos_by_email[email]
         next_id = max((todo.id for todo in todos), default=0) + 1
-        new_todo = TodoItem(id=next_id, title=item.title)
+        new_todo = TodoItem(
+            id=next_id,
+            title=item.title,
+            description=item.description,
+            deadline=item.deadline,
+        )
         todos.append(new_todo)
         return new_todo
 
@@ -53,8 +68,13 @@ class State:
         self.todos_by_email[email] = new_todos
 
 
-app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 state = State()
+ai_service = AIService(
+    "openai/gpt-4o-mini", LITELLM_PROXY_API_BASE, LITELLM_PROXY_API_KEY
+)
+
+app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
+
 
 def extract_user(request: Request) -> User:
     if USE_MOCK_AUTHENTICATION:
@@ -98,6 +118,18 @@ def create_todo(request: Request, item: TodoItemForCreate):
 def delete_todo(request: Request, todo_id: int):
     user = extract_user(request)
     state.delete_todo(user.email, todo_id)
+
+
+@app.get(
+    "/api/todos/generate",
+    response_model=TodoItemForCreate,
+    status_code=status.HTTP_200_OK,
+)
+def generate_todo(prompt: str):
+    try:
+        return ai_service.generate_todo(prompt)
+    except Exception:
+        return TodoItemForCreate(title="", description="", deadline="")
 
 
 if __name__ == "__main__":

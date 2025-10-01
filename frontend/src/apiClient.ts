@@ -7,6 +7,14 @@ export interface User {
 export interface TodoItem {
   id: number;
   title: string;
+  description: string;
+  deadline: Date;
+}
+
+export interface TodoItemForCreate {
+  title: string;
+  description: string;
+  deadline: Date;
 }
 
 export class ApiError extends Error {
@@ -56,8 +64,22 @@ export function getTodos(): Promise<TodoItem[]> {
   return request(`/api/todos`, "GET");
 }
 
-export function createTodo(title: string): Promise<TodoItem> {
-  return request(`/api/todos`, "POST", { title });
+export function createTodo(
+  title: string,
+  description: string,
+  deadline: Date,
+): Promise<TodoItem> {
+  return request(`/api/todos`, "POST", { title, description, deadline });
+}
+
+export function generateTodo(prompt: string): Promise<TodoItemForCreate> {
+  return request<TodoItemForCreate>(
+    `/api/todos/generate?prompt=${encodeURIComponent(prompt)}`,
+    "GET",
+  ).then((data) => {
+    data.deadline = new Date(data.deadline);
+    return data;
+  });
 }
 
 export function deleteTodo(id: number): Promise<void> {
