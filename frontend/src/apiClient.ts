@@ -11,12 +11,11 @@ export interface TodoItem {
   deadline: string;
 }
 
-export interface TodoItemRecommendation {
+export interface TodoItemForCreate {
   title: string;
   description: string;
   deadline: string;
 }
-
 
 export class ApiError extends Error {
   constructor(status: number, message: string) {
@@ -69,10 +68,10 @@ export function createTodo(title: string, description: string, deadline: string)
   return request(`/api/todos`, "POST", { title, description, deadline });
 }
 
-export function deleteTodo(id: number): Promise<void> {
-  return request(`/api/todos/${id}`, "DELETE");
+export function generateTodo(prompt: string): Promise<TodoItemForCreate> {
+  return request(`/api/todos/generate?prompt=${encodeURIComponent(prompt)}`, "GET");
 }
 
-export function generateTodo(prompt: string): Promise<TodoItemRecommendation> {
-  return request(`/api/todos/generate?prompt=${encodeURIComponent(prompt)}`, "GET");
+export function deleteTodo(id: number): Promise<void> {
+  return request(`/api/todos/${id}`, "DELETE");
 }

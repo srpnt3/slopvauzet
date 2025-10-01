@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   createTodo,
   generateTodo,
-  type TodoItemRecommendation,
+  type TodoItemForCreate,
 } from "../apiClient";
 
 interface TodoFormProps {
@@ -11,12 +11,12 @@ interface TodoFormProps {
 
 const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
   const [prompt, setPrompt] = useState<string>("");
-  const [generatedTodo, setGeneratedTodo] = useState<TodoItemRecommendation | null>(null);
+  const [generatedTodo, setGeneratedTodo] = useState<TodoItemForCreate | null>(null);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
 
   async function generateTodoFromPrompt() {
     if (!prompt.trim()) return;
-    
+
     setIsGenerating(true);
     try {
       const generated = await generateTodo(prompt);
@@ -59,7 +59,7 @@ const TodoForm = ({ onTodoCreated }: TodoFormProps) => {
           </button>
         </div>
       )}
-      
+
       {generatedTodo && (
         <div className="preview-section">
           <h3>Review and Edit Generated Todo:</h3>

@@ -3,38 +3,14 @@ from copy import deepcopy
 from os import getenv
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, Request, status
-from pydantic import BaseModel, ValidationError
-
 from ai import AIService
+from fastapi import FastAPI, HTTPException, Request, status
+from models import TodoItem, TodoItemForCreate, User
+from pydantic import ValidationError
 
-
+LITELLM_PROXY_API_KEY = getenv("LITELLM_PROXY_API_KEY")
+LITELLM_PROXY_API_BASE = getenv("LITELLM_PROXY_API_BASE")
 USE_MOCK_AUTHENTICATION = getenv("USE_MOCK_AUTHENTICATION", "true").lower() != "false"
-
-
-class User(BaseModel):
-    email: str
-    username: str
-    name: str
-
-
-class TodoItem(BaseModel):
-    id: int
-    title: str
-    description: str
-    deadline: str
-
-
-class TodoItemRecommendation(BaseModel):
-    title: str
-    description: str
-    deadline: str
-
-
-class TodoItemForCreate(BaseModel):
-    title: str
-    description: str
-    deadline: str
 
 
 class State:
@@ -65,6 +41,8 @@ class State:
         ),
     ]
 
+    # Mapping from user email to their todo items
+    # When a new email is seen, initialize with a fresh copy of DEFAULT_TODOS
     todos_by_email: defaultdict[str, list[TodoItem]] = defaultdict(
         lambda: deepcopy(State.DEFAULT_TODOS)
     )
@@ -90,8 +68,12 @@ class State:
         self.todos_by_email[email] = new_todos
 
 
-app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 state = State()
+ai_service = AIService(
+    "openai/gpt-4o-mini", LITELLM_PROXY_API_BASE, LITELLM_PROXY_API_KEY
+)
+
+app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
 
 def extract_user(request: Request) -> User:
@@ -140,15 +122,14 @@ def delete_todo(request: Request, todo_id: int):
 
 @app.get(
     "/api/todos/generate",
-    response_model=TodoItemRecommendation,
+    response_model=TodoItemForCreate,
     status_code=status.HTTP_200_OK,
 )
 def generate_todo(prompt: str):
     try:
-        ai = AIService("openai/gpt-4o-mini")
-        return ai.generate_todo(prompt)
+        return ai_service.generate_todo(prompt)
     except Exception:
-        return TodoItemRecommendation(title="", description="", deadline="")
+        return TodoItemForCreate(title="", description="", deadline="")
 
 
 if __name__ == "__main__":
