@@ -6,6 +6,8 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, Request, status
 from pydantic import BaseModel, ValidationError
 
+from ai import AIService
+
 
 USE_MOCK_AUTHENTICATION = getenv("USE_MOCK_AUTHENTICATION", "true").lower() != "false"
 
@@ -19,18 +21,27 @@ class User(BaseModel):
 class TodoItem(BaseModel):
     id: int
     title: str
+    description: str
+    deadline: str
+
+class TodoItemRecommendation(BaseModel):
+    title: str
+    description: str
+    deadline: str
 
 
 class TodoItemForCreate(BaseModel):
     title: str
+    description: str
+    deadline: str
 
 
 class State:
     DEFAULT_TODOS: list[TodoItem] = [
-        TodoItem(id=1, title="Find a great team"),
-        TodoItem(id=2, title="Choose a project"),
-        TodoItem(id=3, title="Interview people for need-finding"),
-        TodoItem(id=4, title="Come up with a lo-fi prototype"),
+        TodoItem(id=1, title="Find a great team", description="Find a great team to work with", deadline="2025-01-01"),
+        TodoItem(id=2, title="Choose a project", description="Choose a project to work on", deadline="2025-01-01"),
+        TodoItem(id=3, title="Interview people for need-finding", description="Interview people for need-finding", deadline="2025-01-01"),
+        TodoItem(id=4, title="Come up with a lo-fi prototype", description="Come up with a lo-fi prototype", deadline="2025-01-01"),
     ]
 
     todos_by_email: defaultdict[str, list[TodoItem]] = defaultdict(
@@ -43,7 +54,7 @@ class State:
     def create_todo(self, email: str, item: TodoItemForCreate) -> TodoItem:
         todos = self.todos_by_email[email]
         next_id = max((todo.id for todo in todos), default=0) + 1
-        new_todo = TodoItem(id=next_id, title=item.title)
+        new_todo = TodoItem(id=next_id, title=item.title, description=item.description, deadline=item.deadline)
         todos.append(new_todo)
         return new_todo
 
@@ -98,6 +109,14 @@ def create_todo(request: Request, item: TodoItemForCreate):
 def delete_todo(request: Request, todo_id: int):
     user = extract_user(request)
     state.delete_todo(user.email, todo_id)
+
+@app.get("/api/todos/generate", response_model=TodoItemRecommendation, status_code=status.HTTP_200_OK)
+def generate_todo(prompt: str):
+    try:
+        ai = AIService("litellm_proxy/openrouter/mistralai/devstral-medium")
+        return ai.generate_todo(prompt)
+    except Exception:
+        return TodoItemRecommendation(title="", description="", deadline="")
 
 
 if __name__ == "__main__":
