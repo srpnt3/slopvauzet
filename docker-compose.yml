@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     environment:
-      USE_MOCK_AUTHENTICATION: true # Set to `true` to enable mock authentication
+      USE_MOCK_AUTHENTICATION: false # Set to `true` to enable mock authentication
     expose:
       - 8000
     labels:
