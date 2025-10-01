@@ -1,8 +1,9 @@
 from datetime import datetime, timedelta
 
 from litellm import _turn_on_debug, completion
-from models import TodoItem, TodoItemForCreate
 from pydantic import ValidationError
+
+from models import TodoItem, TodoItemForCreate
 
 # _turn_on_debug()  # Uncomment for debugging litellm requests
 

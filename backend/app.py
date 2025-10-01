@@ -1,12 +1,14 @@
 from collections import defaultdict
 from copy import deepcopy
+from datetime import datetime, timedelta
 from os import getenv
 
 import uvicorn
-from ai import AIService
 from fastapi import FastAPI, HTTPException, Request, status
-from models import TodoItem, TodoItemForCreate, User
 from pydantic import ValidationError
+
+from ai import AIService
+from models import TodoItem, TodoItemForCreate, User
 
 LITELLM_PROXY_API_KEY = getenv("LITELLM_PROXY_API_KEY")
 LITELLM_PROXY_API_BASE = getenv("LITELLM_PROXY_API_BASE")
@@ -19,25 +21,25 @@ class State:
             id=1,
             title="Find a great team",
             description="Find a great team to work with",
-            deadline="2025-01-01",
+            deadline=datetime.now(),
         ),
         TodoItem(
             id=2,
             title="Choose a project",
             description="Choose a project to work on",
-            deadline="2025-01-01",
+            deadline=datetime.now() + timedelta(hours=1),
         ),
         TodoItem(
             id=3,
             title="Interview people for need-finding",
             description="Interview people for need-finding",
-            deadline="2025-01-01",
+            deadline=datetime.now() + timedelta(hours=2),
         ),
         TodoItem(
             id=4,
             title="Come up with a lo-fi prototype",
             description="Come up with a lo-fi prototype",
-            deadline="2025-01-01",
+            deadline=datetime.now() + timedelta(hours=3),
         ),
     ]
 
@@ -129,7 +131,7 @@ def generate_todo(prompt: str):
     try:
         return ai_service.generate_todo(prompt)
     except Exception:
-        return TodoItemForCreate(title="", description="", deadline="")
+        return TodoItemForCreate(title="", description="", deadline=datetime.now())
 
 
 if __name__ == "__main__":
