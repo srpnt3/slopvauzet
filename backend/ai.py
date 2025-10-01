@@ -12,7 +12,7 @@ class TodoItem(BaseModel):
 
 
 class AIService:
-    def __init__(self, api_model: str, api_base_url: str = None, api_key: str= None):
+    def __init__(self, api_model: str, api_base_url: str = None, api_key: str = None):
         self.api_key = api_key or os.getenv("LITELLM_PROXY_API_KEY")
         self.api_base_url = api_base_url or os.getenv("LITELLM_PROXY_API_BASE")
         self.api_model = api_model
@@ -34,11 +34,11 @@ class AIService:
             },
             {
                 "role": "assistant",
-                "content": json.dumps({
+                "content": {
                     "title": "Clean room",
                     "description": "Organize and tidy up living space",
                     "deadline": today_iso,
-                }),
+                },
             },
             {
                 "role": "user",
@@ -46,22 +46,22 @@ class AIService:
             },
             {
                 "role": "assistant",
-                "content": json.dumps({
+                "content": {
                     "title": "Finish project report",
                     "description": "Complete final report and submit",
                     "deadline": (today_date + timedelta(days=7)).strftime("%Y-%m-%d"),
-                }),
+                },
             },
             {"role": "user", "content": "Call my mom next Monday"},
             {
                 "role": "assistant",
-                "content": json.dumps({
+                "content": {
                     "title": "Call mom",
                     "description": "Phone call with mother",
                     "deadline": (
                         today_date + timedelta(days=(7 - today_date.weekday()) % 7 or 7)
                     ).strftime("%Y-%m-%d"),
-                }),
+                },
             },
             {
                 "role": "user",

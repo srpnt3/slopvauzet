@@ -24,6 +24,7 @@ class TodoItem(BaseModel):
     description: str
     deadline: str
 
+
 class TodoItemRecommendation(BaseModel):
     title: str
     description: str
@@ -38,10 +39,30 @@ class TodoItemForCreate(BaseModel):
 
 class State:
     DEFAULT_TODOS: list[TodoItem] = [
-        TodoItem(id=1, title="Find a great team", description="Find a great team to work with", deadline="2025-01-01"),
-        TodoItem(id=2, title="Choose a project", description="Choose a project to work on", deadline="2025-01-01"),
-        TodoItem(id=3, title="Interview people for need-finding", description="Interview people for need-finding", deadline="2025-01-01"),
-        TodoItem(id=4, title="Come up with a lo-fi prototype", description="Come up with a lo-fi prototype", deadline="2025-01-01"),
+        TodoItem(
+            id=1,
+            title="Find a great team",
+            description="Find a great team to work with",
+            deadline="2025-01-01",
+        ),
+        TodoItem(
+            id=2,
+            title="Choose a project",
+            description="Choose a project to work on",
+            deadline="2025-01-01",
+        ),
+        TodoItem(
+            id=3,
+            title="Interview people for need-finding",
+            description="Interview people for need-finding",
+            deadline="2025-01-01",
+        ),
+        TodoItem(
+            id=4,
+            title="Come up with a lo-fi prototype",
+            description="Come up with a lo-fi prototype",
+            deadline="2025-01-01",
+        ),
     ]
 
     todos_by_email: defaultdict[str, list[TodoItem]] = defaultdict(
@@ -54,7 +75,12 @@ class State:
     def create_todo(self, email: str, item: TodoItemForCreate) -> TodoItem:
         todos = self.todos_by_email[email]
         next_id = max((todo.id for todo in todos), default=0) + 1
-        new_todo = TodoItem(id=next_id, title=item.title, description=item.description, deadline=item.deadline)
+        new_todo = TodoItem(
+            id=next_id,
+            title=item.title,
+            description=item.description,
+            deadline=item.deadline,
+        )
         todos.append(new_todo)
         return new_todo
 
@@ -66,6 +92,7 @@ class State:
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 state = State()
+
 
 def extract_user(request: Request) -> User:
     if USE_MOCK_AUTHENTICATION:
@@ -110,7 +137,12 @@ def delete_todo(request: Request, todo_id: int):
     user = extract_user(request)
     state.delete_todo(user.email, todo_id)
 
-@app.get("/api/todos/generate", response_model=TodoItemRecommendation, status_code=status.HTTP_200_OK)
+
+@app.get(
+    "/api/todos/generate",
+    response_model=TodoItemRecommendation,
+    status_code=status.HTTP_200_OK,
+)
 def generate_todo(prompt: str):
     try:
         ai = AIService("litellm_proxy/openrouter/mistralai/devstral-medium")
