@@ -145,7 +145,7 @@ def delete_todo(request: Request, todo_id: int):
 )
 def generate_todo(prompt: str):
     try:
-        ai = AIService("litellm_proxy/openrouter/mistralai/devstral-medium")
+        ai = AIService("openai/gpt-4o-mini")
         return ai.generate_todo(prompt)
     except Exception:
         return TodoItemRecommendation(title="", description="", deadline="")

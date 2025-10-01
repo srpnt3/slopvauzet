@@ -34,11 +34,11 @@ class AIService:
             },
             {
                 "role": "assistant",
-                "content": {
+                "content": json.dumps({
                     "title": "Clean room",
                     "description": "Organize and tidy up living space",
                     "deadline": today_iso,
-                },
+                }),
             },
             {
                 "role": "user",
@@ -46,22 +46,22 @@ class AIService:
             },
             {
                 "role": "assistant",
-                "content": {
+                "content": json.dumps({
                     "title": "Finish project report",
                     "description": "Complete final report and submit",
                     "deadline": (today_date + timedelta(days=7)).strftime("%Y-%m-%d"),
-                },
+                }),
             },
             {"role": "user", "content": "Call my mom next Monday"},
             {
                 "role": "assistant",
-                "content": {
+                "content": json.dumps({
                     "title": "Call mom",
                     "description": "Phone call with mother",
                     "deadline": (
                         today_date + timedelta(days=(7 - today_date.weekday()) % 7 or 7)
                     ).strftime("%Y-%m-%d"),
-                },
+                }),
             },
             {
                 "role": "user",
