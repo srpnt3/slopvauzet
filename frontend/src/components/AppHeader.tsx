@@ -29,10 +29,10 @@ const AppHeader = () => {
         <br />
         We've provided you with an example app to get you started quickly. Feel
         free to change anything you'd like or discard it completely.{" "}
-        <a href="https://gitlab.ethz.ch/vseth/1100-fv/1116-vis/vc2/sip-vis-vc2-hackathon/template">
+        <a href="https://github.com/SleepyMorpheus/viscon-hackathon-2025-template">
           Link
         </a>{" "}
-        to the Gitlab repository.
+        to the GitHub repository.
         <br />
         <br />
         Cheers!
