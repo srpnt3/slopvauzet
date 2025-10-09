@@ -80,20 +80,18 @@ app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
 def extract_user(request: Request) -> User:
     if USE_MOCK_AUTHENTICATION:
-        username = "aeinstein"
-        email = "aeinstein@ethz.ch"
+        id = "aeinstein"
         name = "Albert Einstein"
     else:
-        username = request.headers.get("X-authentik-username")
-        email = request.headers.get("X-authentik-email")
-        name = request.headers.get("X-authentik-name")
+        id = request.headers.get("X-User-Id")
+        name = request.headers.get("X-User-Name")
 
     try:
-        user = User(username=username, email=email, name=name)
+        user = User(id=id, name=name)
     except ValidationError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid authentication headers, expected X-authentik-username, X-authentik-email, and X-authentik-name",
+            detail="Invalid authentication headers, expected X-User-Id and X-User-Name",
         )
 
     return user
