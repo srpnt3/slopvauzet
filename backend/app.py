@@ -43,17 +43,17 @@ class State:
         ),
     ]
 
-    # Mapping from user email to their todo items
-    # When a new email is seen, initialize with a fresh copy of DEFAULT_TODOS
-    todos_by_email: defaultdict[str, list[TodoItem]] = defaultdict(
+    # Mapping from user id to their todo items
+    # When a new user id is seen, initialize with a fresh copy of DEFAULT_TODOS
+    todos_by_user_id: defaultdict[str, list[TodoItem]] = defaultdict(
         lambda: deepcopy(State.DEFAULT_TODOS)
     )
 
-    def get_todos(self, email: str) -> list[TodoItem]:
-        return self.todos_by_email[email]
+    def get_todos(self, user_id: str) -> list[TodoItem]:
+        return self.todos_by_user_id[user_id]
 
-    def create_todo(self, email: str, item: TodoItemForCreate) -> TodoItem:
-        todos = self.todos_by_email[email]
+    def create_todo(self, user_id: str, item: TodoItemForCreate) -> TodoItem:
+        todos = self.todos_by_user_id[user_id]
         next_id = max((todo.id for todo in todos), default=0) + 1
         new_todo = TodoItem(
             id=next_id,
@@ -64,10 +64,10 @@ class State:
         todos.append(new_todo)
         return new_todo
 
-    def delete_todo(self, email: str, todo_id: int):
-        todos = self.todos_by_email[email]
+    def delete_todo(self, user_id: str, todo_id: int):
+        todos = self.todos_by_user_id[user_id]
         new_todos = [todo for todo in todos if todo.id != todo_id]
-        self.todos_by_email[email] = new_todos
+        self.todos_by_user_id[user_id] = new_todos
 
 
 state = State()
@@ -105,19 +105,19 @@ def auth_me(request: Request):
 @app.get("/api/todos", response_model=list[TodoItem], status_code=status.HTTP_200_OK)
 def get_todos(request: Request):
     user = extract_user(request)
-    return state.get_todos(user.email)
+    return state.get_todos(user.id)
 
 
 @app.post("/api/todos", response_model=TodoItem, status_code=status.HTTP_201_CREATED)
 def create_todo(request: Request, item: TodoItemForCreate):
     user = extract_user(request)
-    return state.create_todo(user.email, item)
+    return state.create_todo(user.id, item)
 
 
 @app.delete("/api/todos/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_todo(request: Request, todo_id: int):
     user = extract_user(request)
-    state.delete_todo(user.email, todo_id)
+    state.delete_todo(user.id, todo_id)
 
 
 @app.get(

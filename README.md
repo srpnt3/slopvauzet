@@ -24,7 +24,7 @@ Everything is containerized with Docker, so you can get up and running with a si
 To start all the services, simply run:
 
 ```bash
-docker compose up
+docker compose up --build
 ```
 
 This will build the containers and start the frontend, backend, and proxy. The application will then be available at:
