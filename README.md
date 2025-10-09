@@ -1,6 +1,6 @@
-# VC2 Hackathon Template
+# VIScon Hackathon Template
 
-Welcome hackers, to the VC2 Hackathon!
+Welcome, hackers, to the VIScon Hackathon!
 
 This repository is a template for your hackathon project. It includes a
 basic structure for your project, as well as some resources to help you
@@ -8,61 +8,104 @@ get started.
 
 Feel free to modify this template as you see fit or yeet it completely :)
 
-## Getting Started
-This repository contains a frontend, backend, and a http proxy server.
-Everything can easily
-be started with `docker-compose`.
+## Project Overview
+
+This template provides a solid starting point for your hackathon project, featuring:
+
+- **Frontend:** A simple React application.
+- **Backend:** A Python backend built with the **FastAPI** framework.
+- **AI Integration:** An AI-powered endpoint that generates structured data from natural language prompts using `litellm`.
+- **Proxy:** A Traefik reverse proxy to route traffic seamlessly.
+
+Everything is containerized with Docker, so you can get up and running with a single command.
+
+## Quick Start
+
+To start all the services, simply run:
 
 ```bash
 docker compose up
 ```
 
-This will start the frontend, backend, and proxy server. The frontend
-will be available at `http://localhost:8000` and the backend will be
-available at `http://localhost:8000/api`.
+This will build the containers and start the frontend, backend, and proxy. The application will then be available at:
 
-### Proxy (Traefik)
-The proxy server is a reverse proxy that routes requests to the frontend
-and backend. In this case we have decided to use traefikIt is configured
-to route requests to the frontend if the path starts with `/` and to the
-backend if the path starts with `/api`.
+- **Frontend:** [`http://localhost:8080`](http://localhost:8080)
+- **Backend API:** [`http://localhost:8080/api`](http://localhost:8080/api)
 
-Additionally, it provides a middleware that adds dummy authentication
-headers to each request. This is useful for testing authentication.
-The following headers are added:
-- `X-Authentik-Username`
-- `X-Authentik-Email`
-- `X-Authentik-Name`
+## Backend (FastAPI)
 
-You can assume that the email header is unique for each user and thus
-use it as a unique identifier.
+The backend is a Python application built with the **FastAPI** framework. It provides a REST API for a multi-user todo list and includes an AI-powered feature.
 
-To add authentication to any other services, simply add the following
-labels to the service in the `docker-compose.yml` file:
-```yaml
-labels:
-    traefik.http.routers.<YOUR_ROUTER>.middlewares: dummy-auth-header
+The backend code is located in the `/backend` directory. You can start it independently by running:
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python app.py
 ```
 
-### Backend
-The backend is written in Python using the Flask framework. It provides
-a simple REST API for managing a todo list and user authentication.
+You can then get started by visiting http://localhost:8000/api/docs.
 
-| Method | Path           | Description                            |
-|--------|----------------|----------------------------------------|
-| GET    | /api/todos     | Get all todos                          |
-| POST   | /api/todos     | Create a new todo                      |
-| DELETE | /api/todos/:id | Delete a todo                          |
-| GET    | /api/auth/me   | Get the current user from auth headers |
+### API Endpoints
 
-Make sure to include the prefix `/api` in your endpoints for the proxy
-to route the requests correctly to your backend application.
+The following endpoints are available. Note that the `/api` prefix is required for all backend routes.
 
-### Frontend
-The frontend is a simple React app that displays some information and
-hosts a todo list app. It is written in Javascript and the backend
-requests are made using the `fetch` API.
+| Method   | Path                   | Description                                         |
+| :------- | :--------------------- | :-------------------------------------------------- |
+| `GET`    | `/api/me`              | Get the current user.                               |
+| `GET`    | `/api/todos`           | Get all todos for the current user.                 |
+| `POST`   | `/api/todos`           | Create a new todo for the current user.             |
+| `DELETE` | `/api/todos/{todo_id}` | Delete a specific todo by its ID.                   |
+| `GET`    | `/api/todos/generate`  | Suggests a new todo from a natural language prompt. |
 
-If you feel confident or want to use a more involved frontend framework,
-we recommend you to use `NEXT.JS` which supports server-side rendering,
-multi-page routing, and more.
+### Authentication
+
+By default, authentication is handled by the VIScon platform's central proxy. When a user logs into the platform, these headers are automatically added to requests forwarded to your application.
+
+The following headers are expected on requests to the `/api` endpoints:
+
+- `X-User-Id`: A unique identifier for the user.
+- `X-User-Name`: The user's full name.
+
+The backend uses the `X-User-Id` to maintain a separate todo list for each user.
+
+### AI-Powered Todo Generation
+
+We've integrated an AI service using `litellm` to generate structured todo items from natural language.
+
+This feature requires credentials for an LLM proxy. To enable it, ensure that the `.env` file in the root directory of the project contains you team-specific API key.
+
+```ini
+# .env
+...
+LITELLM_PROXY_API_KEY=your-secret-api-key
+```
+
+## Frontend (React)
+
+The frontend is a simple React app that displays some information and hosts a todo list app. It is written in TypeScript, and the backend requests are made using the `fetch` API.
+
+The frontend code is located in the `/frontend` directory. You can start it independently by running:
+
+```bash
+cd frontend
+npm install
+
+npm run dev
+```
+
+You can then get started by visiting http://localhost:3000.
+
+## Proxy (Traefik)
+
+The project uses Traefik as a reverse proxy. It acts as the single entry point for the application, listening on `http://localhost:8080`.
+
+Its main responsibilities are:
+
+- Routing requests starting with `/api` to the backend service.
+- Routing all other requests (`/`) to the frontend service.
+
+The configuration is done via Docker labels in the `docker-compose.yml` file, so you can easily add new services and routing rules.
