@@ -1,0 +1,79 @@
+{
+  "course_id": "401-0131-00",
+  "title": "Linear Algebra",
+  "semester": "Autumn Semester 2025",
+  "periodicity": "yearly recurring course",
+  "language_of_instruction": "German",
+  "lecturers": ["B. Gärtner", "R. Weismantel"],
+  "classes": [
+    {
+      "type": "Lecture",
+      "hours_per_week": 4,
+      "schedule": [
+        {
+          "day": "Wednesday",
+          "time": "10:15-12:00",
+          "venue": "HG F7 with video transmission to HG F5"
+        },
+        {
+          "day": "Friday",
+          "time": "10:15-12:00",
+          "venue": "HG F7 with video transmission to HG F5"
+        }
+      ]
+    },
+    {
+      "type": "Exercise / Tutorial (U)",
+      "hours_per_week": 2,
+      "schedule": [
+        {
+          "day": "Thursday",
+          "time": "08:15-10:00",
+          "venue": "CAB G 56 / CHN C 14 / D 42 / D 46 / CLA E 4 / HG F 26.5 / IFW A 32.1 / ML F 34 / ML F 38 / H 41.1 / RZ F 21"
+        },
+        {
+          "day": "Thursday",
+          "time": "16:15-18:00",
+          "venue": "CAB G 56 / CHN D 42 / CHN D 44 / IFW A 34 / ML J 34.3 / ML J 37.1 / NO C 6"
+        },
+        {
+          "day": "Friday",
+          "time": "14:00-16:00",
+          "venue": "ONLINE"
+        },
+        {
+          "day": "Friday",
+          "time": "14:15-16:00",
+          "venue": "CHN D 42 / CHN G 46 / HG F 26.5 / IFW A 34 / IFW C 31 / LFW C 4"
+        }
+      ]
+    }
+  ],
+  "notes": "Groups are selected in myStudies. Do 8-10, Do 16-18 or Fr 14-16 according to grouping. Exact teaching times for online events will be communicated.",
+  "catalogue_data": {
+    "description": "Introduction to linear algebra: vectors and matrices, solving systems of linear equations, vector spaces and subspaces, orthogonality and least squares, determinants, eigenvalues and eigenvectors, singular value decomposition and linear transformations. Applications in and links to computer science will be presented in parallel.",
+    "learning_objectives": [
+      "Understand and apply fundamental concepts of linear algebra",
+      "Learn about applications of linear algebra in computer science"
+    ],
+    "content": "Vectors and matrices, solving systems of linear equations, vector spaces and subspaces, orthogonality and least squares, determinants, eigenvalues and eigenvectors, singular value decomposition, linear transformations, Applications in and links to computer science",
+    "lecture_notes": "Will be handed out at the start of the semester",
+    "literature": "Gilbert Strang, Introduction to Linear Algebra, 6th Edition, Wellesley - Cambridge Press. Further literature and links can be found on the course webpage."
+  },
+  "performance_assessment": {
+    "ects_credits": 7,
+    "assessment_type": "session examination",
+    "language_of_examination": "German",
+    "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+    "examination": "written 90 minutes",
+    "additional_info": "ACHTUNG: Die folgenden Angaben betreffen nur den JAHRESKURS Mathematik I und II. Im Rahmen der Leistungskontrolle zur Basisprüfung wird auch eine freiwillige Multiple-Choice-Zwischenprüfung in der ersten Woche des FS 2026 angeboten. Gegenstand dieser Zwischenprüfung ist der gesamte in der Mathematik-I-Vorlesung und den entsprechenden Übungsserien behandelte Stoff. Falls die Prozent-Note dieser Zwischenprüfung besser ist als die Prozent-Note der Prüfung des Jahreskurses in der Sommerprüfungssession 2026 (bzw. Winterprüfungssession 2027), wird die Note dieser Zwischenprüfung zu 20% an die Endnote angerechnet.\n\n[Der SEMESTERKURS Mathematik I für den Bachelor-Studiengang Lebensmittelwissenschaften und Ernährung (Reglement 2024) ist davon nicht betroffen.]",
+    "exam_aid": "20 A4-Seiten (= 10 doppelseitige Blätter) Notizen. 1 Wörterbuch für fremdsprachige Studierende. Keine (Taschen)Rechner, keine Mobiltelefone."
+  },
+  "offered_in": [
+    {
+      "program": "Computer Science Bachelor",
+      "section": "First Year Examination Block 1",
+      "type": "O"
+    }
+  ]
+}
