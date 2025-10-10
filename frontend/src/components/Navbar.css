@@ -7,11 +7,11 @@
 	gap: 1rem;
 }
 
-.navbutton {
+.navlink {
 	padding: 1rem;
 	cursor: pointer;
 }
 
-.navbutton.active {
+.navlink.active {
 	font-weight: bold;
 }
