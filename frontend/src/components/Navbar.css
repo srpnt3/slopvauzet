@@ -1,0 +1,17 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+	gap: 1rem;
+}
+
+.navbutton {
+	padding: 1rem;
+	cursor: pointer;
+}
+
+.navbutton.active {
+	font-weight: bold;
+}
