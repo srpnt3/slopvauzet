@@ -2,8 +2,10 @@
 import json
 import csv
 import re
+import numpy as np
+from pprint import pprint
 
-# json_test_data = json.load(open("test.json"))
+json_test_data = json.load(open("test_json.json"))
 
 def get_correct_hours(str_arr_in): # dont read this its massive [redacted]
     str_arr_out = str_arr_in.copy()
@@ -56,14 +58,16 @@ def get_timetanle_data_json(json_arr_in):
 
 def gen_timetable_csv_from_json(json_arr_in):
     
-    print(json_arr_in)
+    # print(json_arr_in)
     timetable_arr = [[0 for _ in range(6)] for _ in range(15)]
     curr_hour = 5
     for curr_row in timetable_arr:
         curr_row[0] = str(curr_hour) + "-" + str(curr_hour + 1)
         curr_hour += 1
     timetable_arr[0] = ["||||", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-    
+    for i in range (0, 15):
+        timetable_arr[i] = list(map(lambda curr_val: "" if curr_val ==  0 else curr_val, timetable_arr[i]))
+    # pprint(timetable_arr)
     for curr_json in json_arr_in:
         if "course name" in curr_json:
             course_name = curr_json["course name"]
@@ -73,9 +77,12 @@ def gen_timetable_csv_from_json(json_arr_in):
             
         for curr_time_slot in lecture_time:
             day_idx = get_weekday_index(curr_time_slot.get("day"))
-            print(str(day_idx) + " " + curr_time_slot.get("day"))
+            # print(str(day_idx) + " " + curr_time_slot.get("day"))
             for curr_hour in curr_time_slot.get("time"):
-                print(int( curr_hour) - 5)
+                # print(int( curr_hour) - 5)
+                if timetable_arr[int(curr_hour) - 5][day_idx] != "":
+                    timetable_arr[int(curr_hour) - 5][day_idx] = timetable_arr[int(curr_hour) - 5][day_idx] + "/\n" + course_name
+                    continue
                 timetable_arr[int(curr_hour) - 5][day_idx] = course_name
 
     with open("timetable_out.csv", 'w', newline='', encoding='utf-8') as csvfile:
@@ -83,15 +90,16 @@ def gen_timetable_csv_from_json(json_arr_in):
         for row in timetable_arr:
             writer.writerow(row)
 
+    # pprint(timetable_arr)
     return timetable_arr
     
-# def test_fn(json_in):
-#     timetable_data = get_timetanle_data_json([json_in])
-#     gen_timetable_csv_from_json(timetable_data)
-#     return
+def test_fn(json_in):
+    timetable_data = get_timetanle_data_json([json_in])
+    gen_timetable_csv_from_json(timetable_data)
+    return
 
 
-# test_fn(json_test_data)
+test_fn(json_test_data)
 
 
 
