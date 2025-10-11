@@ -1,23 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import Search from "./components/Search";
+import Search, { type Course } from "./components/Search";
 import Navbar from "./components/Navbar";
 import Studyplan from "./components/Studyplan";
-import Schedule from "./components/Schedule";
-import Debug from "./components/Debug";
-
-export type Page = "search" | "studyplan" | "schedule" | "debug";
+import CoursePopup from "./components/CoursePopup";
+import Timetable from "./components/Timetable";
+import { getCurrentCourses } from "./util/courses";
 
 function App() {
-  const [page, setPage] = useState<Page>("search");
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [coursePopup, setCoursePopup] = useState<Course | undefined>(undefined);
+
+  useEffect(() => {
+    setCourses(getCurrentCourses());
+  }, []);
 
   return (
     <div className="app">
-      <Navbar page={page} setPage={setPage}></Navbar>
-      {page == "search" && <Search></Search>}
-      {page == "studyplan" && <Studyplan></Studyplan>}
-      {page == "schedule" && <Schedule></Schedule>}
-      {page == "debug" && <Debug></Debug>}
+      <Navbar></Navbar>
+      <main className="main">
+        <div className="infoColumn">
+          <div className="title">Study Profile</div>
+          <Studyplan></Studyplan>
+          <div className="title">Timetable</div>
+          <Timetable courses={courses}></Timetable>
+        </div>
+        <div className="searchColumn">
+          <Search></Search>
+        </div>
+      </main>
+      {coursePopup && <CoursePopup course={coursePopup}></CoursePopup>}
     </div>
   );
 };

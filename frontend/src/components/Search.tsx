@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Search.css";
 import Result from "./Result";
-import Recommendation from "./Recommendation";
 import Symbol from "./Symbol";
 
 // TODO: match the actual data from backend
@@ -51,18 +50,16 @@ function Search() {
         <input className="searchbar" placeholder="Course ID / Course Name" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value)}></input>
         <button className="filters"><Symbol>tune</Symbol></button>
       </div>
-      {results.length > 0 && <>
-        <div className="title">Results</div>
-        <div className="results">
+      <div className="results">
+        {results.length > 0 && <>
+          <div className="title">Results</div>
           {results.map((course, i) => <Result course={course} key={i}></Result>)}
-        </div>
-      </>}
-      {recommendations.length > 0 && <>
-        <div className="title">Recommendations</div>
-        <div className="recommendations">
-          {recommendations.map((course, i) => <Recommendation course={course} key={i}></Recommendation>)}
-        </div>
-      </>}
+        </>}
+        {recommendations.length > 0 && <>
+          <div className="title">Recommendations</div>
+          {recommendations.map((course, i) => <Result course={course} key={i}></Result>)}
+        </>}
+      </div>
     </div>
   );
 }

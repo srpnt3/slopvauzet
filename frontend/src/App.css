@@ -1,6 +1,27 @@
 .app {
 	height: 100dvh;
+	max-height: 100dvh;
+	overflow: hidden;
+}
+
+.main {
+	width: 100%;
+	height: calc(100dvh - 5rem);
+	display: flex;
+	flex-direction: row;
+	padding: 4rem;
+	padding-top: 0;
+	gap: 3rem;
+	overflow: hidden;
+}
+
+.infoColumn {
+	width: 40%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	gap: 1rem;
+}
+
+.searchColumn {
+	width: 60%;
 }
