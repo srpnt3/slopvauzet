@@ -13,7 +13,7 @@ export type Filters = {
   credits: number,
 };
 
-function Search({setCoursePopup, setCoursesChanged}: {setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void}) {
+function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void}) {
   const [results, setResults] = useState<Course[]>([]);
   const [recommendations, setRecommendations] = useState<Course[]>([]);
   const [filters, setFilters] = useState<Filters>({credits: 0});
@@ -54,11 +54,11 @@ function Search({setCoursePopup, setCoursesChanged}: {setCoursePopup: (course: C
       <div className="results">
         {results.length > 0 && <>
           <div className="title">Results</div>
-          {results.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} key={i}></Result>)}
+          {results.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} key={i}></Result>)}
         </>}
         {recommendations.length > 0 && <>
           <div className="title">Recommendations</div>
-          {recommendations.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} key={i}></Result>)}
+          {recommendations.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} key={i}></Result>)}
         </>}
       </div>
     </div>

@@ -3,7 +3,7 @@ import "./Result.css";
 import type { Course } from "./Search";
 import Symbol from "./Symbol";
 
-function Result({course, setCoursePopup, setCoursesChanged}: {course: Course, setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void}) { 
+function Result({course, setCoursePopup, setCoursesChanged, setHoveredCourse}: {course: Course, setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void}) { 
   const toggleAddCourse = (course: Course) => {
     if (!inCurrentCourses(course.id)) {
       addCurrentCourse(course);
@@ -15,7 +15,7 @@ function Result({course, setCoursePopup, setCoursesChanged}: {course: Course, se
   };
   
   return (
-    <div className="result">
+    <div className="result" onMouseEnter={() => setHoveredCourse(course)} onMouseLeave={() => setHoveredCourse(undefined)}>
       <div className="id">{course.id}</div>
       <div className="name">{course.name}</div>
       <button className={"add " + (inCurrentCourses(course.id) ? "active" : "")} onClick={() => toggleAddCourse(course)}><Symbol>add</Symbol></button>

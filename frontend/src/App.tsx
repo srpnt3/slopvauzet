@@ -11,6 +11,7 @@ function App() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [coursePopup, setCoursePopup] = useState<Course | undefined>(undefined);
   const [coursesChanged, setCoursesChanged] = useState<number>(1); // set to nonzero to force rerender with new localstorage courses
+  const [hoveredCourse, setHoveredCourse] = useState<Course | undefined>(undefined);
 
   // todo: persist in localstorage
   const [level, setLevel] = useState<string>("Bachelor");
@@ -31,10 +32,10 @@ function App() {
           <div className="title">Study Profile</div>
           <Studyplan info={level + ", " + department + ", " + programme}></Studyplan>
           <div className="title">Timetable</div>
-          <Timetable courses={courses}></Timetable>
+          <Timetable courses={courses} hoveredCourse={hoveredCourse}></Timetable>
         </div>
         <div className="searchColumn">
-          <Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged}></Search>
+          <Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse}></Search>
         </div>
       </main>
       {coursePopup && <CoursePopup course={coursePopup} setCoursePopup={setCoursePopup}></CoursePopup>}
