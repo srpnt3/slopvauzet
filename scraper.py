@@ -54,7 +54,10 @@ custom_parser = {
 
 def scrape_vvz_course(url, language_site):
     response = requests.get(url)
-    response.raise_for_status()
+
+    while(response.status_code != 200):
+        print(response.status_code)
+        response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     # --- Helpers ---
     def clean(text):
@@ -125,7 +128,7 @@ def scrape_vvz_course(url, language_site):
     ects = course_info.get("ECTS Credits", "")
 
     # --- Lecturers ---
-    lecturers = get_all_texts(f"td:contains('{get_field_name('lecturers')}') + td a")
+    lecturers = get_all_texts(f"td:-soup-contains('{get_field_name('lecturers')}') + td a")
 
 
 
@@ -272,7 +275,8 @@ def scrape_vvz_course_links(language, semester):
         url = f"https://www.vvz.ethz.ch/Vorlesungsverzeichnis/sucheLehrangebot.view?lerneinheitscode=&deptId=&famname=&unterbereichAbschnittId=&seite={index}&lerneinheitstitel=&rufname=&kpRange=0,999&lehrsprache=&bereichAbschnittId=&semkez={semester}&studiengangAbschnittId=&studiengangTyp=&ansicht=1&lang=de&katalogdaten=&wahlinfo=&lang={language}"
     
         response = requests.get(url)
-        response.raise_for_status()
+
+        # response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
         # print(response.text)
         links = soup.find_all(href=re.compile('.*Vorlesungsverzeichnis/lerneinheit.view.*'))
@@ -289,13 +293,7 @@ def scrape_vvz_course_links(language, semester):
             f.write(link + "\n")
     return result
 
-if __name__ == "__main__":
-    url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2025W&ansicht=ALLE&lerneinheitId=193980&lang=en"
-    url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lang=en&semkez=2025W&ansicht=ALLE&lerneinheitId=194120&"
-    semester = "2025W"
-    language = "en"
-    # scrape_vvz_course_links(language, semester)
-
+def scrape_all_courses_from_links(language, semester):
     final_json = []
     urls = []
     with open(f"links_{semester}_{language}", "r", encoding="utf-8") as f:
@@ -310,6 +308,15 @@ if __name__ == "__main__":
     # print(final_json)
     with open(f"courses_{semester}_{language}.json", "w", encoding="utf-8") as f:
         json.dump(final_json, f, indent=2, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2025W&ansicht=ALLE&lerneinheitId=193980&lang=en"
+    url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lang=en&semkez=2025W&ansicht=ALLE&lerneinheitId=194120&"
+    semester = "2025W"
+    language = "en"
+    scrape_vvz_course_links(language, semester)
+
 
 
     # print("✅ Scraping complete. Data saved to result.json")
