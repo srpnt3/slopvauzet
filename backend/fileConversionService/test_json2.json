@@ -132,5 +132,72 @@
         "type": "E-"
       }
     ]
+  },
+  {
+    "course_id": "447-0649-02L",
+    "title": "Applied Statistical Regression II",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "two-yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": [
+      "C. Renaux"
+    ],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 10,
+        "schedule": [
+          {
+            "venue": [
+              "HGD 1.1"
+            ],
+            "day": "Mon/2",
+            "time": "08:15-10:00"
+          }
+        ]
+      },
+      {
+        "type": "Exercise",
+        "notes": "",
+        "hours_per_week": 10,
+        "schedule": [
+          {
+            "venue": [
+              "HGE 19"
+            ],
+            "day": "Mon/2",
+            "time": "10:15-12:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Generalized linear models (GLMs) and basic ideas of more advanced regression models.",
+      "learning_objectives": "Understanding the concept and flexibility of generalized linear models and correct interpretation of the corresponding model outputs."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Applied Statistical Data Science",
+        "section": "Further Courses",
+        "type": "Z"
+      },
+      {
+        "program": "DAS in Applied Statistical Data Science",
+        "section": "Electives",
+        "type": "W"
+      }
+    ]
   }
 ]
