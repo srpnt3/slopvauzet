@@ -7,7 +7,7 @@ function Result({course, setCoursePopup}: {course: Course, setCoursePopup: (cour
     <div className="result">
       <div className="id">{course.id}</div>
       <div className="name">{course.name}</div>
-      <button className="popup" onClick={() => setCoursePopup(course)}><Symbol>open_in_new</Symbol></button>
+      <button className="open" onClick={() => setCoursePopup(course)}><Symbol>open_in_new</Symbol></button>
     </div>
   );
 }
