@@ -4,8 +4,9 @@ import Search from "./components/Search";
 import Navbar from "./components/Navbar";
 import Studyplan from "./components/Studyplan";
 import Schedule from "./components/Schedule";
+import Debug from "./components/Debug";
 
-export type Page = "search" | "studyplan" | "schedule";
+export type Page = "search" | "studyplan" | "schedule" | "debug";
 
 function App() {
   const [page, setPage] = useState<Page>("search");
@@ -16,6 +17,7 @@ function App() {
       {page == "search" && <Search></Search>}
       {page == "studyplan" && <Studyplan></Studyplan>}
       {page == "schedule" && <Schedule></Schedule>}
+      {page == "debug" && <Debug></Debug>}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Symbol from "./Symbol";
 
 // TODO: match the actual data from backend
 export type Course = {
+  id: string,
   name: string,
 };
 
@@ -28,18 +29,18 @@ function Search() {
       return;
     }
     let dummyResults: Course[] = [
-      {name: `intro to ${query}`},
-      {name: `${query} II`},
-      {name: `${query} and stuff`},
+      {id: "100", name: `intro to ${query}`},
+      {id: "101", name: `${query} II`},
+      {id: "102", name: `${query} and stuff`},
     ];
     setResults(dummyResults);
   };
 
   const getRecommendations = () => {
     let dummyRecommendations: Course[] = [
-      {name: "cool"},
-      {name: "easy"},
-      {name: "fun"},
+      {id: "200", name: "cool"},
+      {id: "201", name: "easy"},
+      {id: "202", name: "fun"},
     ];
     setRecommendations(dummyRecommendations);
   }

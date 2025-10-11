@@ -2,7 +2,7 @@ import "./Studyplan.css";
 
 function Studyplan() {
   return (
-    <div className="schedule">
+    <div className="studyplan">
       <div>studyplan</div>
     </div>
   );
