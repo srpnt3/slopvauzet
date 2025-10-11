@@ -1,11 +1,9 @@
-
 # from fastapi import FastAPI  // what am i even using this for? 
 import json
 import csv
 import re
-from pprint import pprint
 
-json_test_data = json.load(open("test.json"))
+# json_test_data = json.load(open("test.json"))
 
 def get_correct_hours(str_arr_in): # dont read this its massive [redacted]
     str_arr_out = str_arr_in.copy()
@@ -80,7 +78,6 @@ def gen_timetable_csv_from_json(json_arr_in):
                 print(int( curr_hour) - 5)
                 timetable_arr[int(curr_hour) - 5][day_idx] = course_name
 
-    # pprint(timetable_arr)
     with open("timetable_out.csv", 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         for row in timetable_arr:
@@ -88,13 +85,13 @@ def gen_timetable_csv_from_json(json_arr_in):
 
     return timetable_arr
     
-def test_fn(json_in):
-    timetable_data = get_timetanle_data_json([json_in])
-    gen_timetable_csv_from_json(timetable_data)
-    return
+# def test_fn(json_in):
+#     timetable_data = get_timetanle_data_json([json_in])
+#     gen_timetable_csv_from_json(timetable_data)
+#     return
 
 
-test_fn(json_test_data)
+# test_fn(json_test_data)
 
 
 
