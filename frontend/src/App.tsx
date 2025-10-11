@@ -11,17 +11,22 @@ function App() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [coursePopup, setCoursePopup] = useState<Course | undefined>(undefined);
 
+  // todo: persist in localstorage
+  const [level, setLevel] = useState<string>("Bachelor");
+  const [department, setDepartment] = useState<string>("D-INFK");
+  const [programme, setProgramme] = useState<string>("Computer Science Bachelor");
+
   useEffect(() => {
     setCourses(getCurrentCourses());
   }, []);
 
   return (
     <div className="app">
-      <Navbar></Navbar>
+      <Navbar level={level} setLevel={setLevel} department={department} setDepartment={setDepartment} programme={programme} setProgramme={setProgramme}></Navbar>
       <main className="main">
         <div className="infoColumn">
           <div className="title">Study Profile</div>
-          <Studyplan></Studyplan>
+          <Studyplan info={level + ", " + department + ", " + programme}></Studyplan>
           <div className="title">Timetable</div>
           <Timetable courses={courses}></Timetable>
         </div>

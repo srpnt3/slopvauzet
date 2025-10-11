@@ -27,4 +27,8 @@
 	.right {
 		margin-left: auto;
 	}
+
+	.navselect {
+		margin: 0 1rem;
+	}
 }
