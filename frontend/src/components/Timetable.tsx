@@ -5,7 +5,7 @@ import "./Timetable.css";
 function Timetable({courses, hoveredCourse}: {courses: Course[], hoveredCourse: Course | undefined}) {
   
   const renderTimetable = () => {
-    let debug = "(" + courses.length + ") " + (hoveredCourse?.id ?? "");
+    let debug = "(" + courses.length + ") " + (hoveredCourse?.course_id ?? "");
     let cells: JSX.Element[] = [];
     [debug, "mon", "tue", "wed", "thu", "fri"].map(d => cells.push(<div className="cell day" key={d}>{d}</div>));
     for (let h=8; h<22; h++) {

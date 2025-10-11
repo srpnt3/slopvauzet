@@ -1,0 +1,108 @@
+{
+  "course_id": "900-0100-DRL",
+  "title": "Transferable Skills Course I (1-3 days)",
+  "semester": "Autumn Semester 2025",
+  "periodicity": "every semester recurring course",
+  "language_of_instruction": "English",
+  "comment": "Only for doctoral students.Please select your doctoral thesis supervisor as a lecturer and prove your participation with the appropriate certificate.",
+  "lecturers": [],
+  "classes": [
+    {
+      "type": "Seminar",
+      "notes": "",
+      "hours_per_week": 30,
+      "schedule": []
+    }
+  ],
+  "notes": "",
+  "catalogue_data": {
+    "description": "Acquisition of transferable skills and cross-disciplinary competences in the range of short courses or workshops with a maximum duration of 3 days.",
+    "learning_objectives": "Acquisition of transferable skills and cross-disciplinary competences in the range of short courses or workshops with a maximum duration of 3 days."
+  },
+  "performance_assessment": [
+    {
+      "ects_credits": 1,
+      "assessment_type": "ungraded semester performance",
+      "language_of_examination": "English",
+      "repetition": "Repetition only possible after re-enrolling for the course unit.",
+      "assessment_description": "Performance assessment as a semester course"
+    }
+  ],
+  "offered_in": [
+    {
+      "program": "Doctorate Architecture",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Civil, Environmental and Geomatic Engineering",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Biology",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Chemistry and Applied Biosciences",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Earth and Planetary Sciences",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Humanities, Social and Political Sciences",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Health Sciences and Technology",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Computer Science",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Information Technology and Electrical Engineering",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Management, Technology, and Economics",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Mechanical and Process Engineering",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Materials Science",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Mathematics",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Physics",
+      "section": "Transferable Skills",
+      "type": "W"
+    },
+    {
+      "program": "Doctorate Environmental Systems Sciences",
+      "section": "Transferable Skills",
+      "type": "W"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ function App() {
   return (
     <div className={cn("flex flex-col app px-16 gap-8")}>
       <Navbar level={level} setLevel={setLevel} department={department} setDepartment={setDepartment} programme={programme} setProgramme={setProgramme}></Navbar>
-      <main className="main">
+      {!coursePopup && <main className="main">
         <div className="infoColumn">
           <div className="title">Study Profile</div>
           <Studyplan info={level + ", " + department + ", " + programme}></Studyplan>
@@ -38,7 +38,7 @@ function App() {
         <div className="searchColumn">
           <Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse}></Search>
         </div>
-      </main>
+      </main>}
       {coursePopup && <CoursePopup course={coursePopup} setCoursePopup={setCoursePopup}></CoursePopup>}
     </div>
   );
