@@ -6,7 +6,7 @@
 
 .main {
 	width: 100%;
-	height: calc(100dvh - 5rem);
+	height: calc(100dvh - 5rem); /* i hate this :( */
 	display: flex;
 	flex-direction: row;
 	padding: 4rem;
