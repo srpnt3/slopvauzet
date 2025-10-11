@@ -1,12 +1,10 @@
 import "./Studyplan.css";
 
-function Studyplan() {
+function Studyplan({info}: {info: string}) {
   return (
     <div className="studyplan">
       <div className="column">
-        <div className="info">programme</div>
-        <div className="info">semester</div>
-        <div className="info">credits</div>
+        <div className="info">{info}</div>
       </div>
       <div className="column">
         <div className="credits_container">
