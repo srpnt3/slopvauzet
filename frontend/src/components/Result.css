@@ -1,36 +1,64 @@
 .result {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	width: 100%;
 	height: 8rem;
 	padding: 0.5rem;
 	border: solid 1px;
 	border-radius: 8px;
 	margin: 1rem 0;
+	overflow: hidden;
 
-	.id {
+	.info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
 
-	}
+		.item {
+			font-size: 0.9rem;
+			max-width: 60%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
 
-	.name {
+		.add {
+			margin-left: auto;
 
-	}
+			&.active {
+				border-radius: 4px;
+				color: white;
+				background-color: black;
+			}
+		}
 
-	.add {
-		position: absolute;
-		top: 1rem;
-		right: 4rem;
+		.open {
 
-		&.active {
-			border: solid 1px;
-			border-radius: 4px;
-			color: white;
-			background-color: black;
 		}
 	}
 
-	.open {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
+	.title {
+		font-size: 1.6rem;
+		max-width: 80%;	
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.tags {
+		margin-top: auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+
+		.tag {
+			padding: 0.25rem 0.5rem;
+			border: solid 1px;
+			border-radius: 8px;
+			font-size: 0.9rem;
+		}
 	}
 }

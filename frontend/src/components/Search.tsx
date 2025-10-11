@@ -2,11 +2,51 @@ import { useEffect, useState } from "react";
 import "./Search.css";
 import Result from "./Result";
 import Symbol from "./Symbol";
+import { exampleCourses } from "../util/exampleData";
 
-// TODO: match the actual data from backend
 export type Course = {
-  id: string,
-  name: string,
+  course_id: string,
+  title: string,
+  semester: string,
+  periodicity: string,
+  language_of_instruction: string,
+  comment?: string,
+  lecturers: string[],
+  classes: {
+    type: string,
+    hours_per_week: number,
+    notes: string,
+    schedule: {
+      day: string,
+      time: string,
+      venue: string[],
+    }[],
+  }[],
+  notes: string,
+  catalogue_data: {
+    description: string,
+    learning_objectives: string,
+    content?: string,
+    lecture_notes?: string,
+    literature?: string,
+    prerequisites?: string,
+  },
+  performance_assessment: {
+    ects_credits: number,
+    assessment_type?: string,
+    language_of_examination?: string,
+    repetition?: string,
+    examination?: string,
+    additional_info?: string,
+    exam_aid?: string,
+    assessment_description: string,
+    regulations?: string,
+  }[],
+  offered_in: {
+    program: string,
+    section: string,
+    type: string,
+  }[],
 };
 
 export type Filters = {
@@ -28,20 +68,12 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCours
       setResults([]);
       return;
     }
-    let dummyResults: Course[] = [
-      {id: "100", name: `intro to ${query}`},
-      {id: "101", name: `${query} II`},
-      {id: "102", name: `${query} and stuff`},
-    ];
+    let dummyResults: Course[] = exampleCourses.slice(0, 20);
     setResults(dummyResults);
   };
 
   const getRecommendations = () => {
-    let dummyRecommendations: Course[] = [
-      {id: "200", name: "cool"},
-      {id: "201", name: "easy"},
-      {id: "202", name: "fun"},
-    ];
+    let dummyRecommendations: Course[] = exampleCourses.slice(20, 23);
     setRecommendations(dummyRecommendations);
   }
 

@@ -1,33 +1,41 @@
 .coursePopup {
-	position: fixed;
-	inset: 0;
-	background-color: #00000088;
-}
+	width: 100%;
+	height: calc(100dvh - 5rem); /* i hate this :( */
+	padding: 4rem;
+	padding-top: 0;
 
-.courseInfo {
-	position: fixed;
-	inset: 8rem;
-	padding: 1rem;
-	border: solid 1px;
-	border-radius: 24px;
-	background-color: #ffffff;
-
-	.id {
-
-	}
-
-	.name {
-
-	}
-
-	.close {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
+	.back {
 		padding: 0.5rem;
-		border: solid 1px;
-		border-radius: 10px;
-		color: white;
-		background-color: black;
+		padding-left: 0;
+	}
+
+	.title {
+		font-size: 4rem;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+
+		.item {
+			padding: 0.25rem 0.5rem;
+			border-radius: 8px;
+			font-size: 0.9rem;
+			background-color: black;
+			color: white;
+		}
+
+		.id {
+			background-color: #eeeeee;
+			color: black;
+		}
+	}
+
+	.body {
+		height: 60%;
+		overflow-y: auto;
 	}
 }
