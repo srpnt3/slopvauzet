@@ -1,78 +1,105 @@
 {
-  "course_id": "401-0131-00",
-  "title": "Linear Algebra",
-  "semester": "Autumn Semester 2025",
+  "course_id": "227-0003-10L",
+  "title": "Digital Design and Computer Architecture",
+  "semester": "Spring Semester 2025",
   "periodicity": "yearly recurring course",
-  "language_of_instruction": "German",
-  "lecturers": ["B. Gärtner", "R. Weismantel"],
+  "language_of_instruction": "English",
+  "lecturers": ["O. Mutlu", "S. Sadrosadati"],
   "classes": [
     {
       "type": "Lecture",
+      "notes": "Findet im HG F 7 mit Videoübertragung ins HG F 5 statt.Ausnahme am Do. 27.02.25 und am Fr. 28.02.25: Findet im HG F 7 mit Videoübertragung ins ETF C1 statt.Die Vorlesung vom 22.05.2025 findet von 13:00 - 15:00 statt.",
       "hours_per_week": 4,
       "schedule": [
         {
-          "day": "Wednesday",
-          "time": "10:15-12:00",
-          "venue": "HG F7 with video transmission to HG F5"
+          "venue": ["HGF 5", "HGF 7"],
+          "day": "Thu",
+          "time": "14:15-16:00"
         },
         {
-          "day": "Friday",
-          "time": "10:15-12:00",
-          "venue": "HG F7 with video transmission to HG F5"
+          "venue": ["HGF 5", "HGF 7"],
+          "day": "Fri",
+          "time": "14:15-16:00"
+        },
+        {
+          "venue": ["ETFC 1"],
+          "day": "27.02.",
+          "time": "14:15-16:00"
+        },
+        {
+          "venue": ["ETFC 1"],
+          "day": "28.02.",
+          "time": "14:15-16:00"
+        },
+        {
+          "venue": ["HGF 7"],
+          "day": "22.05.",
+          "time": "13:15-15:00"
         }
       ]
     },
     {
-      "type": "Exercise / Tutorial (U)",
+      "type": "Exercise",
+      "notes": "",
       "hours_per_week": 2,
-      "schedule": [
+      "classes": [
         {
-          "day": "Thursday",
-          "time": "08:15-10:00",
-          "venue": "CAB G 56 / CHN C 14 / D 42 / D 46 / CLA E 4 / HG F 26.5 / IFW A 32.1 / ML F 34 / ML F 38 / H 41.1 / RZ F 21"
+          "venue": ["HGE 19", "HGE 26.1", "HGE 26.3", "HGE 27"],
+          "day": "Tue",
+          "time": "16:15-18:00"
         },
         {
-          "day": "Thursday",
-          "time": "16:15-18:00",
-          "venue": "CAB G 56 / CHN D 42 / CHN D 44 / IFW A 34 / ML J 34.3 / ML J 37.1 / NO C 6"
+          "venue": ["HGE 19", "HGE 26.1", "HGE 26.3", "HGE 27"],
+          "day": "Wed",
+          "time": "16:15-18:00"
         },
         {
-          "day": "Friday",
-          "time": "14:00-16:00",
-          "venue": "ONLINE"
+          "venue": ["HGD 11", "HGD 12", "HGE 26.3", "HGE 27"],
+          "day": "Fri",
+          "time": "08:15-10:00"
         },
         {
-          "day": "Friday",
-          "time": "14:15-16:00",
-          "venue": "CHN D 42 / CHN G 46 / HG F 26.5 / IFW A 34 / IFW C 31 / LFW C 4"
+          "venue": ["HGE 19", "HGE 26.1", "HGE 26.3", "HGE 27"],
+          "day": "Fri",
+          "time": "10:15-12:00"
+        },
+        {
+          "venue": ["HGE 27"],
+          "day": "02.06.",
+          "time": "08:15-12:00"
+        },
+        {
+          "venue": ["HGE 27"],
+          "day": "02.06.",
+          "time": "14:15-18:00"
         }
       ]
     }
   ],
-  "notes": "Groups are selected in myStudies. Do 8-10, Do 16-18 or Fr 14-16 according to grouping. Exact teaching times for online events will be communicated.",
+  "notes": "",
   "catalogue_data": {
-    "description": "Introduction to linear algebra: vectors and matrices, solving systems of linear equations, vector spaces and subspaces, orthogonality and least squares, determinants, eigenvalues and eigenvectors, singular value decomposition and linear transformations. Applications in and links to computer science will be presented in parallel.",
-    "learning_objectives": [
-      "Understand and apply fundamental concepts of linear algebra",
-      "Learn about applications of linear algebra in computer science"
-    ],
-    "content": "Vectors and matrices, solving systems of linear equations, vector spaces and subspaces, orthogonality and least squares, determinants, eigenvalues and eigenvectors, singular value decomposition, linear transformations, Applications in and links to computer science",
-    "lecture_notes": "Will be handed out at the start of the semester",
-    "literature": "Gilbert Strang, Introduction to Linear Algebra, 6th Edition, Wellesley - Cambridge Press. Further literature and links can be found on the course webpage."
+    "description": "The class provides a first introduction to the design of digital circuits and computer architecture. It covers technical foundations of how a computing platform is designed from the bottom up. It introduces various execution paradigms, hardware description languages, and principles in digital design and computer architecture.",
+    "learning_objectives": "This class provides a first approach to Computer Architecture. The students learn the design of digital circuits in order to:\n- understand the basics, \n- understand the principles (of design), \n- understand the precedents (in computer architecture). \nBased on such understanding, the students are expected to:\n- learn how a modern computer works underneath, from the bottom up, \n- evaluate tradeoffs of different designs and ideas, \n- implement a principled design (a simple microprocessor), \n- learn to systematically debug increasingly complex systems, \n- hopefully be prepared to develop novel, out-of-the-box designs.\nThe focus is on basics, principles, precedents, and how to use them to create/implement good designs.",
+    "content": "The class consists of the following major blocks of contents:\n- Major Current Issues in Computer Architecture: Principles, Mysteries, Motivational Case Studies and Examples\n- Digital Logic Design: Combinational Logic, Sequential Logic, Hardware Description Languages, FPGAs, Timing and Verification.\n- Basics of Computer Architecture: Von Neumann Model of Computing, Instruction Set Architecture, Assembly Programming, Microarchitecture, Microprogramming.\n- Basics of Processor Design: Pipelining, Out-of-Order Execution, Branch Prediction.\n- Execution Paradigms: Out-of-order Execution, Dataflow, Superscalar Execution, VLIW, Decoupled Access/Execute, SIMD Processors, GPUs, Systolic Arrays, Multithreading.\n- Memory System: Memory Organization, Memory Technologies, Memory Hierarchy, Caches, Prefetching, Virtual Memory.",
+    "lecture_notes": "All the materials (including lecture slides) will be provided on the course website: \nhttp://safari.ethz.ch/ddca/\nThe video recordings of the lectures are likely to be made available, but there may be delays associated with the posting of online videos.",
+    "literature": "Patt and Patel's \"Introduction to Computing Systems\" and Harris and Harris's \"Digital Design and Computer Architecture\" are the official textbooks of the course.\nWe will provide required and recommended readings in every lecture since the course is cutting-edge and there is no textbook that covers what the course covers. They will be mostly chapters of the two textbooks, and important articles that are essential for understanding the material."
   },
-  "performance_assessment": {
-    "ects_credits": 7,
-    "assessment_type": "session examination",
-    "language_of_examination": "German",
-    "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
-    "examination": "written 90 minutes",
-    "additional_info": "ACHTUNG: Die folgenden Angaben betreffen nur den JAHRESKURS Mathematik I und II. Im Rahmen der Leistungskontrolle zur Basisprüfung wird auch eine freiwillige Multiple-Choice-Zwischenprüfung in der ersten Woche des FS 2026 angeboten. Gegenstand dieser Zwischenprüfung ist der gesamte in der Mathematik-I-Vorlesung und den entsprechenden Übungsserien behandelte Stoff. Falls die Prozent-Note dieser Zwischenprüfung besser ist als die Prozent-Note der Prüfung des Jahreskurses in der Sommerprüfungssession 2026 (bzw. Winterprüfungssession 2027), wird die Note dieser Zwischenprüfung zu 20% an die Endnote angerechnet.\n\n[Der SEMESTERKURS Mathematik I für den Bachelor-Studiengang Lebensmittelwissenschaften und Ernährung (Reglement 2024) ist davon nicht betroffen.]",
-    "exam_aid": "20 A4-Seiten (= 10 doppelseitige Blätter) Notizen. 1 Wörterbuch für fremdsprachige Studierende. Keine (Taschen)Rechner, keine Mobiltelefone."
-  },
+  "performance_assessment": [
+    {
+      "ects_credits": 7,
+      "assessment_type": "session examination",
+      "language_of_examination": "English",
+      "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+      "examination": "written 180 minutes",
+      "additional_info": "Eine Abschlussprüfung, insgesamt 180 Minuten (70%)\nÜbungen (obligatorische kontinuierliche Leistungsbeurteilung) mit Vor-Ort-Beurteilung und Abgabe von Berichten (30%). Die Nichtbeteiligung in einer Übung ergibt die Note 1 (bzw. Null Punkte) in jener Übung.\nHausaufgaben zur Unterstützung des Lernens und der Prüfungsvorbereitung (0%).\nOne final exam of 180 min (70%).\nLab assignments (compulsory continuous performance assessments) with meeting-based assessment and submission of lab reports (30%). Not participating in a lab assignment incurs grade 1 (or zero points) in that lab assignment.\nHomeworks to aid learning and exam preparation (0%).",
+      "exam_aid": "No books, papers, computers, phones, calculators, or other electronic devices are allowed.\nMaximum 6 A4 hand-written pages (i.e., 3 double-sided A4 sheets or 6 one-sided A4 sheets) with notes are allowed.\nBücher, Publikationen, Computer, Mobiltelefone, Taschenrechner oder andere elektronische Geräte sind nicht erlaubt. Maximal sechs A4 Seiten mit handschriftlichen Notizen sind erlaubt (d.h. drei beidseitig beschriftete A4 Seiten, oder sechs einseitig beschriftete A4 Seiten).",
+      "assessment_description": "Performance assessment as a semester course"
+    }
+  ],
   "offered_in": [
     {
       "program": "Computer Science Bachelor",
-      "section": "First Year Examination Block 1",
+      "section": "First Year Examination Block 2",
       "type": "O"
     }
   ]

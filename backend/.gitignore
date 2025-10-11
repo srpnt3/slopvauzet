@@ -1,1 +1,4 @@
 .venv
+fileConversionService/test.json
+fileConversionService/test2.json
+fileConversionService/timetable_out.csv
