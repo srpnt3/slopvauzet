@@ -1,0 +1,2142 @@
+[
+  {
+    "course_id": "102-0250-00L",
+    "title": "Urban Drainage Planning and Modelling",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": [
+      "M. Maurer",
+      "U. Karaus",
+      "J. P. Leitão Correia",
+      "M. Stähle"
+    ],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Remark: Introduction on 16.09.2025 12:45-13:30 in HIF E 11.",
+        "hours_per_week": 4,
+        "schedule": [
+          {
+            "venue": ["HCPE 47.1", "HCPE 47.4"],
+            "day": "Mon",
+            "time": "13:45-17:30"
+          },
+          {
+            "venue": ["HIFE 11"],
+            "day": "16.09.",
+            "time": "12:45-13:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "In this course, students learn modern urban drainage engineering approaches, critical thinking, decision making in a complex environment as well as dealing with insufficient data and ill-defined problems.",
+      "learning_objectives": "By the end of the course, you should be able to do the following:\n-Apply different methods and methodologies to assess the impact of urban drainage on water pollution and flooding potential.\n-Distinguish between hydrological and hydrodynamic models and their correct application. \n-Identify the difference between emission and immission oriented approaches for identifying drainage measures.\n-Identify relevant measures, quantify their effects and assess their relative ranking/priority. \n-Consider uncertainties and handle incomplete data and information.\n-Make decisions and recommendations in a complex application case.\n-Teamwork. State principles of effective team performance and the functions of different team roles; work effectively in problem-solving teams.\n-Communication. Communicate and document your findings in concise group presentations and a written report.",
+      "content": "In urban drainage, the complexity of the decision-making, the available methodologies and the data availability have increased significantly. In current environmental engineering practice, the focus has shifted from tables and nomograms to sophisticated simulation tools.\nThe topics cover:\n-Integrated urban water management\n-Hydrological and hydrodynamic modelling\n-Water quality based assessment\n-Freshwater ecology\n-Hydraulic capacity assessment\n-Sewer network operation\n-Decision analysis",
+      "prerequisites": "Prerequisites: 102-0214-00 Siedlungswasserwirtschaft and 102-0215-00 Siedlungswasserwirtschaft II or comparable educational background."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "Grades will be assigned based on the group work during the semester. Intermediate results, written report, and the collaboration during the project will be evaluated and account for the final grade.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Environmental Engineering Master",
+        "section": "Water Infrastructure Planning and Stormwater Management",
+        "type": "O"
+      },
+      {
+        "program": "Environmental Engineering Master",
+        "section": "EM: Water Infrastructure Planning and Stormwater Management",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "327-2226-00L",
+    "title": "Ethics and Scientific Integrity for Doctoral Students (MaP Doctoral School)",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "Priority is given to doctoral students affiliated with the MaP Doctoral School.",
+    "lecturers": [
+      "M. Trassin",
+      "K. M. Berg",
+      "A. Lauria",
+      "R. Nicolosi Libanori",
+      "S. Stepanow"
+    ],
+    "classes": [
+      {
+        "type": "Exercise",
+        "notes": "E-Learning and Workshop.",
+        "hours_per_week": 28,
+        "schedule": [
+          {
+            "venue": ["HITE 51"],
+            "day": "13.01.",
+            "time": "07:45-17:30"
+          },
+          {
+            "venue": ["HITE 51"],
+            "day": "16.01.",
+            "time": "07:45-17:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This course sensitises doctoral students to ethical issues that may occur during their doctorate. After an introduction to ethics and good scientific practice, students are familiarised with resources that can assist them with ethical decision-making. Students get the chance to apply their knowledge in a discipline specific context.",
+      "learning_objectives": "Doctoral students learn how to identify, analyse and address ethical issues in their own scientific research. In addition, they will reflect on their professional role as scientific researchers.",
+      "content": "Part I\nThe self-paced e-learning course consists of 5 modules:\n(1) Ethics: Introduction to moral theory (with emphasis on practical guidance regarding decision making)\n(2) Ethics in Scientific Research: Introduction to ethical issues that occur within scientific research (i.e. regarding authorship, cooperation, data use and sharing, and other aspects that are subject to scientific integrity and good scientific practice).\n(3) Collecting Resources: A variety of tools and resources that help identify ethical issues are presented and explained\n(4) Setting up a Strategy: Example examination of a case regarding its ethical scope (students develop their own strategy to examine situations for their ethical implications).\n(5) Making Decisions: Different ways of addressing ethical issues are presented and explained (i.e. how to make hard choices, or solve ethical dilemmas. But also where to seek advice if needed).\nPart II\nThe second, face-to-face part of this course focuses on discipline-specific aspects of Materials, Processes and Manufacturing Technologies. It provides an interactive learning environment. Participants get to apply their knowledge, and they are encouraged to reflect on ethical problems and critically discuss them with fellow doctoral students.",
+      "prerequisites": "For doctoral students only"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 1,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Doctorate Mechanical and Process Engineering",
+        "section": "Transferable Skills",
+        "type": "W"
+      },
+      {
+        "program": "Doctorate Materials Science",
+        "section": "Transferable Skills",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "166-0303-00L",
+    "title": "Agile and User-Centered Innovation",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "two-yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Does not take place this semester.Blockkurs",
+        "hours_per_week": 24,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "For companies it is essential to realise products quickly, economically and in a customer-oriented way. In this context approaches to agile and user-centred product development such as Scrum and Design Thinking are increasing in importance. Compared to traditional product development methods, agile methods promise higher quality and customer satisfaction coupled with reduced expenditure.",
+      "learning_objectives": "Design and realisation of product development projects for future transport systems: Participants are familiar with the methods and procedures of agile and user-centred product development and are able to apply them profitably in their enterprises.",
+      "content": "Participants define an innovation theme themselves in groups, and a selection of topics is then drawn from this theme for module group work. The module takes participants through the whole process, from the analysis of target groups and their requirements through project conception and planning to implementation in example form. The course is practical and uses concrete examples. At the end of the module participants will have deployed the methods of agile and user-centred product development to work very practically through a theme they have developed themselves, and will have become familiar with the typical application scenarios, advantages and hurdles associated with these methods.",
+      "lecture_notes": "Distributed at start of module",
+      "literature": "Distributed at start of module",
+      "prerequisites": "Announced to students of the MAS/CAS at the beginning of the term"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Future Transport Systems: New Business Models",
+        "section": "Major Courses",
+        "type": "O"
+      },
+      {
+        "program": "MAS in Future Transport Systems",
+        "section": "Major in New Business Models",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "377-0503-03L",
+    "title": "Paediatrics",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": [
+      "M. Seiler",
+      "C. Berger",
+      "R. Liamlahi",
+      "A. Möller",
+      "C. Schaefer",
+      "M. Wolff"
+    ],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "Findet vom 10.11. - 25.11.2025 statt. Durchführung im Kispi, detaillierte Informationen im Moodle-Kurs.Die aktive Teilnahme (Anwesenheitspflicht) am Impfkurs wird vorausgesetzt.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["IFWA 36"],
+            "day": "Mon/2",
+            "time": "14:15-18:00"
+          },
+          {
+            "venue": ["MLF 36"],
+            "day": "Tue/2",
+            "time": "14:15-18:00"
+          },
+          {
+            "venue": ["MLF 36"],
+            "day": "Fri/2",
+            "time": "12:15-16:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The module Paediatrics describes the peculiarities of the paediatric anamnesis as well as selected topics of the healthy and sick child. The focus is on the newborn, development in the first years of life and adolescence. Infections, congenital heart and the most common respiratory diseases are described throughout the different age stages.",
+      "learning_objectives": "• Knowledge of the paediatric aspects of the medical history\n• Knowledge of the enormous variety of child development (inter- and intra-individual variability)\n• Milestone concept: Assessment of the stage of development of a child in the first years of life\n• Landmark concept: first knowledge of the demilitation on normality versus disorder\n• Getting to know frequent developmental pediatric disorders\n• Knowledge of the most common congenital heart defects\n• Getting to know and recognize respiratory diseases of the upper and lower respiratory tract",
+      "content": "It describes the peculiarities of the pediatric anamnesis as well as selected topics of the healthy and sick child. The focus is on the newborn, development in the first years of life and adolescence. Infections, congenital heart, and the most common respiratory diseases are described throughout the different age stages.",
+      "prerequisites": "Prerequisites: \nLE 377-0105-00L Bewegungsapparat\nLE 377-0107-00L Nervensystem\nLE 377-0201-00L Herz-Kreislauf-System\nLE 377-0203-00L Atmungs-System\nLE 377-0205-00L Nieren und Homöostase \nLE 377-0301-01L Blut, Immunsystem\nLE 377-0301-02L Ernährung und Verdauung\nLE 377-0301-03L Endokrinologie, Stoffwechsel\nLE 377-0401-00L Sinnesorgane\nLE 377-0403-00L Haut und Anhangsorgane"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "end-of-semester examination",
+        "language_of_examination": "German",
+        "repetition": "A repetition date will be offered in the first two weeks of the semester immediately consecutive.",
+        "examination": "written 45 minutes",
+        "additional_info": "Die aktive Teilnahme (Anwesenheitspflicht) am Impfkurs wird vorausgesetzt.\nDie Vorlesungsteile, die in Englisch gehalten wurden, werden auch auf Englisch geprüft.",
+        "exam_aid": "None",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Human Medicine Bachelor",
+        "section": "Additional Courses 3rd Year",
+        "type": "O"
+      },
+      {
+        "program": "Human Medicine Bachelor",
+        "section": "Core Courses Organ Systems and Clinical Practice",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "227-0811-00L",
+    "title": "Creative Thinking Seminar",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["A. C. Notz"],
+    "classes": [
+      {
+        "type": "Seminar",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["CHND 42"],
+            "day": "Thu",
+            "time": "12:15-14:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This seminar aims to understand better what creativity and creative thinking is by looking at the history of the creativity dispositive we are embedded in. We will look, learn and apply creative artistic practices to find innovative solutions. And we will also look beyond the artistic practices, into the creative potential of today’s technologies, especially Generative AI.",
+      "learning_objectives": "The students will gain insights into the concept and mechanics of Creative Thinking. They will trace the historical roots of creativity and its contemporary significance, explore how Creative Thinking intersects with modern innovations and technologies.\nThe students will develop a comprehensive understanding of Creative Thinking and its practical application, start to cultivate the ability to generate innovative solutions through creative practices and will analyze the broader implications of creativity in various contexts.",
+      "content": "In the business world Creative Thinking is considered to be one of the “top ten skills” or “most In-Demand skill” in 2024. With Creative Thinking innovative solutions to problems are developed and not only a large number of ideas but also a variety and range of them are brainstormed. It seems that in today's dynamic world, creativity isn't just an asset – but actually necessity. \nBut what exactly is Creative Thinking? In the above mentioned business context it is assumed everybody knows. And what is creativity? And how can we use it. Or not. \nOriginally, connected to artistic practice, creativity is nowadays a skill and practice that can be found in all work areas, especially in innovation and maybe even in technological applicaitons themselves. Today, not only because of creative economy, creative cities or innovation, but also because of generative AI creativity has gained new and broad attention. In the seminar we go back in history to the invention of the genius and look at different social subsystems like art, psychology, economy as well as field as fashion, advertisement and arts and crafts, how our understanding of creativity has emerged till today."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Doctorate Computer Science",
+        "section": "Subject Specialisation",
+        "type": "W"
+      },
+      {
+        "program": "Doctorate Information Technology and Electrical Engineering",
+        "section": "Transferable Skills",
+        "type": "W"
+      },
+      {
+        "program": "Electrical Engineering and Information Technology Master",
+        "section": "Tracks (all): Electives",
+        "type": "W"
+      },
+      {
+        "program": "Computer Science Master",
+        "section": "Elective Courses",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "406-0173-AAL",
+    "title": "Linear Algebra I and II",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "Enrolment ONLY for MSc students with a decree declaring this course unit as an additional admission requirement.Any other students (e.g. incoming exchange students, doctoral students) CANNOT enrol for this course unit.",
+    "lecturers": ["N. Hungerbühler"],
+    "classes": [
+      {
+        "type": "Revision course / private study",
+        "notes": "Self-study course. No presence required.",
+        "hours_per_week": 180,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Linear algebra is an indispensable tool of engineering mathematics. The course is an introduction to basic methods and fundamental concepts of linear algebra and its applications to engineering sciences.",
+      "learning_objectives": "After completion of this course, students are able to recognize linear structures and to apply adequate tools from linear algebra in order to solve corresponding problems from theory and applications. In addition, students have a basic knowledge of the software package Matlab.",
+      "content": "Systems of linear equations, Gaussian elimination, solution space, matrices, LR decomposition, determinants, structure of linear spaces, normed vector spaces, inner products, method of least squares, QR decomposition, introduction to MATLAB, applications.\nLinear maps, kernel and image, coordinates and matrices, coordinate transformations, norm of a matrix, orthogonal matrices, eigenvalues and eigenvectors, algebraic and geometric multiplicity, eigenbasis, diagonalizable matrices, symmetric matrices, orthonormal basis, condition number, linear differential equations, Jordan decomposition, singular value decomposition, examples in MATLAB, applications.\nReading:\nGilbert Strang \"Introduction to linear algebra\", Wellesley-Cambridge Press: Chapters 1-6, 7.1-7.3, 8.1, 8.2, 8.6\nA Practical Introduction to MATLAB: \nhttp://www.math.ethz.ch/~grsam/Numerik_MAVT_WS0203/docs/intro.pdf\nMatlab Primer: \nhttp://www.math.ethz.ch/~grsam/Numerik_MAVT_WS0203/docs/primer.pdf",
+      "literature": "- Gilbert Strang: Introduction to linear algebra. Wellesley-Cambridge Press\n- A Practical Introduction to MATLAB: \nhttp://www.math.ethz.ch/~grsam/Numerik_MAVT_WS0203/docs/intro.pdf\n- Matlab Primer: \nhttp://www.math.ethz.ch/~grsam/Numerik_MAVT_WS0203/docs/primer.pdf"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "session examination",
+        "language_of_examination": "English",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 120 minutes",
+        "additional_info": "Takes place as a written session examination simultaneously with the session examination for the course units 401-0171-00L together with 401-0172-00L.",
+        "exam_aid": "20 pages DIN A4 (210mm x 297mm) self-authored summary; no pocket calculator.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Statistics Master",
+        "section": "Course Units for Additional Admission Requirements",
+        "type": "E-"
+      }
+    ]
+  },
+  {
+    "course_id": "535-0230-00L",
+    "title": "Medicinal Chemistry I",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["J. Hall"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["HCIJ 3"],
+            "day": "Mon",
+            "time": "09:45-11:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The lectures give an overview of selected drugs and the molecular mechanisms underlying their therapeutic effects in disease. The historical and modern-day methods by which these drugs were discovered and developed are described. Structure-function relationships and the biophysical rules underlying ligand-target interactions will be discussed and  illustrated with examples.",
+      "learning_objectives": "Basic understanding of therapeutic agents with respect to molecular, pharmacological and pharmaceutical properties.",
+      "content": "Molecular mechanisms of action of drugs. Structure function and biophysical basis of ligand-target interactions",
+      "lecture_notes": "Will be provided in parts before each individual lecture.",
+      "literature": "- G.L. Patrick, \"An Introduction to Medicinal Chemistry\", 5th edition, Oxford University Press\n- D. Steinhilber, M. Schubert-Zsilavecz, H.J. Roth, \"Medizinische Chemie\", Deutscher Apotheker Verlag Stuttgart (2005)\n- J.H. Block, J.M. Beale, \"Organic Medicinal and Pharmaceutical Chemistry\", 11th edition, Lippincott, Williams, Wilkins (2002)\n- A. Gringauz, \"How Drugs Act and Why\", Wiley (1997)\n- R. B. Silverman and M. W. Holladay, \"The Organic Chemistry of Drug Design and Drug Action\", 3rd edition, Elsevier",
+      "prerequisites": "Requirements: Knowledge of physical and organic chemistry, biochemistry and biology.\nAttendance of Medicinal Chemistry II in the spring semester.\nFor Pharmacy and non-Pharmacy students, Medicinal Chemistry I and II are examined in a SINGLE examination (Jahresprüfung)."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 4,
+        "assessment_description": "Performance assessment as a two-semester course together with 535-0231-00L Medicinal Chemistry II\r\n                 (next semester)"
+      },
+      {
+        "ects_credits": 2,
+        "assessment_type": "session examination",
+        "language_of_examination": "English",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 60 minutes",
+        "additional_info": "Studierende im BSc Pharmazeutische Wissenschaften und im BSc Gesundheitswissenschaft und Technologie  müssen die Jahreskursprüfung absolvieren. Andere Studierende, die die Semesterkursprüfung machen möchten, sind gebeten, vor der Prüfungsanmeldung mit Prof. Hall Kontakt aufzunehmen.",
+        "exam_aid": "None",
+        "assessment_description": "Performance assessment as a semester course\r\n                 (other programmes)"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Biochemistry – Chemical Biology Bachelor",
+        "section": "Electives",
+        "type": "W"
+      },
+      {
+        "program": "Biochemistry - Chemical Biology Master",
+        "section": "Electives",
+        "type": "W"
+      },
+      {
+        "program": "Health Sciences and Technology Bachelor",
+        "section": "Electives",
+        "type": "W"
+      },
+      {
+        "program": "Food Science and Nutrition Bachelor",
+        "section": "Electives",
+        "type": "W"
+      },
+      {
+        "program": "Pharmaceutical Sciences Bachelor",
+        "section": "Core Courses",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "862-0004-21L",
+    "title": "Research Colloquium Philosophy for Master and PhD Students (HS 2025)",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["N. Mazouz", "M. Hampe"],
+    "classes": [
+      {
+        "type": "Colloquium",
+        "notes": "Registration with Prof. Michael Hampe or Prof. Nadia Mazouz.",
+        "hours_per_week": 14,
+        "schedule": [
+          {
+            "venue": ["RZF 21"],
+            "day": "Wed/2w",
+            "time": "18:15-20:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "PhD students, postdocs, members of staff, and senior colleagues from other philosophy departments will report on their work in progress. Furthermore, promissing new philosophical articles and parts of new philosophical books will be studied.",
+      "learning_objectives": "Ideas and arguments dealing with systematic problems especially in epistemology, ethics, political philosophy, and the philosophy of mind will be scrutinized and elaborated."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Doctorate Humanities, Social and Political Sciences",
+        "section": "Subject Specialisation",
+        "type": "W"
+      },
+      {
+        "program": "History and Philosophy of Knowledge Master",
+        "section": "Research Colloquia",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "151-0909-00L",
+    "title": "Chemistry",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["D. J. Norris"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "Vorlesung im ETA F 5 mit Videoübertragung ins HG E 5.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["ETAF 5", "HGE 5"],
+            "day": "Thu",
+            "time": "10:15-12:00"
+          }
+        ]
+      },
+      {
+        "type": "Exercise",
+        "notes": "Groups are selected in myStudies.In addition, the Study Center is offered: Wednesdays 18-20, starting in the 3rd week of the semester, in ETA F 5, where students can work on problems on their own and receive support and advice from teaching assistants. The Study Center is further meant for students to study the course materials before/after class and solve exercise problems.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": [
+              "CABG 56",
+              "CHNE 46",
+              "ETZE 7",
+              "ETZE 8",
+              "GLCE 24",
+              "GLCE 34.1",
+              "GLCE 34.2",
+              "HGE 21",
+              "HGG 26.1",
+              "IFWA 32.1",
+              "LEEC 114",
+              "LEED 101",
+              "LFVE 41",
+              "LFWC 1",
+              "LFWC 5",
+              "LFWE 13",
+              "MLH 41.1"
+            ],
+            "day": "Fri",
+            "time": "14:15-16:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This is a general chemistry course aimed at first-year bachelor students in the Department of Mechanical and Process Engineering.",
+      "learning_objectives": "The aims of the course are:\n1) To provide a thorough understanding of the basic principles of chemistry and its application,\n2) To develop an understanding of the atomic and molecular nature of matter and of the chemical reactions that describe its transformations, and\n3) To emphasize areas considered most relevant in an engineering context.",
+      "content": "Electronic structure of atoms, chemical bonding, molecular geometry and bonding theories, intermolecular forces, gases, thermodynamics, chemical thermodynamics, chemical kinetics, equilibria, liquids and solutions, acids and bases, redox- and electrochemistry.",
+      "lecture_notes": "The instructor's lecture notes will be available prior to every lecture and can be downloaded from Moodle.",
+      "literature": "The course is based on \"Chemistry: The Central Science\" by Brown, LeMay, Bursten, Murphy, Woodward, and Stoltzfus. Pearson, 15th Edition in SI units (global edition)."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 4,
+        "assessment_type": "session examination",
+        "language_of_examination": "English",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 120 minutes",
+        "additional_info": "The final note of each student will be determined from:\n120-Minute Final Session Examination: 100%\nThe exam is \"closed book\" and \"closed notes.\" Each student will be allowed to bring a standard scientific calculator. An announcement will be made before the exam begins whether this calculator will be necessary. Devices with internet access and mini computers are not allowed. \nIn addition, during the semester, weekly exercise series (problem sets as learning tasks) will be assigned and collected. Three of these assignments will be selected at random and graded pass/fail.  If a student passes 2 of these 3 graded problem sets, they will receive a 0.25 bonus on their grade for the final exam.",
+        "exam_aid": "Students may use one A4 sheet of paper (“cheat” sheet) that includes any information that they consider useful for the exam (both sides). Printing, scanning, and copying is allowed. Students can collaborate to make their cheat sheets or use sheets provided by AMIV or the course instructors. A periodic table of the elements will also be provided to each student with the exam, along with other useful tables.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Integrated Building Systems Master",
+        "section": "Core Courses",
+        "type": "W"
+      },
+      {
+        "program": "Mechanical Engineering Bachelor",
+        "section": "First Year Examination Block A",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "999-9999-99L",
+    "title": "EduApp Course",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "German",
+    "comment": "This course unit is not a genuine ETH course unit. It is used by LET and the Teaching Specialists for EduApp demonstration purposes.",
+    "lecturers": ["B. Volk"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 1,
+        "schedule": [
+          {
+            "venue": ["HGE 15"],
+            "day": "Mon",
+            "time": "08:15-09:00"
+          }
+        ]
+      },
+      {
+        "type": "Exercise",
+        "notes": "Groups are selected in myStudies.",
+        "hours_per_week": 1,
+        "schedule": [
+          {
+            "venue": ["HGE 15"],
+            "day": "Mon",
+            "time": "09:15-10:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "",
+      "learning_objectives": ""
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 0,
+        "assessment_type": "no performance assessment",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Humanities, Social and Political Sciences (General Courses)",
+        "section": "Specialized Continuing Education",
+        "type": "E-"
+      }
+    ]
+  },
+  {
+    "course_id": "701-0951-00L",
+    "title": "GIS I: Basics of Geographic Information Systems",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": ["M. A. M. Niederhuber"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["CHNE 46"],
+            "day": "Fri",
+            "time": "10:15-12:00"
+          }
+        ]
+      },
+      {
+        "type": "Practical / laboratory course",
+        "notes": "Für die Übungen werden die Studierenden auf zwei Zeitfenster aufgeteilt. Eine Zuteilung erfolgt spätestens am Ende der ersten Semesterwoche.",
+        "hours_per_week": 3,
+        "schedule": [
+          {
+            "venue": ["NOD 39"],
+            "day": "Tue",
+            "time": "12:15-14:00"
+          },
+          {
+            "venue": ["NOD 39"],
+            "day": "Fri",
+            "time": "14:15-16:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "A geographic information system (GIS) is used to collect, manage, analyse, and present spatial data. This course teaches the theoretical foundations and concepts and provides hands-on experience on practice-relevant examples, using ArcGIS Pro software.\nAfter completing the course, students will be able to work out solutions to simple GIS problems on their own.",
+      "learning_objectives": "Students will be able to\n- explain the components and theoretical principles of a GIS using examples.\n- identify the necessary data for a simple spatial problem and model it conceptually using the Unified Modeling Language (UML).\n- set up a clean project and database structure using ArcGIS Pro software.\n- search and download data from data portals/GIS browsers in appropriate formats or integrate it into a project using Web Map Services (WMS),Web Feature Services (WFS) or Web Coverage Service (WCS).\n- evaluate the quality of geospatial data.\n- georeference raster data, and map and digitize objects.\n- perform simple vector and raster analysis and critically evaluate the results.\n- visualize the results in the form of a map, considering the accessibility for different groups of people.\n- independently develop a solution to simple spatial problems on a conceptual basis and implement it professionally using software.",
+      "content": "The following topics are covered in the course:\n- Definition of GIS and geospatial data\n- Representation of reality using vector and raster data models\n- 4 phases of data modeling: spatial, conceptual, logical, physical model\n- Data acquisition options and procurement of spatial data (open source)\n- Spatial analysis I: query and manipulation of vector data\n- Spatial analysis II: operators and functions with raster data\n- Digital elevation models, as special representatives of raster data, and products derived from them\n- Process modelling with vector and raster data\n- Presentation options for spatial data.",
+      "literature": "Ralf Bill (2023): Grundlagen der Geo-Informationssysteme. 7., vollständig neu  bearbeitete und erweitete Auflage 2023. Wichmann Verlag. Heidelberg.",
+      "prerequisites": "Aufgrund der Grösse des verfügbaren EDV-Schulungsraumes ist die Teilnehmerzahl auf 50 Studierende beschränkt! Für die Übungen werden die Studierenden auf zwei Zeitfenster aufgeteilt. Pro Zeitfenster können maximal 25 Studierende betreut werden."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 5,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "Für den praktischen Teil müssen Sie einen Zeitbedarf von 8 - 10 Stunden pro Übung/Aufgabe einplanen.\nDie Abgabe der Aufgaben, verbunden mit dem Lösen der Moodle-Quizzes ist obligatorisch und wird bei der Note mit 0.25 Punkten berücksichtigt. \nProjektarbeit in der Mitte des Semesters (2er Team). Schriftliche Abschlussprüfung am Ende (alleine).\nProjektarbeit und Examen zählen zu je 50 % zur Abschlussnote.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Agricultural Sciences Master",
+        "section": "Data Science and Technology for Agricultural Science",
+        "type": "W+"
+      },
+      {
+        "program": "Environmental Sciences Bachelor",
+        "section": "For the Specialization in Forest and Landscape",
+        "type": "W"
+      },
+      {
+        "program": "Environmental Sciences Bachelor",
+        "section": "Environmental Planning",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "151-2011-00L",
+    "title": "Physics of Nuclear Reactors (EPFL)",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "No enrolment to this course at ETH Zurich. Book the corresponding module directly at EPFL.",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "**Course at EPFL**",
+        "hours_per_week": 6,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "In this course, one acquires an understanding of the basic neutronics interactions occurring in a nuclear fission reactor and, as such, the conditions for establishing and controlling a nuclear chain reaction.",
+      "learning_objectives": "By the end of the course, the student must be able to:\n- Elaborate on neutron diffusion equation\n- Systematize nuclear reaction cross sections\n- Formulate approximations to solving the diffusion equation for simple systems",
+      "content": "Content:\n- Brief review of nuclear physics\n- Historical: Constitution of the nucleus and discovery of the neutron -\nNuclear reactions and radioactivity - Cross sections - Differences between\nfusion and fission.\n- Nuclear fission\n- Characteristics - Nuclear fuel - Introductory elements of neutronics.\n- Fissile and fertile materials - Breeding.\n- Neutron diffusion and slowing down\n- Monoenergetic neutrons - Angular and scalar flux\n- Diffusion theory as simplified case of transport theory - Neutron slowing\ndown through elastic scattering.\n- Multiplying media (reactors)\n- Multiplication factors - Criticality condition in simple cases.\n- Thermal reactors - Neutron spectra - Multizone reactors - Multigroup\ntheory and general criticality condition - Heterogeneous reactors.\n- Reactor kinetics\n- Point reactor model: prompt and delayed transients - Practical\napplications.\n- Reactivity variations and control\n- Short, medium and long term reactivity changes ? Different means of\ncontrol.",
+      "literature": "Distributed documents, recommended book chapters",
+      "prerequisites": "Prerequisite for: Reactor Experiments"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "additional_info": "Registration modalities, date and venue of this performance assessment are specified solely by the EPFL.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Nuclear Engineering Master",
+        "section": "1. Semester (EPFL)",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "103-0115-01L",
+    "title": "Geodetic Measuring Technology and Laserscanning",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": ["A. Wieser", "N. Meyer"],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "",
+        "hours_per_week": 4,
+        "schedule": [
+          {
+            "venue": ["HILD 53"],
+            "day": "Wed",
+            "time": "12:45-16:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Advanced topics in geodetic metrology with focus on approaches to 3d modelling of local real world environments with higher accuracy.",
+      "learning_objectives": "By the end of this course, the students are able to create digital 3d models of the real world covering areas with an extension up to several 100 m with accuracies in the mm- to cm-level range. They can select the appropriate geodetic instruments or terrestrial laser scanners, plan and carry out the required working steps, test the equipment before use, and describe the quality of the results. They know a broad spectrum of visualization options and can assess their respective suitability for various application cases.",
+      "content": "- Overview: 3D Modelling from planning of data acquisition to visualization of the results\n- Modern geodetic instruments\n- Atmospheric effects\n- Measurement techniques for high accuracy\n- Introduction to terrestrial laser scanning\n- Test and calibration of measurement instruments\n- Point cloud processing: preprocessing, registration & georeferencing\n- 3d modelling and visualization of objects, VR/AR/MR",
+      "lecture_notes": "The slides and documents for enhanced study and further reading will be provided online.",
+      "literature": "Witte B, Sparla P (2015) Vermessungskunde und Grundlagen der Statistik für das Bauwesen. 8. Aufl., Wichmann Verlag.\nShan J, Toth C (ed) (2018) Topographic Laser Ranging and Scanning: Principles and Processing. 2nd ed. CRC Press.",
+      "prerequisites": "The course is carried out in German. Basic knowledge of geodetic metrology is required as a prerequisite, corresponding to the learning objectives and content of the course Geodätische Messtechnik GZ. Besides lectures and data processing, the course also comprises extensive practical exercises in the field."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "session examination",
+        "language_of_examination": "German",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "oral 25 minutes",
+        "additional_info": "Die begleitenden praktischen Übungen sind obligatorische Leistungselemente. Sie werden nach einem Schlüssel benotet, der zu Beginn der Lehrveranstaltung bekanntgegeben wird. Die Gesamtnote ergibt sich zu 30% aus der Note für diese Leistungselemente, und zu 70% aus der Note für die mündliche Sessionsprüfung. Die obligatorischen Leistungselemente müssen nicht für sich selbst bestanden werden.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Geospatial Engineering Bachelor",
+        "section": "Digitisation and 3D Modelling",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "395-0201-00L",
+    "title": "Regulatory Thinking",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Does not take place this semester.",
+        "hours_per_week": 55,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Students gain an overview of how to transform a research idea into a finished healthtech product by confidently navigating different regulatory landscapes and developing compelling certification strategies for various healthtech products. Students learn how to use Regulatory Thinking to turn Regulatory Affairs into a business planning tool.",
+      "learning_objectives": "- Applying of regulatory thinking and translation of this method into practice. \n- Getting an overview of applicable laws, different regulations, directives and guidelines in the healthtech sector: MD, IVD, SaMD, medicine, biotech, ATMP.\n- Understanding the different roles and responsibilities of Certi-fication Bodies (CB), Notified Bodies (NB), and other Regula-tors and/or Reimbursement Agencies, hereafter: Competent Authorities (CAs). \n- Knowing how to address CAs, including communication and interaction \n- Awareness of the importance of a quality management system (QMS) and knowing different systems, including, but not limited to ISO 13485:2016, GMP, GLP, GCP",
+      "content": "The journey of regulatory thinking - from medical devices (MDs), to in vitro diagnostics (IVDs), to software as a medical device (SaMD), to medicines and advanced therapeutic medicinal products (ATMPs): Commonalities, differences and the search for the lowest common denominator in terms of:\n- Regulations/Directives/Laws/Guidelines\n- Interaction with the regulatory authorities\n- The principles of safety/efficacy/performance/transparency\n- The requirements for the implementation of a QMS"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Regulatory Thinking",
+        "section": "Modules",
+        "type": "O"
+      },
+      {
+        "program": "MAS in Digital Clinical Research",
+        "section": "Module Regulatory Thinking",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "262-5120-00L",
+    "title": "Principles of Evolution: Theory (University of Zurich)",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "No enrolment to this course at ETH Zurich. Book the corresponding module directly at UZH as an incoming student.UZH Module Code: EEE326 Mind the enrolment deadlines at UZH:https://www.uzh.ch/cmsssl/en/studies/application/deadlines.html",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "**Course at University of Zurich**",
+        "hours_per_week": 40,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "\"Nothing in Biology Makes Sense Except in the Light of Evolution\".\nEvolutionary theory and methods are essential in all branches of modern\nbiology.",
+      "learning_objectives": "Subject specific skills:\nBy the end of the course, students will be able to:\no describe basic evolutionary theory and its applications\no discuss ongoing debates in evolutionary biology\no critically assess the presentation of evolutionary research in\nthe popular media\nKey skills:\nBy the end of the course, students will be able to:\no approach biological questions from an evolutionary perspective",
+      "content": "This course will provide a broad overview of current evolutionary thought, including the mechanisms of evolutionary change,\nadaptation and the history of life and will involve practical field and lab work as well as lecture material."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "Registration modalities, date and venue of this performance assessment are specified solely by the UZH.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Computational Biology and Bioinformatics Master",
+        "section": "Biology",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "227-0859-10L",
+    "title": "Teaching Internship Including Examination Lessons Electrical Engineering and Information Technology",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "German",
+    "comment": "The teaching internship can just be visited if all other courses of TC are completed.Repetition of the teaching internship is excluded even if the examination lessons are to be repeated.",
+    "lecturers": ["R. Büchi"],
+    "classes": [
+      {
+        "type": "Practical / laboratory course",
+        "notes": "",
+        "hours_per_week": 180,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Students apply the insights, abilities and skills they have acquired within the context of an educational institution. They observe 10 lessons and teach 20 lessons independently. Two of them are as assessed as Examination Lessons.",
+      "learning_objectives": "- Students use their specialist-subject, educational-science and subject-didactics training to draw up concepts for teaching.\n- They are able to assess the significance of tuition topics for their subject from different angles (including interdisciplinary angles) and impart these to their pupils. \n- They learn the skills of the teaching trade. \n- They practise finding the balance between instruction and openness so that pupils can and, indeed, must make their own cognitive contribution.\n- They learn to assess pupils' work.\n- Together with the teacher in charge of their teacher training, the students constantly evaluate their own performance.",
+      "content": "Die Studierenden sammeln Erfahrungen in der Unterrichtsführung, der Auseinandersetzung mit Lernenden, der Klassenbetreuung und der Leistungsbeurteilung. Zu Beginn des Praktikums plant die Praktikumslehrperson gemeinsam mit dem/der Studierenden das Praktikum und die Arbeitsaufträge. Die schriftlich dokumentierten Ergebnisse der Arbeitsaufträge sind Bestandteil des Portfolios der Studierenden. Anlässlich der Hospitationen erläutert die Praktikumslehrperson ihre fachlichen, fachdidaktischen und pädagogischen Überlegungen, auf deren Basis sie den Unterricht geplant hat und tauscht sich mit dem/der Studierenden aus. Die von dem/der Studierenden gehaltenen Lektionen werden vor- und nachbesprochen. \nDie Themen für die beiden Prüfungslektionen am Schluss des Praktikums erfahren die Studierenden in der Regel eine Woche vor dem Prüfungstermin. Sie erstellen eine Vorbereitung gemäss Anleitung und reichen sie bis am Vortrag um 12 Uhr den beiden Prüfungsexperten (Fachdidaktiker/-in, Departementsvertreter/-in) ein. Die gehaltenen Lektionen werden kriteriumsbasiert beurteilt. Die Beurteilung umfasst auch die schriftliche Vorbereitung und eine mündliche Reflexion des Kandidaten/der Kandidatin über die gehaltenen Lektionen im Rahmen eines kurzen Kolloquiums.",
+      "lecture_notes": "Dokument: schriftliche Vorbereitung für Prüfungslektionen.",
+      "literature": "Wird von der Praktikumslehrperson bestimmt."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Electrical Engineering and Information Technology TC",
+        "section": "Subject Didactics and Professional Training",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "651-4071-00L",
+    "title": "Industrial Internship",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "German",
+    "comment": "Prerequisites: successful participation in all 3 compulsory modules of the Major in Engineering Geology (Fundamentals, Methods and Integration).The Industrial Internship of the Eng Geol Major takes place in the second MSc year after consultation with Dr. Heike Willenberg. Detailed regulations of this practical are published on the Engineering Geology Website.",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Practical / laboratory course",
+        "notes": "Permission from lecturers required for all students. \r\n  ",
+        "hours_per_week": 0,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The industry practical is supervised both from the industry partner and ETH and consists of technically and/or scientifically challenging work in the engineering geology domain. The regular duration of the practical is 10 weeks. The practical is is pre-defined in a work plan and concluded with a report written by the student.",
+      "learning_objectives": "The goals of the industry practical are to become familiar with technical, economic, legal and communication issues of real-life work in private industry or technical administration."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 12,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "additional_info": "Report about the completed Industry Practical",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Earth Sciences Master",
+        "section": "Engineering Geology: Industrial Internship",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "541-1000-00L",
+    "title": "Essay",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "Only for CAS in Pharmaceuticals.The enrolment is done by the CAS in Pharmaceuticals study administration.",
+    "lecturers": ["R. Furegati Hafner", "R. Schibli"],
+    "classes": [
+      {
+        "type": "Diploma thesis",
+        "notes": "",
+        "hours_per_week": 30,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The essay is an essential part of the CAS program „Pharmaceuticals – From Research to Market“ (CAS Pharm) and serves as final performance assessment.",
+      "learning_objectives": "The essay documents the student’s competence development during the program as well as the transfer of acquired knowledge to professional practice/activities.",
+      "literature": "www.postgraduate.pharma.ethz.ch\ndocuments: essay"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 1,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Pharmaceuticals - From Research to Market",
+        "section": "Essay",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "529-1001-01L",
+    "title": "General Chemistry (for Biol./Pharm.Sc.)",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": ["J. Cvengros"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "Di 10-12 Uhr im HG F1 mit Videoübertragung ins HG F3Do 8-10 Uhr im HCI G3 mit Videoübertragung ins HCI G7",
+        "hours_per_week": 4,
+        "schedule": [
+          {
+            "venue": ["HGF 1", "HGF 3"],
+            "day": "Tue",
+            "time": "10:15-12:00"
+          },
+          {
+            "venue": ["HCIG 3", "HCIG 7"],
+            "day": "Thu",
+            "time": "07:45-09:30"
+          }
+        ]
+      },
+      {
+        "type": "Exercise",
+        "notes": "Die Übungen beginnen erst in der zweiten Woche, sind fakultativ und wie folgt vorgesehen:Pharma: Mo 16-18BIOL: Mo 16-18",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": [
+              "HILD 10.2",
+              "HITF 31.2",
+              "HITH 51",
+              "HITJ 51",
+              "HITJ 52",
+              "HITJ 53",
+              "HITK 51",
+              "HITK 52"
+            ],
+            "day": "Mon",
+            "time": "15:45-17:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The lecture deals with a number of basic chemistry concepts. These include (amongst others) chemical reactions, energy transfer during chemical reactions, properties of ionic and covalent bonds, Lewis structures, properties of solutions, kinetics, thermodynamics, acid-base equilibria, electrochemistry and properties of metal complexes.",
+      "learning_objectives": "The course is designed to provide an understanding of the basic principles and concepts of general and inorganic chemistry.",
+      "literature": "Charles E. Mortimer, CHEMIE - DAS BASISWISSEN DER CHEMIE. 12. Auflage, Georg Thieme Verlag Stuttgart, 2015.\nWeiterführende Literatur:\nTheodore L. Brown, H. Eugene LeMay, Bruce E. Bursten, CHEMIE. 10. Auflage, Pearson Studium, 2011. (deutsch)\nCatherine Housecroft, Edwin Constable, CHEMISTRY: AN INTRODUCTION TO ORGANIC, INORGANIC AND PHYSICAL CHEMISTRY, 3. Auflage, Prentice Hall, 2005.(englisch)"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 4,
+        "assessment_type": "session examination",
+        "language_of_examination": "German",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 150 minutes",
+        "exam_aid": "Zusammenfassung: 4 A4-Blätter, einseitig, handgeschrieben (jegliche Art von Ausdrucken (z.B. von einem eingescannten Dokument oder von einem auf einem Tablet erstellten File) und jegliche Art von Fotokopien werden nicht akzeptiert).\nEinfacher Taschenrechner (die Liste mit den erlaubten Modellen wird in der Vorlesung verteilt), Periodensystem (Version PSE für Allgemeine Chemie)",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Biology Bachelor",
+        "section": "First Year Examination Block 1",
+        "type": "O"
+      },
+      {
+        "program": "Pharmaceutical Sciences Bachelor",
+        "section": "First Year Examination Block 1",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "402-0913-00L",
+    "title": "Teaching Internship Physics II",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "German",
+    "comment": "Teaching Internship for students upgrading TC to Teaching Diploma.",
+    "lecturers": ["M. Mohr"],
+    "classes": [
+      {
+        "type": "Practical / laboratory course",
+        "notes": "Permission from lecturers required for all students. \r\n  ",
+        "hours_per_week": 120,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This is a supplement to the Teaching Internship required to obtain a Master of Advanced Studies in Secondary and Higher Education in the corresponding subject. It is aimed at enlarging the already acquired teaching experience. Students observe 10 lessons and teach 15 lessons independently.",
+      "learning_objectives": "Die Studierenden können die Bedeutung von Unterrichtsthemen in ihrem Fach unter verschiedenen Blickwinkeln einschätzen. Sie kennen und beherrschen das unterrichtliche Handwerk. Sie können ein gegebenes Unterrichtsthema für eine Gruppe von Lernenden fachlich und didaktisch korrekt strukturieren und in eine adäquate Lernumgebung umsetzen. Es gelingt ihnen, die Balance zwischen Anleitung und Offenheit zu finden, sodass die Lernenden sowohl über den nötigen Freiraum wie über ausreichend Orientierung verfügen, um aktiv und effektiv flexibel nutzbares (Fach-)Wissen zu erwerben.",
+      "content": "Das Aufbaupraktikum richtet sich an Studierende, die bereits das Didaktik-Zertifikat in ihrem Fach erworben haben und nun eine Aufbauausbildung zum Master of Advanced Studies in Secondary and Higher Education absolvieren. In diesem zusätzlichen Praktikum sollen die Studierenden vertiefte unterrichtliche Erfahrungen machen. Auf der Grundlage der zusätzlich erworbenen Kenntnisse und mit Hilfe der ihnen jetzt zu Verfügung stehenden Instrumente analysieren sie verschiedene Aspekte des hospitierten Unterrichts. In dem von ihnen selbst gestalteten Unterricht nutzen sie beim Entwurf, bei der Durchführung und der Beurteilung ihrer Arbeit insbesondere die zusätzlich gewonnen Erkenntnisse aus der allgemeinen und fachdidaktischen Lehr- und Lernforschung."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 4,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Physics Teaching Diploma",
+        "section": "Professional Training in Physics",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "166-0300-00L",
+    "title": "Framework Conditions and Transport Behaviour",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "two-yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Does not take place this semester.Blockkurs",
+        "hours_per_week": 44,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This module addresses the demand for new business models for future transport systems. Why and in what way do people wish to be mobile? What are the economic, social and legal framework conditions, and how will these develop? What approaches leading to new value propositions will follow?",
+      "learning_objectives": "Participants\n• can tell the difference between drivers of mobility which cannot really change and those which can change;\n• are able to identify the effects of path dependence on transport systems and future transport systems;\n• are familiar with the socio-psychological factors involved in transport vehicle acquisition and transport behaviour, and can apply them in ideas for new business models;\n• are able to judge the significance of travel time, driving time and fixed costs and use this knowledge to identify new business models;\n• are able to design incentives which will trigger maximum changes in behaviour and/or facilitate cooperative behaviour;\n• are able to embed electric mobility conceptually such that its potential is realised and the associated risks are minimised;\n• are familiar with the framework conditions and efficient drivers required to replace overland transport with air transport;\n• are able to assemble combinations of political and market instruments on the basis of their efficiency profiles and side-effects in order to realise efficiency potentials and changes in behaviour;\n• are able to design policy and market measures in such a way that they minimise rebound effects (including those in connection with automatic and fully autonomous vehicles);\n• are able to recognise the properties of automatic and fully autonomous vehicles which are particularly suitable for new business models.",
+      "content": "Content\n• Why are people mobile? What resources (time, money, space) do they invest in mobility?\n• What are the various qualities of transport services (comfort/stress, risk/safety, plannability, multifunctionality)?\n• What are the various resource and quality profiles of current transport services, and what mutual dependencies are there?\n• What current mobility demands are unsated? Why are they unsated? What future key technologies might change this?\n• What current forms of mobility might be substituted by other transport services? If they were substituted, how would the necessary resources and transport service qualities change?\nMethods\n• Group work (groups of four and groups of two)\n• Creative methods for generating value propositions\n• Tasks in preparation for the fourth course day: design, implementation and analysis of a small survey of potential target clients regarding a not-yet-existing business model\nCase studies\n• Reciprocal presentation of personally compiled case studies",
+      "lecture_notes": "Distributed at start of module.",
+      "literature": "Distributed at start of module.",
+      "prerequisites": "Announced to students of the of the MAS | CAS at the beginning of the term."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "additional_info": "min. 80% Anwesenheit im Präsenzunterricht pro Modul. Genaueres wird zu Beginn des Semesters bekannt gegeben.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Future Transport Systems: New Business Models",
+        "section": "Major Courses",
+        "type": "O"
+      },
+      {
+        "program": "MAS in Future Transport Systems",
+        "section": "Major in New Business Models",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "851-0827-01L",
+    "title": "French B2.2-C1: Society and Current Issues",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "French",
+    "comment": "No enrolment to this course at ETH Zurich. Book the corresponding course directly at \"Language Center of UZH and ETH Zürich\".Course fees: https://www.sprachenzentrum.uzh.ch/en/Sprachkurse/Kursgebuehren1.htmlRegistration dates: https://www.sprachenzentrum.uzh.ch/en/Sprachkurse.html",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Does not take place this semester.**Kurs vom Sprachenzentrum der UZH und der ETH Zürich**",
+        "hours_per_week": 20,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This course offers participants the opportunity to read, and reflect in class on, challenging texts on societal issues that regularly appear on the French-language news agenda, in order to expand their cultural knowledge, and specifically, to improve their lexical skills in writing and speaking, as well as express complex personal opinions when speaking.",
+      "learning_objectives": "The main objective of this course is to develop participants’ written comprehension and expression and, more specifically, to explore the implicit and cultural aspects  of a variety of text genres (academic writing, essays, investigative journalism). This course aims to improve participants' language skills through the acquisition of precise and context-specific vocabulary. It also raises their awareness of the argumentative character of written texts, words or expressions used in writing, and various types of discourse and language registers."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "French",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "Anmeldemodalitäten, Datum und Ort dieser Leistungskontrolle wird ausschliesslich vom Sprachenzentrum UZH/ETH festgelegt.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Science in Perspective",
+        "section": "Language Courses of the UZH and ETH Zurich",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "052-0655-25L",
+    "title": "Architectural Acoustics",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "Max.number of students: 20Waiting list until September 28, 2025",
+    "lecturers": ["A. Xydis", "C. Frick", "J. Strauss"],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "No course on 23.10.2025 (seminar week) and in the last two semester weeks.",
+        "hours_per_week": 3,
+        "schedule": [
+          {
+            "venue": ["HITF 22"],
+            "day": "Thu",
+            "time": "15:45-18:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Every space, outdoor or indoor, exhibits different acoustic properties. These properties depend on the space's shape, size, and surface material; therefore, architects' design influences their resulting acoustical signature. This course introduces room acoustics and its applications in architecture and design.",
+      "learning_objectives": "The course lays out the theoretical background on how sound propagates in space, interacts with surfaces, and is ultimately perceived. Furthermore, hands-on exercises provide the tools to measure and analyse the acoustics of existing spaces and how to design and predict the acoustics of modelled spaces. The course provides a comprehensive understanding of acoustics and its practical applications in architecture, enabling students to apply their knowledge of acoustics in real-world scenarios.",
+      "content": "The course examines room acoustics and its applications in architecture and design. It introduces physiological and psychoacoustics by exploring audible space impressions in daily life and our ability to perceive and localise sounds. It provides the theoretical background on how sound propagates in space and interacts with surfaces by looking closely into reflection, absorption, and diffusion. It demonstrates basic mathematical and physics concepts such as decibels and reverberation time through practical examples and hands-on exercises. The course examines how headphones and loudspeaker systems made electroacoustics and their application in room acoustics simulation and auralisation, a tool for acoustic design in architecture. It provides the software and hardware tools to measure and analyse the acoustics of existing spaces. It demonstrates acoustic simulation tools for designing and predicting the acoustics of digitally designed spaces.\nLectures by guest speakers round up the content and broaden the focus outside the box. Finally, the course concludes with a short semester thesis, allowing students to apply their acquired knowledge to a small design project.\nThe course format is a 1-hour lecture and a 2-hour hands-on exercise session.",
+      "lecture_notes": "Lecture notes are provided every week through the course's website.",
+      "prerequisites": "The course takes place in the Immersive Design Laboratory (IDL) at HIT F22."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "In every course, students are given short tasks that can be completed during the exercise session of the course.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Architecture Bachelor",
+        "section": "Technology in Architecture",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "551-1153-00L",
+    "title": "Systems Biology of Metabolism",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "Number of participants limited to 15.",
+    "lecturers": ["U. Sauer", "N. Zamboni"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["HPLD 34"],
+            "day": "Mon",
+            "time": "09:45-11:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Starting from contemporary biological problems related to metabolism, the course focuses on systems biological approaches to address them. In a problem-oriented, this-is-how-it-is-done manner, we thereby teach modern methods and concepts.",
+      "learning_objectives": "Develop a deeper understanding of how relevant biological problems can be solved, thereby providing advanced insights to key experimental and computational methods in systems biology.",
+      "content": "The course will be given as a mixture of lectures, studies of original research and guided discussions that focus on current research topics. For each particular problem studied, we will work out how the various methods work and what their capabilities/limits are. The problem areas range from microbial metabolism to cancer cell metabolism and from metabolic networks to regulation networks in populations and single cells. Key methods to be covered are various modeling approaches, metabolic flux analyses, metabolomics and other omics.",
+      "lecture_notes": "Script and original publications will be supplied during the course.",
+      "prerequisites": "The course extends many of the generally introduced concepts and methods of the Concept Course in Systems Biology. It requires a good knowledge of biochemistry and basics of mathematics and chemistry."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 4,
+        "assessment_type": "end-of-semester examination",
+        "language_of_examination": "English",
+        "repetition": "A repetition date will be offered in the first two weeks of the semester immediately consecutive.",
+        "examination": "oral 30 minutes",
+        "additional_info": "english or german language",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses II: Biology",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Biology Master",
+        "section": "Elective Compulsory Master Courses",
+        "type": "W"
+      },
+      {
+        "program": "Health Sciences and Technology Master",
+        "section": "Elective Courses",
+        "type": "W"
+      },
+      {
+        "program": "Health Sciences and Technology Master",
+        "section": "Elective Courses II",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "395-0300-00L",
+    "title": "Introduction to Nutrition",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["F. von Meyenn"],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Does not take place this semester.Permission from lecturers required for all students. \r\n  ",
+        "hours_per_week": 16,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This first module of the CAS Nutrition in Medicine will provide an overview of the most important concepts of nutrition. The introduction to nutrition specific physiology, will be followed by a more detailed overview of the macro- and micronutrients as well as their importance to health and disease.",
+      "learning_objectives": "Students can describe the basic concepts of nutrition\nStudents can name the different macronutrients and can explain how they are metabolized\nStudents can classify vitamins and minerals and can describe the most important deficiencies"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Nutrition in Medicine",
+        "section": "Modules",
+        "type": "O"
+      },
+      {
+        "program": "MAS in Digital Clinical Research",
+        "section": "Module Nutrition in Medicine",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "151-0321-00L",
+    "title": "Engineering Design and Material Selection",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["K. Shea", "T. Stankovic"],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Groups are selected in myStudies.Vorlesung Mo 15-16 im HG E7 mit Videoübertragung ins HG E5 und ins ML E12.Die Lehrveranstaltung (Vorlesung und Übung) beginnt in der 2. Semesterwoche.",
+        "hours_per_week": 4,
+        "schedule": [
+          {
+            "venue": ["HGE 5", "HGE 7", "MLE 12"],
+            "day": "Mon",
+            "time": "15:15-16:00"
+          },
+          {
+            "venue": ["HGG 1", "HGK 30.1"],
+            "day": "Mon",
+            "time": "16:15-19:00"
+          },
+          {
+            "venue": ["HGE 19", "HGE 26.1", "HGE 26.3", "HGG 1", "HGK 30.1"],
+            "day": "Tue",
+            "time": "16:15-19:00"
+          },
+          {
+            "venue": ["HGE 19", "HGE 26.1", "HGE 26.3", "HGG 1", "HGK 30.1"],
+            "day": "Wed",
+            "time": "14:15-17:00"
+          },
+          {
+            "venue": ["HGE 19", "HGE 26.1", "HGE 26.3", "HGG 1", "HGK 30.1"],
+            "day": "Thu",
+            "time": "14:15-17:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This course provides an introduction to engineering design. Through hands-on, practice-oriented exercises, students learn about and experience the fundamentals of engineering design, including concept design, technical drawing, CAD, material selection, manufacturing process selection and sustainability. Three case studies in healthcare, mobility and sustainable materials are explored.",
+      "learning_objectives": "The lecture and exercises teach the fundamentals of engineering design, technical drawing and CAD as well as material selection. After taking the course, students will be able to tackle simple design tasks, generate and evaluate concepts, accurately create technical drawings of parts and assemblies as well as read them. Students will also be able to create models of parts and assemblies in a 3D, feature-based CAD system. They will understand the links between engineering design, sustainability, material selection and manufacturing process selection.",
+      "content": "Introduction to Engineering Design\n• design requirements\n• concept generation and selection\n• prototyping\nDesign Representations\n• Sketching in Engineering Design\n• Technical Drawing:\no projections, views and cuts\no dimensioning\no assemblies\n• CAD:\no CAD modeling operations\no parametric design and feature-based modeling\no assemblies\no creating 2D drawings from 3D part models\nFabrication and Additive manufacturing\nDesign for the Environment\nMaterial and Manufacturing Process Selection\n• materials and their properties, with emphasis on sustainable materials\n• basic mechanics\n• material selection processes\n• manufacturing process selection\nThree case studies in healthcare, mobility and sustainable materials",
+      "lecture_notes": "Lecture slides and exercise handouts are available on the course Moodle website: \nhttps://moodle-app2.let.ethz.ch/course/view.php?id=23131",
+      "literature": "All literature will be given on the Moodle website: \nhttps://moodle-app2.let.ethz.ch/course/view.php?id=23131",
+      "prerequisites": "This course is given as a lecture (1h /week) and an exercise (3h/week). Students are split into working groups for the exercises with a maximum of 20 students per group.\nSemester Fee: A fee is charged for printed copies of the course handouts. The fee is 7.- CHF per student."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 4,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "The mandatory quizzes are held in the regular exercise sessions from Monday to Thursday each week.\nDates of Quizzes:\n- Week of 10.11.2025 and following days depending on the exercise slot (Mon, Tue, Wed or Thu) of the student\n- Week of 15.12.2025 and following days depending on the exercise slot (Mon, Tue, Wed or Thu) of the student\nParticipation \n- After participation in the first quiz, the course will be graded and the subsequent quiz has to be taken.\n- A maximum of one quiz can be missed and taken at another date for a valid reason, i.e. illness with a doctors certificate\nOnline examination: The examination may take place on the computer.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Mechanical Engineering Bachelor",
+        "section": "Additional First Year Courses",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "151-1072-00L",
+    "title": "Mentored Thesis in Didactics of Mechanical and Process Engineering",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": ["Q. Lohmeyer"],
+    "classes": [
+      {
+        "type": "Independent project",
+        "notes": "",
+        "hours_per_week": 60,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The purpose of the mentored thesis is to bring together the findings from didactics and to expand them by incorporating specific teaching techniques and teaching methods. The thesis can be thematically aligned with the subsequent teaching internship.",
+      "learning_objectives": "The students learn to link theoretical topics from the didactic education with practice-relevant aspects and to articulate the result in written form by means of a suitable task.",
+      "content": "The choice of the topic and the definition of the contents takes place in agreement between the students and the mentor. The topic must be chosen in such a way that the learning objective described above can be achieved.",
+      "lecture_notes": "A short guideline is available.",
+      "literature": "The use of suitable literature is part of the assignment.",
+      "prerequisites": "Prerequisite: Both didactics courses completed.\nThe work should be completed before the start of the internship."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Mechanical and Process Engineering TC",
+        "section": "Subject Didactics and Professional Training",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "262-0100-00L",
+    "title": "Lab Rotation Short 1",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Independent project",
+        "notes": "Only for MSc CBB students starting before Autumn Semester 2021!",
+        "hours_per_week": 180,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Flexible short research project of 4 weeks, completed with a written report.",
+      "learning_objectives": "Students gain an overview of different research areas by applying concepts taught in the core courses and advanced courses."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 6,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Computational Biology and Bioinformatics Master",
+        "section": "Lab Rotations",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "651-4037-00L",
+    "title": "Mineral Resources I",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "Can be chosen as an elective course within the Bachelor. Prospective MSc-Students attending the module \"Mineral Resources\" should attend Mineral Resources I and II in the first year of their MSc studies.",
+    "lecturers": ["C. Chelle-Michou", "L. Tavazzani"],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["NOD 11"],
+            "day": "Wed",
+            "time": "14:15-16:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Principles of hydrothermal ore formation, using base metal deposits (Cu, Pb, Zn) in sedimentary basins to explain the interplay of geological, chemical and physical factors from global scale to sample scale.  Introduction to orthomagmatic ore formation (mostly Cr, Ni, PGE). Introduction to supergene residual deposits (Ni, Al)",
+      "learning_objectives": "Understanding the fundamental processes of hydrothermal, magmatic and supergene ore formation, recognising and interpreting mineralised rocks in geological context",
+      "content": "(a) Principles of hydrothermal ore formation: base metal deposits in sedimentary basins. Practical classification of sample suites by genetic ore deposit types\nMineral solubility and ore deposition, principles & thermodynamic prediction using activity diagrams. Driving forces and structural focussing of hydrothermal fluid flow\n(b) Introduction to orthomagmatic ore formation. Chromite, Ni-Cu sulphides and PGE in layered mafic intrusions. Distribution coefficients between silicate and sulphide melts. Carbonatites and pegmatite deposits.\n(c) Introduction to supergene residual deposits with emphasis on Ni laterites and bauxites",
+      "lecture_notes": "Notes handed out during lectures",
+      "literature": "Extensive literature list distributed in course",
+      "prerequisites": "2 contact hours per  lecture / week including lectures, exercises and practical study of samples, and small literature-based student presentations. Supplementary contact for sample practicals and exercises as required. Credits and mark based on participation in course (exercises, 50%) and 1h30 written exam in the last lecture of the semester (50%)."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "additional_info": "Credits and mark based on participation in course (exercises, 50%) and 1h30 written exam in the last lecture of the semester (50%).",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Earth Sciences Master",
+        "section": "Mineral Resources: Compulsory Courses",
+        "type": "W"
+      },
+      {
+        "program": "Science, Technology, and Policy Master",
+        "section": "Resources and Environment",
+        "type": "W"
+      },
+      {
+        "program": "Space Systems Master",
+        "section": "Deep Track Planetary Science",
+        "type": "W+"
+      }
+    ]
+  },
+  {
+    "course_id": "651-1617-00L",
+    "title": "Geophysical Fluid Dynamics and Numerical Modelling Seminar",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["P. Tackley", "T. Gerya"],
+    "classes": [
+      {
+        "type": "Seminar",
+        "notes": "",
+        "hours_per_week": 1,
+        "schedule": [
+          {
+            "venue": ["NOF 39"],
+            "day": "Wed",
+            "time": "12:15-13:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "",
+      "learning_objectives": ""
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 0,
+        "assessment_type": "no performance assessment",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Doctorate Earth and Planetary Sciences",
+        "section": "Subject Specialisation",
+        "type": "E-"
+      },
+      {
+        "program": "Earth Sciences Master",
+        "section": "Electives",
+        "type": "E- Dr"
+      }
+    ]
+  },
+  {
+    "course_id": "851-0816-07L",
+    "title": "French B2-C1: Language and Literature",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "French",
+    "comment": "No enrolment to this course at ETH Zurich. Book the corresponding course directly at \"Language Center of UZH and ETH Zürich\".Course fees: https://www.sprachenzentrum.uzh.ch/en/Sprachkurse/Kursgebuehren1.htmlRegistration dates: https://www.sprachenzentrum.uzh.ch/en/Sprachkurse.html",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "**Kurs vom Sprachenzentrum der UZH und der ETH Zürich**",
+        "hours_per_week": 14,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This course offers participants the opportunity to read short stories in order to raise their awareness of linguistic aspects and cultural issues in the Francophone world, and to improve their oral skills, mainly through oral presentations.",
+      "learning_objectives": "The primary objective of this course is to develop participants’ written comprehension and, more specifically, to refine their perception of the implicit meanings and cultural aspects present in the literary texts proposed for reading. The course further aims to raise participants' awareness of contemporary cultural issues in the Francophone world. Another goal is to improve participants’ oral skills, specifically so they can deliver structured presentations and express personal, informed, and nuanced opinions."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "French",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "Anmeldemodalitäten, Datum und Ort dieser Leistungskontrolle wird ausschliesslich vom Sprachenzentrum UZH/ETH festgelegt.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Science in Perspective",
+        "section": "Language Courses of the UZH and ETH Zurich",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "853-8002-00L",
+    "title": "The Role of Technology in National and International Security Policy",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": ["A. Wenger", "N. Cadorin", "A. Dossi"],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["IFWA 36"],
+            "day": "Tue",
+            "time": "08:15-10:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The lecture provides an introduction to the role of security and military technologies in the formulation and implementation of national and international security policies. The focus is on challenges posed by new and developing technologies, the transformation of military capabilities, and the question of regulation.",
+      "learning_objectives": "Participants will gain an in-depth overview of the many ways in which technology is becoming part of security policies and practices, in both civilian and military contexts.",
+      "content": "Der erste Teil befasst sich mit den vielgestaltigen und komplexen Beziehungen zwischen Konzepten nationaler und internationaler Sicherheit, der Förderung von Forschung und Entwicklung, ökonomischen Aspekten von Technologie, und Aussenpolitik und Diplomatie. Der zweite Teil behandelt die Auswirkungen von neuen Technologien auf militärische Kapazitäten, strategische Optionen, und Militärdoktrinen in Krieg und Frieden. Der dritte Teil konzentriert sich auf regulatorische Herausforderungen, die aus der Implementierung und der globalen Weiterverbreitung von Technologie resultieren. Der letzte Teil schliesslich beschäftigt sich mit den Herausforderungen für den Staat im Umgang mit neuen und noch in der Entwicklung befindlicher Technologien, vorrangig in den sensiblen Bereich der Rüstungsbeschaffung und des nachrichtendienstlichen Einsatzes.",
+      "literature": "Literatur für die einzelnen Sitzungen wird auf Moodle bereitgestellt.",
+      "prerequisites": "The lecture is being supported by a website on Moodle. If you have any questions, please contact Fabio Schmocker (\nfabio.schmocker@sipo.gess.ethz.ch\n)"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "additional_info": "Datum wird noch bekannt gegeben; 90 Min schriftlich; keine Hilfsmittel",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "DAS in Military Sciences",
+        "section": "Courses Offered",
+        "type": "O"
+      },
+      {
+        "program": "Public Policy Bachelor",
+        "section": "Recommended Elective Courses",
+        "type": "W+"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "Political Science",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "D-MATH",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "D-MATL",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "D-MAVT",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "102-0004-00L",
+    "title": "Introduction into Environmental Engineering",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": [
+      "P. Molnar",
+      "R. Boes",
+      "I. Hajnsek",
+      "S. Hellweg",
+      "J. P. Leitão Correia",
+      "M. Maurer",
+      "S. Pfister",
+      "J. Slomka",
+      "J. Wang"
+    ],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "Maximal ein Drittel der an der Lehrveranstaltung beteiligten Dozierenden unterrichtet auf Englisch.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["HCIJ 3"],
+            "day": "Fri",
+            "time": "09:45-11:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "In this course students are introduced to how environmental problems in the areas of water quantity and quality, waste production and recycling, air pollution control, are formulated and solved with engineering methods. The course makes a connection between the theoretical Bachelor foundation classes and practical topics of environmental engineering in six main thematic areas.",
+      "learning_objectives": "After completing this course, the student will be able to:\n- formulate key global environmental problems\n- develop a systems perspective and solutions to the problems (critical thinking)\n- identify and solve simple numerical problems in the domain areas\n- understand why/how we use data/models in environmental engineering\n- develop own interest in the domain areas and see career opportunities",
+      "content": "Topics of study:\n0. Introduction – description of the Earth System, main stressors, global warming, introduction into the methods and goals of environmental engineering.\n1. Water Science & Engineering – definition of the global water cycle and hydrological regimes, surface/subsurface flow equations (advection, diffusion), water resources management, climate change.\n2. Resource Management & Recovery – waste management, recycling, resource recovery, lifecycle assessment, water and carbon footprints.\n3. Urban Water Technology – water quality parameters, municipal water and wastewater treatment processes and technologies, urban water systems (infrastructure).\n4. River and Hydraulic Engineering – utility hydraulic engineering (hydropower production), protective hydraulic engineering (flood protection), waters protection (river restoration, ecological measures at hydropower plants).\n5. Air Quality – air quality parameters, main air pollutants, air quality in cities/indoor, emission control, the plume dispersion model.\n6. Earth Observation – satellite observation of the Earth System from space, methods, environmental applications (glaciers, forest, land surface change)",
+      "lecture_notes": "Course will take place in English and German (bilingual). The English textbook by Masters and Ela (see below) will be complemented by instructors materials to the individual thematic topics. Lecture presentations will be the main study material. There is no formal Script.",
+      "literature": "- Masters, G.M., & Ela, W.P. (2014). Introduction to Environmental Engineering and Science, Third Edition, Prentice Hall, 692 pp, \nhttps://ebookcentral.proquest.com/lib/ethz/reader.action?docID=5831826\n- lecture presentations and selected papers"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Environmental Engineering Bachelor",
+        "section": "Additional First Year Courses",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "752-4001-00L",
+    "title": "Microbiology",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "Some parts of the lecture will be taught in English.",
+    "lecturers": ["M. Schuppler", "M. Pilhofer", "S. Robinson", "G. Velicer"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "Teile der Vorlesung werden auf Englisch gehalten.Some parts of the lecture will be taught in English.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["MLD 28"],
+            "day": "Mon",
+            "time": "08:15-10:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Teaching of basic knowledge in microbiology with main focus on the topics: Prokaryotic Diversity, Microbial Cell Structure and Function, Molecular Genetics, Microbial Growth, Metabolic Diversity, Phylogeny and Taxonomy, as well as applied aspects of Biotechnology and the Interaction of Humans and Microbes.",
+      "learning_objectives": "Subject-Specific Learning Objectives\nThe students\n- understand important concepts and theories of microbiology, relating to the structure of cells as well as their function and metabolism.\n- are familiar with methods and technologies in which microorganisms play an important role.\n- know how microorganisms interact with the human body.",
+      "content": "The focus is on the following topics:\n- Prokaryotic diversity\n- Bacterial cell biology\n- Molecular genetics\n- Growth physiology\n- Biochemical diversity\n- Phylogeny and taxonomy\n- Biotechnology\n- Interaction between humans and microorganisms",
+      "lecture_notes": "Presentation slides will be provided to students.",
+      "literature": "The topics are covered on the basis of the textbook Brock, Biology of Microorganisms."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "session examination",
+        "language_of_examination": "German",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 90 minutes",
+        "additional_info": "Die Prüfungsfragen zu den auf Englisch unterrichteten Teilen werden auf Deutsch und Englisch gestellt.  \nThe exam questions related to the parts taught in English will be provided in German and English.\nAntworten sind auf Englisch und Deutsch erlaubt/Responses are allowed in English and German.",
+        "exam_aid": "Einfacher Taschenrechner",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Agricultural Sciences Bachelor",
+        "section": "Examination Block",
+        "type": "O"
+      },
+      {
+        "program": "Biology Teaching Diploma",
+        "section": "Course Units for Additional Admission Requirements",
+        "type": "E-"
+      },
+      {
+        "program": "Chemical Engineering Bachelor",
+        "section": "Examination Block IV",
+        "type": "O"
+      },
+      {
+        "program": "Interdisciplinary Sciences Bachelor",
+        "section": "Electives",
+        "type": "W"
+      },
+      {
+        "program": "Food Science and Nutrition Bachelor",
+        "section": "Examination Block",
+        "type": "O"
+      },
+      {
+        "program": "Environmental Engineering Bachelor",
+        "section": "Examination Block 2",
+        "type": "O"
+      },
+      {
+        "program": "Environmental Sciences Bachelor",
+        "section": "Examination Block 1",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "752-6308-00L",
+    "title": "Physiology",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": ["D. Burdakov", "D. Peleg-Raibstein"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["LFWC 5"],
+            "day": "Tue",
+            "time": "08:15-10:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Imparts basic understanding of physiology, focusing on physiological systems of direct relevance to nutrition topics,\nsuch as taste and appetite (neurophysiology), food digestion (gastrointestinal physiology), and related general topic (neural and endocrine communication in the body).",
+      "learning_objectives": "At the end of the course, the students are able to describe, explain, and apply the biological and nutritional principles of physiology including specific examples.",
+      "lecture_notes": "Handouts for each topic will be made available on Moodle."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "session examination",
+        "language_of_examination": "English",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 60 minutes",
+        "exam_aid": "None",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Food Science and Nutrition Bachelor",
+        "section": "Examination Block",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "511-0007-00L",
+    "title": "Scientific Writing and Presenting",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "English",
+    "comment": "The ECTS are earned by mandatory tasks which require your personal presence in the lectrure.",
+    "lecturers": [
+      "J. A. Hiss",
+      "G. M. Cannarozzi-Bossard",
+      "J. Dolenc",
+      "J.‑C. Leroux",
+      "R. Mihalka",
+      "C. Steuer"
+    ],
+    "classes": [
+      {
+        "type": "Mixture of lectures and exercises",
+        "notes": "The ECTS are earned by mandatory tasks which require your personal presence in the lecture.The lecture also includes an introduction to generative AI tools with a hands-on training which also requires your presence.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["HCID 8"],
+            "day": "Mon",
+            "time": "15:45-17:30"
+          },
+          {
+            "venue": ["HGD 16.2"],
+            "day": "15.12.",
+            "time": "16:15-18:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This introductory class provides an overview of the basic scientific writing techniques and a guideline to presenting scientific data, together with guided exercises and hands-on training. It is devised to accompany the research projects within the curriculum of the MSc in Pharmaceutical Sciences.",
+      "learning_objectives": "The class enables the participants to prepare their own scientific texts and oral presentations, and critically assess the quality of the presentation of scientific data.",
+      "content": "The participants receive an introduction to basic formal aspects of scientific writing and the design of graphical elements. Lectures and topical seminars alternate with practical task for the participants, which will be evaluated in a peer-to-peer setting. Performance feedback is provided by both the teachers and the peers."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "additional_info": "The participants have to give final brief oral presentations and write concise scientific abstracts summarizing their own project work.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Pharmaceutical Sciences Master",
+        "section": "Core Courses I",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "851-0252-01L",
+    "title": "Human-Computer Interaction: Cognition and Usability",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "Particularly suitable for students of D-ARCH, D-INFK, D-ITET.",
+    "lecturers": ["C. Hölscher"],
+    "classes": [
+      {
+        "type": "Seminar",
+        "notes": "Does not take place this semester.",
+        "hours_per_week": 2,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "This seminar will introduce key topics, theories and methodology in human-computer interaction (HCI) and usability, with a focus on applying them to real situations.",
+      "learning_objectives": "Presentations will cover the basics of human-computer interaction and selected topics:\n● History of HCI\n● Research ethics\n● Literature reviews\n● Participant-free methods: cognitive walkthrough and heuristic evaluation\n● Card sorting and information architecture\n● Usability studies\n● Unmoderated research and diary studies\n● Surveys\n● User Logs and metric frameworks\nOn a weekly basis, students will conduct authentic research in class covering the topics above. They will submit their in-class research results regularly and also present their findings to the class once per semester.\nThe final project demonstrates class topic adoption by deeply exploring one HCI problem using the covered methods and tools. Students will choose a research topic and execute their research plan. They will individually write a formal report including problem definition, literature review, methodology, findings and discussion."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 3,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Doctorate Humanities, Social and Political Sciences",
+        "section": "Subject Specialisation",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "D-ARCH",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "Psychology, Pedagogics",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "D-INFK",
+        "type": "W"
+      },
+      {
+        "program": "Science in Perspective",
+        "section": "D-ITET",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "101-0198-10L",
+    "title": "Project on Structural Engineering",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "",
+    "lecturers": [],
+    "classes": [
+      {
+        "type": "Independent project",
+        "notes": "",
+        "hours_per_week": 330,
+        "schedule": []
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Working on a concrete task in Construction Engineering",
+      "learning_objectives": "Promote independent, structured and scientific work; learn to apply engineering methods; deepen the knowledge in the field of the treated task.",
+      "content": "The project work is supervised by a professor. Students can choose from different subjects and tasks."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 11,
+        "assessment_type": "graded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "In Abstimmung mit den Betreuern kann die Prüfungssprache Deutsch anstelle Englisch sein.\nGerman instead of English is possible upon mutual agreement between supervisor and student.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Civil Engineering Master",
+        "section": "Projects",
+        "type": "W"
+      }
+    ]
+  },
+  {
+    "course_id": "327-2144-00L",
+    "title": "Microscopy Training Cryogenic Electron Microscopy",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "English",
+    "comment": "Limited number of participants.",
+    "lecturers": [
+      "M. Peterek",
+      "B. Qureshi",
+      "E. J. Barthazy Meier",
+      "S. Handschin",
+      "M. S. Lucas-Droste",
+      "N. Machi",
+      "P. Zeng"
+    ],
+    "classes": [
+      {
+        "type": "Practical / laboratory course",
+        "notes": "This 3-day block course takes place 10-12 November 2025  in the seminar room and rooms of ScopeM.",
+        "hours_per_week": 21,
+        "schedule": [
+          {
+            "venue": ["HITF 11.1"],
+            "day": "10.11.",
+            "time": "07:45-13:30"
+          },
+          {
+            "venue": ["HITF 11.1"],
+            "day": "11.11.",
+            "time": "07:45-13:30"
+          },
+          {
+            "venue": ["HITF 11.1"],
+            "day": "12.11.",
+            "time": "07:45-17:30"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "The introductory course on cryogenic electron microscopy (cryoEM) provides theoretical and hands-on learning for new operators, utilizing lectures, demonstrations and hands-on sessions.",
+      "learning_objectives": "- Overview of cryoEM theory, instrumentation, operation and applications\n- Prepare cryoEM sample (vitrification using Vitrobot)\n- Set-up, align and operate a cryoTEM successfully and safely\n- Set up automated data collection \n- Basic processing steps to analyze/interpret the data e.g., reconstruction 3D volumes",
+      "content": "This course introduces and gives an overview of cryoEM and its applications. At the end of the course, students will be familiar with how to prepare vitrified probe and how to use a cryoTEM to collect and analyze data for exemplary techniques:   \n- Introduction and discussion on cryoEM and instrumentation\n- Lectures on cryoEM theory\n- Lectures on cryoEM applications\n- Practicals/demonstration on vitrification, grid preparation\n- Practicals/demonstration on data collection\n- Lecture and practicals/demonstration on reconstruction of 3D volumes from 2D cryoEM projections/images",
+      "literature": "- Course slides\n- EM-University: (\nhttps://em-learning.com/\n)\n- Book: CryoEM Methods and Protocols edited by T Gonen, B B Nannenga\n- Book: Single-particle Cryo-eM of Biological Macromolecules edited by R M Glaeser, E Nogales, W Chiu",
+      "prerequisites": "The students should fulfil one or more of these prerequisites:\n- Prior attendance to the ScopeM Microscopy Training TEM I \n- Prior TEM experience"
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 1,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "English",
+        "repetition": "Repetition only possible after re-enrolling for the course unit.",
+        "additional_info": "Student presentation and discussion",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Materials Science Master",
+        "section": "Elective Courses",
+        "type": "W"
+      }
+    ]
+  }
+]
