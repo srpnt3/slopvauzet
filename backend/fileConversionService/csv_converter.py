@@ -99,16 +99,24 @@ def gen_timetable_csv_from_json(json_arr_in):
             day_idx = get_weekday_index(curr_time_slot.get("day"))
             for curr_hour in curr_time_slot.get("time"):
                 curr_entry = timetable_arr[int(curr_hour) - 5][day_idx]
-                print(course_name)
+                print("course name: " + course_name + "       curr_entry: " + curr_entry)
                 print(course_name not in curr_entry)
-                if curr_entry != "" and course_name not in curr_entry:
+
+                if curr_entry == "":
+                    timetable_arr[int(curr_hour) - 5][day_idx] = course_name
+                    continue
+
+                if course_name not in curr_entry:
                     # print(curr_entry)
                     # new_entry = curr_entry + "/\n" + course_name
                     curr_entry = curr_entry + "/\n" + course_name
                     # print(curr_entry)
                     timetable_arr[int(curr_hour) - 5][day_idx] = curr_entry
                     continue
-                timetable_arr[int(curr_hour) - 5][day_idx] = course_name
+                
+
+
+
             # pprint(timetable_arr)
     
     with open("timetable_out.csv", 'w', newline='', encoding='utf-8') as csvfile:
@@ -117,15 +125,10 @@ def gen_timetable_csv_from_json(json_arr_in):
             writer.writerow(row)
     return 
 
-
-def get_subject_as_csv_from_json(json_in):
-    return
-    
 def test_fn(json_in):
     timetable_data = get_timetanle_data_json(json_in)
     gen_timetable_csv_from_json(timetable_data)
     return
-
 
 test_fn(json_test_data)
 
