@@ -4,4 +4,15 @@
 	padding: 0.5rem;
 	border: solid 1px;
 	border-radius: 8px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 16.66%;
+	height: 6.66%;
 }
