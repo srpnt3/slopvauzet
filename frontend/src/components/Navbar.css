@@ -6,25 +6,25 @@
 	padding: 1rem;
 	gap: 1rem;
 	width: 100%;
-}
 
-.navlink {
-	padding: 1rem;
-	cursor: pointer;
-}
+	.navlink {
+		padding: 1rem;
+		cursor: pointer;
+	}
 
-.navlink.active {
-	font-weight: bold;
-}
+	.navlink.active {
+		font-weight: bold;
+	}
 
-.navbutton {
-	padding: 1rem;
-}
+	.navbutton {
+		padding: 1rem;
+	}
 
-.navbar .left {
-	margin-right: auto;
-}
+	.left {
+		margin-right: auto;
+	}
 
-.navbar .right {
-	margin-left: auto;
+	.right {
+		margin-left: auto;
+	}
 }
