@@ -18,6 +18,8 @@
 
 		.item {
 			font-size: 0.9rem;
+			max-width: 60%;
+			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 		}
@@ -39,6 +41,8 @@
 
 	.title {
 		font-size: 1.6rem;
+		max-width: 80%;	
+		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
