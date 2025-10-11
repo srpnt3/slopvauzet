@@ -1,0 +1,6 @@
+.recommendation {
+	min-width: 8rem;
+	flex-grow: 1;
+	height: 8rem;
+	background-color: #eeeeee;
+}
