@@ -6,8 +6,8 @@ function CoursePopup({course, setCoursePopup}: {course: Course, setCoursePopup: 
   return (
     <div className="coursePopup" onClick={() => setCoursePopup(undefined)}>
       <div className="courseInfo" onClick={(e) => e.stopPropagation()}>
-        <div className="id">{course.id}</div>
-        <div className="name">{course.name}</div>
+        <div className="id">{course.course_id}</div>
+        <div className="title">{course.title}</div>
         <button className="close" onClick={() => setCoursePopup(undefined)}><Symbol>close</Symbol></button>
       </div>
     </div>

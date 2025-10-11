@@ -12,7 +12,7 @@ export function setCurrentCourses(courses: Course[]) {
 
 export function addCurrentCourse(course: Course) {
 	let courses = getCurrentCourses();
-	if (!courses.map(c => c.id).includes(course.id)) { // todo: check equality properly
+	if (!courses.map(c => c.course_id).includes(course.course_id)) { // todo: check equality properly
 		courses.push(course);
 		setCurrentCourses(courses);
 	}
@@ -20,11 +20,11 @@ export function addCurrentCourse(course: Course) {
 
 export function removeCurrentCourse(id: string) {
 	let courses = getCurrentCourses();
-	courses = courses.filter(c => c.id != id);
+	courses = courses.filter(c => c.course_id != id);
 	setCurrentCourses(courses);
 }
 
 export function inCurrentCourses(id: string): boolean {
 	let courses = getCurrentCourses();
-	return courses.map(c => c.id).includes(id);
+	return courses.map(c => c.course_id).includes(id);
 }
