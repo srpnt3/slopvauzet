@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import "./Search.css";
 import Result from "./Result";
 import Recommendation from "./Recommendation";
+import Symbol from "./Symbol";
 
 // TODO: match the actual data from backend
 export type Course = {
-  name: string
-}
+  name: string,
+};
+
+export type Filters = {
+  credits: number,
+};
 
 function Search() {
   const [results, setResults] = useState<Course[]>([]);
@@ -41,7 +46,10 @@ function Search() {
 
   return (
     <div className="search">
-      <input className="searchbar" placeholder="search" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value)}></input>
+      <div className="searchbar_container">
+        <input className="searchbar" placeholder="Course ID / Course Name" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value)}></input>
+        <button className="filters"><Symbol>tune</Symbol></button>
+      </div>
       {results.length > 0 && <>
         <div className="title">Results</div>
         <div className="results">
