@@ -1,3 +1,30 @@
 .coursePopup {
-	
+	position: fixed;
+	inset: 0;
+	background-color: #00000088;
+}
+
+.courseInfo {
+	position: fixed;
+	inset: 8rem;
+	padding: 1rem;
+	border: solid 1px;
+	border-radius: 24px;
+	background-color: #ffffff;
+
+	.id {
+
+	}
+
+	.name {
+
+	}
+
+	.close {
+		padding: 0.5rem;
+		border: solid 1px;
+		border-radius: 10px;
+		color: white;
+		background-color: black;
+	}
 }

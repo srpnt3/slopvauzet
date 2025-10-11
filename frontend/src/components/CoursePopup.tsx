@@ -1,10 +1,15 @@
 import "./CoursePopup.css";
 import type { Course } from "./Search";
+import Symbol from "./Symbol";
 
-function CoursePopup({course}: {course: Course}) {
+function CoursePopup({course, setCoursePopup}: {course: Course, setCoursePopup: (course: Course | undefined) => void}) {
   return (
-    <div className="coursePopup">
-      <div>{course.name}</div>
+    <div className="coursePopup" onClick={() => setCoursePopup(undefined)}>
+      <div className="courseInfo" onClick={(e) => e.stopPropagation()}>
+        <div className="id">{course.id}</div>
+        <div className="name">{course.name}</div>
+        <button className="close" onClick={() => setCoursePopup(undefined)}><Symbol>close</Symbol></button>
+      </div>
     </div>
   );
 }

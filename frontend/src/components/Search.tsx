@@ -13,16 +13,17 @@ export type Filters = {
   credits: number,
 };
 
-function Search() {
+function Search({setCoursePopup}: {setCoursePopup: (course: Course | undefined) => void}) {
   const [results, setResults] = useState<Course[]>([]);
   const [recommendations, setRecommendations] = useState<Course[]>([]);
+  const [filters, setFilters] = useState<Filters>({credits: 0});
 
   useEffect(() => {
     getRecommendations();
   }, []);
 
   // TODO: hook up to backend, add filter params and stuff
-  const getSearchResults = (query: string) => {
+  const getSearchResults = (query: string, filters: Filters) => {
     if (!query) {
       setResults([]);
       return;
@@ -47,17 +48,17 @@ function Search() {
   return (
     <div className="search">
       <div className="searchbar_container">
-        <input className="searchbar" placeholder="Course ID / Course Name" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value)}></input>
+        <input className="searchbar" placeholder="Course ID / Course Name" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value, filters)}></input>
         <button className="filters"><Symbol>tune</Symbol></button>
       </div>
       <div className="results">
         {results.length > 0 && <>
           <div className="title">Results</div>
-          {results.map((course, i) => <Result course={course} key={i}></Result>)}
+          {results.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} key={i}></Result>)}
         </>}
         {recommendations.length > 0 && <>
           <div className="title">Recommendations</div>
-          {recommendations.map((course, i) => <Result course={course} key={i}></Result>)}
+          {recommendations.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} key={i}></Result>)}
         </>}
       </div>
     </div>

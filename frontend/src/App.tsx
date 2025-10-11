@@ -26,10 +26,10 @@ function App() {
           <Timetable courses={courses}></Timetable>
         </div>
         <div className="searchColumn">
-          <Search></Search>
+          <Search setCoursePopup={setCoursePopup}></Search>
         </div>
       </main>
-      {coursePopup && <CoursePopup course={coursePopup}></CoursePopup>}
+      {coursePopup && <CoursePopup course={coursePopup} setCoursePopup={setCoursePopup}></CoursePopup>}
     </div>
   );
 };
