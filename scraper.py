@@ -292,20 +292,22 @@ def scrape_vvz_course_links(language, semester):
 if __name__ == "__main__":
     url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2025W&ansicht=ALLE&lerneinheitId=193980&lang=en"
     url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lang=en&semkez=2025W&ansicht=ALLE&lerneinheitId=194120&"
-    semester = "2024W"
-    language = "de"
+    semester = "2025W"
+    language = "en"
     # scrape_vvz_course_links(language, semester)
 
     final_json = []
     urls = []
-    with open("links", "r", encoding="utf-8") as f:
+    with open(f"links_{semester}_{language}", "r", encoding="utf-8") as f:
         urls = f.readlines()
 
     urls = list(set(urls))    
-    for url in urls:
+    print("Number of courses:",len(urls))
+    for idx, url in enumerate(urls):
+        print(idx)
         result = scrape_vvz_course(url, "en")
         final_json.append(result)
-    print(final_json)
+    # print(final_json)
     with open(f"courses_{semester}_{language}.json", "w", encoding="utf-8") as f:
         json.dump(final_json, f, indent=2, ensure_ascii=False)
 
