@@ -1,16 +1,12 @@
 .app {
 	height: 100dvh;
-	max-height: 100dvh;
+	width: 100dvw;
 	overflow: hidden;
 }
 
 .main {
-	width: 100%;
-	height: calc(100dvh - 5rem);
 	display: flex;
 	flex-direction: row;
-	padding: 4rem;
-	padding-top: 0;
 	gap: 3rem;
 	overflow: hidden;
 }

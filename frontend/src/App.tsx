@@ -6,6 +6,7 @@ import Studyplan from "./components/Studyplan";
 import CoursePopup from "./components/CoursePopup";
 import Timetable from "./components/Timetable";
 import { getCurrentCourses } from "./util/courses";
+import { cn } from "./util/cn.ts";
 
 function App() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -25,7 +26,7 @@ function App() {
   }, [coursesChanged]);
 
   return (
-    <div className="app">
+    <div className={cn("flex flex-col app px-16 gap-8")}>
       <Navbar level={level} setLevel={setLevel} department={department} setDepartment={setDepartment} programme={programme} setProgramme={setProgramme}></Navbar>
       <main className="main">
         <div className="infoColumn">
