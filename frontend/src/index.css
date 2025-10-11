@@ -1,5 +1,8 @@
 @import "tailwindcss";
-@import 'material-symbols';
+
+@theme {
+
+}
 
 :root {
   font-family: "Jetbrains Mono", Avenir, Helvetica, Arial, sans-serif;
