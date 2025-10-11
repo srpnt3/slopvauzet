@@ -10,6 +10,7 @@ import { getCurrentCourses } from "./util/courses";
 function App() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [coursePopup, setCoursePopup] = useState<Course | undefined>(undefined);
+  const [coursesChanged, setCoursesChanged] = useState<number>(1); // set to nonzero to force rerender with new localstorage courses
 
   // todo: persist in localstorage
   const [level, setLevel] = useState<string>("Bachelor");
@@ -17,8 +18,10 @@ function App() {
   const [programme, setProgramme] = useState<string>("Computer Science Bachelor");
 
   useEffect(() => {
+    if (coursesChanged == 0) return;
     setCourses(getCurrentCourses());
-  }, []);
+    setCoursesChanged(0);
+  }, [coursesChanged]);
 
   return (
     <div className="app">
@@ -31,7 +34,7 @@ function App() {
           <Timetable courses={courses}></Timetable>
         </div>
         <div className="searchColumn">
-          <Search setCoursePopup={setCoursePopup}></Search>
+          <Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged}></Search>
         </div>
       </main>
       {coursePopup && <CoursePopup course={coursePopup} setCoursePopup={setCoursePopup}></CoursePopup>}
