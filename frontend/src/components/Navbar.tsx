@@ -8,7 +8,9 @@ function Navbar({level, setLevel, department, setDepartment, programme, setProgr
 	const [programmes, setProgrammes] = useState(listUniversityDegrees);
 
 	const getProgrammes = async () => {
-		let prog = await fetch(`/api/programs?department=${department}&level=${level}`).then(res => res.json());
+		let prog = [""]
+		let prog2 = await fetch(`/api/programs?department=${department}&level=${level}`).then(res => res.json());
+		prog.push(...prog2)
 		setProgrammes(prog);
 	};
 

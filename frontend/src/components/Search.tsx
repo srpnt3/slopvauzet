@@ -87,7 +87,7 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}
 	};
 
 	const getRecommendations = () => {
-		let dummyRecommendations: Course[] = exampleCourses.slice(20, 23);
+		let dummyRecommendations: Course[] = exampleCourses;
 		setRecommendations(dummyRecommendations);
 	}
 
@@ -102,7 +102,7 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}
 					{results.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} key={i}></Result>)}
 				</>}
 				{recommendations.length > 0 && <>
-					<h2 className={"text-base font-medium pb-2"}>Recommendations</h2>
+					<h2 className={"text-base font-medium pb-2 mt-8"}>Recommendations</h2>
 					{recommendations.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} key={i}></Result>)}
 				</>}
 			</div>
