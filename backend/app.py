@@ -13,6 +13,7 @@ from fastapi import FastAPI, HTTPException, Request, status
 from pydantic import ValidationError
 
 from models import Course
+import scraper.constants as constants
 
 from fileConversionService.csv_vibe_converter import convert
 logger = logging.getLogger('uvicorn.error')
@@ -25,10 +26,20 @@ def apiSearch(query: str, filters: str):
     course_dict = search(df = app.df, query=query, filter_criteria=json.loads(filters))
     return course_dict
 
-# @app.get("/api/programs", status_code=status.HTTP_200_OK)
-# def apiSearch(department: str, level: str):
-#     course_dict = search(df = app.df, query=query, filter_criteria=json.loads(filters))
-#     return course_dict
+@app.get("/api/programs", status_code=status.HTTP_200_OK)
+def apiSearch(department: str, level: str):
+    
+    if level == "" or not constants.program_mappings.get(level, None):
+        return constants.only_programs
+    
+    if department == "" or not constants.program_mappings[level].get(department, None):
+        return constants.only_programs
+    
+    ids = constants.program_mappings[level][department]
+    programs = []
+    for i in ids:
+        programs.append(constants.university_programs[i])
+    return programs
 
 @app.get("/api/recommend", status_code=status.HTTP_200_OK)
 def apiRecommend(request: Request):

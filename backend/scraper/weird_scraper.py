@@ -17,12 +17,17 @@ Notes:
  - If the site detects headless browsers, set HEADLESS = False to see the browser.
  - Results are printed as JSON and saved to `programm_ids_by_level_department.json`.
 """
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 import json
 import re
 import time
 from collections import defaultdict
-
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver.common.by import By
@@ -156,14 +161,12 @@ def wait_for_programm_update(driver, previous_values):
 
 if __name__ == "__main__":
     # Setup Chrome driver
-    chrome_opts = Options()
-    if HEADLESS:
-        chrome_opts.add_argument("--headless=new")
-    chrome_opts.add_argument("--disable-gpu")
-    chrome_opts.add_argument("--no-sandbox")
-    chrome_opts.add_argument("--window-size=1600,1000")
-    chrome_service = ChromeService(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=chrome_service, options=chrome_opts)
+    
+    firefox_opts = Options()
+    firefox_opts.add_argument("--headless")  # remove this line if you want to see the browser
+    firefox_service = FirefoxService()
+
+    driver = webdriver.Firefox(service=firefox_service, options=firefox_opts)
 
     try:
         driver.get(START_URL)
