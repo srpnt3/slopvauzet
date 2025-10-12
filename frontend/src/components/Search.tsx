@@ -46,6 +46,7 @@ export type Course = {
 		section: string,
 		type: string,
 	}[],
+	tags?: string[],
 };
 
 export type Filters = {

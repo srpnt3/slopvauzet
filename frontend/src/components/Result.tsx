@@ -34,9 +34,7 @@ function Result({course, setCoursePopup, setCoursesChanged, setHoveredCourse}: {
 			</div>
 			<h3 className="text-lg font-medium pt-2">{course.title}</h3>
 			<div className="flex flex-row gap-2">
-				<Badge className={"border border-bor"}>performance</Badge>
-				<Badge className={"border border-bor"}>hardware</Badge>
-				<Badge className={"border border-bor"}>optimization</Badge>
+				{course.tags?.slice(0, 5).map(tag => <Badge className={"border border-bor"}>{tag}</Badge>)}
 			</div>
 		</div>
 	);

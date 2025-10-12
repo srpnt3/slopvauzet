@@ -18,7 +18,7 @@ from fileConversionService.csv_vibe_converter import convert
 logger = logging.getLogger('uvicorn.error')
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
-app.df = read_and_process_json('scraper/courses_2025W_en.json')
+app.df = read_and_process_json('scraper/courses_tagged.json')
 
 @app.get("/api/search", status_code=status.HTTP_200_OK)
 def apiSearch(query: str, filters: str):
