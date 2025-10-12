@@ -5,7 +5,7 @@ import * as React from "react";
 import { cn } from "../util/cn.ts";
 
 function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse: Course | undefined }) {
-  console.log(hoveredCourse); // look its used
+  	console.log(hoveredCourse); // look its used
 
 	const renderTimetable = () => { // very cursed lol
 		let baseCells: JSX.Element[] = [];
@@ -87,7 +87,7 @@ function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse:
 	}
 
 	return (
-		<div className={"grid w-full h-full min-h-0 p-2 gap-2 text-xs grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] overflow-y-scroll"}>
+		<div className={"grid w-full h-full min-h-0 p-2 gap-2 text-xs grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] overflow-y-auto"}>
 			{renderTimetable()}
 		</div>
 	);
