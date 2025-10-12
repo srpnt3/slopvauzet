@@ -1,7 +1,6 @@
 import json
 import pandas as pd
 import numpy as np
-
 from thefuzz import process, fuzz
 
 # helper functions
@@ -21,16 +20,18 @@ def read_and_process_json() -> pd.DataFrame:
 
     df = pd.json_normalize(data)
     df = df.fillna('')
-    df['lecturers'] = df['lecturers'].apply(lambda x: ', '.join(x))
+    df['lecturers_alt'] = df['lecturers'].apply(lambda x: ', '.join(x))
     df['main_schedule'] = df['classes'].apply(lambda lst: lst[0])
     days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    df['main_schedule_day'] = df['main_schedule'].apply(lambda dic: [entry['day'].lower() for entry in dic['schedule'] if entry['day'] in days])
     df['main_schedule_days_time'] = df['main_schedule'].apply(lambda dic: [(entry['day'].lower(), convert_time_to_int(entry['time'])) for entry in dic['schedule'] if entry['day'] in days])
+    df['programs'] = df['offered_in'].apply(lambda dic: [doc['program'] for doc in dic])
     df['program_section_pairs'] = df['offered_in'].apply(lambda dic: [(doc['program'], doc['section']) for doc in dic])
 
     cols_to_combined = [
         'course_id',
         'title',
-        'lecturers',
+        'lecturers_alt',
         'catalogue_data.description',
         'catalogue_data.learning_objectives', 
         'catalogue_data.content',
@@ -46,8 +47,7 @@ def read_and_process_json() -> pd.DataFrame:
 def fuzzy_search(df: pd.DataFrame, query: str) -> np.ndarray:
     extract_title = np.array(process.extract(query, df['title'], scorer=fuzz.partial_ratio, limit=100))
     extract_cols = np.array(process.extract(query, df['combined_cols'], scorer=fuzz.partial_ratio, limit=100))
-    extract_lecturers = np.array(process.extract(query, df['lecturers'], scorer=fuzz.partial_ratio, limit=100))
-
+    extract_lecturers = np.array(process.extract(query, df['lecturers_alt'], scorer=fuzz.partial_ratio, limit=100))
     # Create score dictionaries
     title_scores = {int(extract_title[i, 2]): float(extract_title[i, 1]) for i in range(len(extract_title))}
     cols_scores = {int(extract_cols[i, 2]): float(extract_cols[i, 1]) for i in range(len(extract_cols))}
@@ -55,7 +55,7 @@ def fuzzy_search(df: pd.DataFrame, query: str) -> np.ndarray:
 
     # Get all unique indices
     all_indices = set(title_scores.keys()).union(set(cols_scores.keys())).union(set(lecturers_scores.keys()))
-
+    
     # Calculate weighted scores and create results
     weighted_results = []
     for idx in all_indices:
@@ -67,7 +67,7 @@ def fuzzy_search(df: pd.DataFrame, query: str) -> np.ndarray:
         weighted_acc = 0.33 * title_acc + 0.33 * cols_acc + 0.33 * lecturers_acc
         
         # Use title as the match string
-        match_str = df.iloc[idx]['title']
+        match_str = df.loc[idx]['title']
         
         weighted_results.append((match_str, weighted_acc, idx))
 
@@ -86,10 +86,35 @@ def fuzzy_search(df: pd.DataFrame, query: str) -> np.ndarray:
 #     'semester': ''
 # }
 #
-def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict):
-    pass
+def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict) -> pd.DataFrame:
+    result = df
+    # filter by programme
+    if filter_criteria['programme']:
+        result = result[[filter_criteria['programme'] in doc for doc in result['programs']]]
+    
+    # filter by (programme, section) pairs
+    if filter_criteria['section']:
+        result = result[[(filter_criteria['programme'],filter_criteria['section']) in doc for doc in result['program_section_pairs']]]
+    
+    # filter by (day, [start,...]) pairs
+    if filter_criteria['day']:
+        truth_vec = [any([(filter_criteria['day'] == pair[0]) and (convert_time_to_int(filter_criteria['hour'])[0]==pair[1][0]) for pair in schedule]) for schedule in result['main_schedule_days_time']]
+        result = result[truth_vec]
+    
+    return result
 
 
 # main function to be passed
-def search(query: str, filter_criteria: dict)-> str:
-    pass
+def search(query: str, filter_criteria: dict):
+   df = read_and_process_json()
+   filtered = filter_by_criteria(df, filter_criteria=filter_criteria).reset_index(drop=True)
+   indices = fuzzy_search(filtered, query=query)
+   indexed = filtered.iloc[indices]
+   og_keys = ['course_id', 'title', 'semester', 'periodicity',
+      'language_of_instruction', 'comment', 'lecturers', 'classes', 'notes',
+      'performance_assessment', 'offered_in', 'catalogue_data.description',
+      'catalogue_data.learning_objectives', 'catalogue_data.content',
+      'catalogue_data.literature', 'catalogue_data.lecture_notes',
+      'catalogue_data.prerequisites']
+
+   return [indexed[og_keys].iloc[i].to_dict() for i in range(len(indices))]
