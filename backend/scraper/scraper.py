@@ -3,55 +3,10 @@ from bs4 import BeautifulSoup
 import json
 import re
 
+import constants
+
 DOMAIN = "https://www.vvz.ethz.ch"
 
-json_format = {
-    # Correct names
-    "course_id":                {"en": "Course ID",                                      "de": "Kurs ID"},
-    "title":                    {"en": "Course title",                                   "de": "Kursname"},
-    "semester":                 {"en": "Semester",                                       "de": "Semester"},
-    "periodicity":              {"en": "Periodicity",                                    "de": "Periodizität"},
-    "language_of_instruction":  {"en": "Language of instruction",                        "de": "Lehrsprache"},
-    "lecturers":                {"en": "Lecturers",                                      "de": "Dozierende"},
-    "comment":                  {"en": "Comment",                                        "de": "Kommentar"},
-    
-    
-    "classes":                  {"en": "Courses",                                        "de": "Lehrveranstaltungen"},
-    "class_type":               {"en": "Number",                                         "de": "Nummer"},
-    "hours_per_week":           {"en": "Hours per week",                                 "de": "Stunden pro Woche"},
-    "schedule":                 {"en": "Schedule",                                       "de": "Stundenplan"},
-    "day":                      {"en": "Day",                                            "de": "Tag"},
-    "time":                     {"en": "Time",                                           "de": "Zeit"},
-    "venue":                    {"en": "Venue",                                          "de": "Ort"},
-    "notes":                    {"en": "Notes",                                          "de": "Bemerkungen"},
-    
-    # Correct names
-    "catalogue_data":           {"en": "Catalogue data",                                 "de": "Katalogdaten"},
-    "description":              {"en": "Abstract",                                       "de": "Kurzbeschreibung"},
-    "learning_objectives":      {"en": "Learning objective",                             "de": "Lernziel"},
-    "content":                  {"en": "Content",                                        "de": "Inhalt"},
-    "lecture_notes":            {"en": "Lecture notes",                                  "de": "Skript"},
-    "literature":               {"en": "Literature",                                     "de": "Literatur"},
-    "prerequisites":               {"en": "Prerequisites / Notice",                      "de": "Voraussetzungen / Besonderes"},
-    # Correct names
-    "performance_assessment":   {"en": "Performance assessment",                         "de": "Leistungskontrolle"},
-    "ects_credits":             {"en": "ECTS credits",                                   "de": "ECTS Kreditpunkte"},
-    "assessment_type":          {"en": "Type",                                           "de": "Form"},
-    "language_of_examination":  {"en": "Language of examination",                        "de": "Prüfungssprache"},
-    "repetition":               {"en": "Repetition",                                     "de": "Repetition"},
-    "examination":              {"en": "Mode of examination",                            "de": "Prüfungsmodus"},
-    "additional_info":          {"en": "Additional information on mode of examination",  "de": "Zusatzinformation zum Prüfungsmodus	"},
-    "exam_aid":                 {"en": "Written aids",                                   "de": "Hilfsmittel schriftlich"},
-    
-    "regulations":              {"en": "For programme regulations(Examination block)",   "de": "Für Reglement(Prüfungsblock)"},
-    "examination_block":        {"en": "In examination block",                           "de": "Im Prüfungsblock für"},
-    
-    # Correct names
-    "offered_in":               {"en": "Offered in",                                     "de": "Angeboten in"},
-    "program":                  {"en": "Programme",                                      "de": "Studiengang"},
-    "section":                  {"en": "Section",                                        "de": "Bereich"},
-    "type":                     {"en": "Type",                                           "de": "Typ"}
-}
 custom_parser = {
     "hours_per_week": (lambda ects: int(re.search(r"\d+", ects.get_text()).group()) if re.search(r"\d+", ects.get_text()) else 0),
     "ects_credits":   (lambda hours: int(re.search(r"\d+", hours.get_text()).group()) if re.search(r"\d+", hours.get_text()) else 0)
@@ -81,7 +36,7 @@ def scrape_vvz_course(url, language_site):
         return re.sub(r"\s+", " ", text.strip()) if text else ""
     
     def get_field_name(field):
-        return json_format[field][language_site]
+        return constants.json_format[field][language_site]
 
     def get_all_texts(selector):
         return [el.get_text(strip=True) for el in soup.select(selector)]
@@ -299,7 +254,7 @@ def scrape_vvz_course_links(language, semester):
         # making all links have the same language
         links = [re.sub(r"lang=\w\w",  f"lang={language}", url + f"&lang={language}") for url in links]
         result += links
-        index +=1
+        index += 1
     
     with open(f"links_{semester}_{language}", "w", encoding="utf-8") as f:
         for link in links:
@@ -322,6 +277,37 @@ def scrape_all_courses_from_links(language, semester):
     with open(f"courses_{semester}_{language}.json", "w", encoding="utf-8") as f:
         json.dump(final_json, f, indent=2, ensure_ascii=False)
 
+def get_level_department_mappings(language, semester):
+    department = 0
+    level = 0
+    course_mappings = {}
+    print(constants.departments.keys())
+    for dep in constants.departments.keys():
+        course_mappings[dep] = {}
+        print(dep)
+        for lvl in constants.level_studies.keys():
+            url = DOMAIN + f"/Vorlesungsverzeichnis/sucheLehrangebotPre.view?lang={language}&search=on&semkez={semester}&studiengangTyp={lvl}&deptId={dep}&studiengangAbschnittId=&lerneinheitstitel=&lerneinheitscode=&famname=&rufname=&wahlinfo=&lehrsprache=&periodizitaet=&kpRange=0%2C999&katalogdaten=&_strukturAus=on"
+
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, "html.parser")
+
+            print(response.text)
+            return 0
+            selector = soup.find(id="studiengangAbschnittId")
+            if selector == None:
+                print(dep, "lvl", lvl)
+                print(url)
+                # print(res)
+            course_mappings[dep][lvl] = {}
+
+            for el in selector.children:
+                # print(el)
+                course_id = el['value']
+                title = el.get_text(strip=True)
+                course_mappings[dep][lvl][course_id] = title 
+            print( course_mappings[dep][lvl])
+    return course_mappings
+
 
 if __name__ == "__main__":
     url = "https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2025W&ansicht=ALLE&lerneinheitId=193980&lang=en"
@@ -335,10 +321,11 @@ if __name__ == "__main__":
     semester = "2025W"
     language = "en"
     # final_json = scrape_vvz_course(url,language)
+    mappings = get_level_department_mappings(language, semester)
 
-    scrape_all_courses_from_links(language, semester)
+    # scrape_all_courses_from_links(language, semester)
     # print(final_json)
-    # with open(f"result.json", "w", encoding="utf-8") as f:
-    #     json.dump(final_json, f, indent=2, ensure_ascii=False)
+    with open(f"course_mappings.json", "w", encoding="utf-8") as f:
+        json.dump(mappings, f, indent=2, ensure_ascii=False)
 
     # print("✅ Scraping complete. Data saved to result.json")
