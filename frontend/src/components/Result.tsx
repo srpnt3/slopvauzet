@@ -16,6 +16,8 @@ function Result({course, setCoursePopup, setCoursesChanged, setHoveredCourse}: {
 		}
 	};
 
+	console.log(course.tags)
+
 	const added = inCurrentCourses(course.course_id);
 
 	return (

@@ -31,3 +31,11 @@
 		background-color: darkslategray;
 	}
 }
+
+.stripes {
+	background: repeating-linear-gradient(
+		45deg,
+		var(--color-bg3), var(--color-bg3) 4px,
+		transparent 4px, transparent 12px
+	);
+}

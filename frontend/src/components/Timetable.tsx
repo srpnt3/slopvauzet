@@ -5,7 +5,6 @@ import * as React from "react";
 import { cn } from "../util/cn.ts";
 
 function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse: Course | undefined }) {
-  	console.log(hoveredCourse); // look its used
 
 	const renderTimetable = () => { // very cursed lol
 		let baseCells: JSX.Element[] = [];
@@ -26,29 +25,33 @@ function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse:
 			}
 		}
 
-		//let abstractCells: Course[][] = baseCells.map(_ => []);
-		/*for (let [d, day] of weekdays.entries()) {
+		let abstractCells: { courses: number, hover?: boolean }[] = baseCells.map(_ => ({ courses: 0 }));
+		for (let [d, day] of weekdays.entries()) {
 			for (let h = 6; h < 20; h++) {
 				for (let course of hoveredCourse ? [...courses, hoveredCourse] : courses) {
 					for (let class2 of course.classes) {
 						for (let schedule of class2.schedule) {
-							let startHour = Number(schedule.time.split("-")[0]?.split(":")[0]);
+							let time = convertTime(schedule.time);
+							let startHour = time[0];
+							let endHour = time[1]-1;
+							/*let startHour = Number(schedule.time.split("-")[0]?.split(":")[0]);
 							let endHour = Number(schedule.time.split("-")[1]?.split(":")[0]);
 							if (Number(schedule.time.split("-")[1]?.split(":")[1]) == 0) {
 								endHour -= 1;
-							}
+							}*/
 
 							for (let hour = startHour; hour <= endHour; hour++) {
 								if (schedule.day.toLowerCase() == day && hour == h) {
 									let i = 7 + ((h - 6) * 6) + d;
-									abstractCells[i].push(course);
+									if (course.course_id === hoveredCourse?.course_id) abstractCells[i].hover = true;
+									else abstractCells[i].courses++;//.push(course);
 								}
 							}
 						}
 					}
 				}
 			}
-		}*/
+		}
 
 		//console.log(abstractCells);
 
@@ -65,6 +68,7 @@ function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse:
 			if (cellCourses.length > 0) baseCells[i] = <div className={className} title={title} key={i}>{count}</div>;
 		}*/
 
+		// courses
 		baseCells.push(...courses.map((course, i) =>
 			course.classes.map((cls, j) =>
 				cls.schedule.map((schedule, k) => {
@@ -72,22 +76,52 @@ function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse:
 					let col = convertDay(schedule.day) + 1
 					if (col === 0) return <></>
 					let rows = convertTime(schedule.time).map(t => t - 4)
-					return <CourseCell col={col} startRow={rows[0]} endRow={rows[1]} key={key}>
-						{schedule.time}
+					return <CourseCell course={course} col={col} startRow={rows[0]} endRow={rows[1]} key={key}>
+						{course.title}
 					</CourseCell>
 				})
 			)
 		).flat(2))
 
-		/*baseCells.push((
-			<div className={"row-[9] col-[5] bg-pink-300"}></div>
-		))*/
+		// hovered course
+		if (hoveredCourse && !courses.find((c : Course) => c.course_id === hoveredCourse.course_id)) {
+
+			// collisions
+			for (let i = 0; i < abstractCells.length; i++) {
+				let c = 0;
+				let j = i;
+				while (abstractCells[j].hover && abstractCells[j].courses > 0) {
+					abstractCells[j].hover = false;
+					c++;
+					j+=6;
+				}
+				if (c === 0) continue;
+				let row = baseCells[i].props.row;
+				let col = baseCells[i].props.col;
+				//let col = Math.floor(i / 6);
+				baseCells.push(
+					<ConflictCell startRow={row} endRow={row+c} col={col}></ConflictCell>
+				)
+			}
+
+			// pattern hover thing
+			baseCells.push(...hoveredCourse.classes.map((cls, j) =>
+				cls.schedule.map((schedule, k) => {
+					let key = `${j}_${k}`
+					let col = convertDay(schedule.day) + 1
+					if (col === 0) return <></>
+					let rows = convertTime(schedule.time).map(t => t - 4)
+					return <CourseCell className={"stripes"} course={hoveredCourse} col={col} startRow={rows[0]} endRow={rows[1]} key={key}>
+					</CourseCell>
+				})
+			).flat(1))
+		}
 
 		return baseCells;
 	}
 
 	return (
-		<div className={"grid w-full h-full min-h-0 p-2 gap-2 text-xs grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] overflow-y-auto"}>
+		<div className={"grid w-full h-full min-h-0 p-2 gap-2 text-xs grid-cols-6 grid-rows-[repeat(15,minmax(0,1fr))] overflow-y-auto"}>
 			{renderTimetable()}
 		</div>
 	);
@@ -99,13 +133,26 @@ function BaseCell({row, col, className, children, ...props}: React.ComponentProp
 	</div>)
 }
 
-function CourseCell({col, startRow, endRow, className, children, ...props}: React.ComponentProps<'div'> & { startRow?: number, endRow?: number, col?: number }) {
-	return (<div style={{gridRowStart: startRow, gridRowEnd: endRow, gridColumn: col}} className={cn(
-		"flex justify-center rounded-2 bg-bg3",
-		className)} {...props}
-	>
-		{children}
-	</div>)
+function CourseCell({course, col, startRow, endRow, className, children, ...props}: React.ComponentProps<'div'> & { startRow?: number, endRow?: number, col?: number, course: Course }) {
+	return (
+		<div style={{gridRowStart: startRow, gridRowEnd: endRow, gridColumn: col}} className={cn(
+			"flex justify-center rounded-2 border-2 border-bg1 bg-bg3 p-2 text-xs text-fg3 text-wrap min-w-0 min-h-0 wrap-anywhere grow-0 shrink-0 overflow-hidden",
+			className)} {...props}
+		>
+			{children}
+		</div>
+	)
+}
+
+function ConflictCell ({col, startRow, endRow, className, children, ...props}: React.ComponentProps<'div'> & { startRow?: number, endRow?: number, col?: number }) {
+	return (
+		<div style={{gridRowStart: startRow, gridRowEnd: endRow, gridColumn: col}} className={cn(
+			"flex justify-center rounded-2 bg-collision p-2 text-xs text-fg3 text-wrap min-w-0 min-h-0 wrap-anywhere grow-0 shrink-0 overflow-hidden",
+			className)} {...props}
+		>
+			{children}
+		</div>
+	)
 }
 
 function convertTime(time: string): [number, number] {
