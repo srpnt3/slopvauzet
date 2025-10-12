@@ -25,6 +25,10 @@ def apiSearch(query: str, filters: str):
     course_dict = search(df = app.df, query=query, filter_criteria=json.loads(filters))
     return course_dict
 
+# @app.get("/api/programs", status_code=status.HTTP_200_OK)
+# def apiSearch(department: str, level: str):
+#     course_dict = search(df = app.df, query=query, filter_criteria=json.loads(filters))
+#     return course_dict
 
 @app.get("/api/recommend", status_code=status.HTTP_200_OK)
 def apiRecommend(request: Request):
