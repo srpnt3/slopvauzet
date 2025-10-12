@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Search.css";
 import Result from "./Result";
 import { exampleCourses } from "../util/exampleData";
@@ -57,6 +57,8 @@ export type Filters = {
 };
 
 function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}: { setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void, programme: string }) {
+
+	const inputRef = useRef<HTMLInputElement>(null);
 	const [results, setResults] = useState<Course[]>([]);
 	const [recommendations, setRecommendations] = useState<Course[]>([]);
 	const [filters, setFilters] = useState<Filters>({programme: "", section: "", day: "", hour: ""});
@@ -64,6 +66,10 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}
 	useEffect(() => {
 		setFilters({programme: programme, section: "", day: "", hour: ""});
 	}, [programme]);
+
+	useEffect(() => {
+		if (inputRef && inputRef.current) getSearchResults(inputRef.current.value, filters)
+	}, [filters]);
 
 	useEffect(() => {
 		getRecommendations();
@@ -87,8 +93,8 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}
 
 	return (
 		<div className="search">
-			<div className="h-64 w-full flex justify-center items-start pt-16 min-h-32">
-				<input className="rounded-2 border border-bor text-base px-6 py-2.5 w-[512px]" placeholder="Course ID / Course Name" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value, filters)}></input>
+			<div className="h-[232px] w-full flex justify-center items-start pt-16 min-h-32">
+				<input ref={inputRef} className="rounded-2 border border-bor text-base px-6 py-2.5 w-[512px]" placeholder="Course ID / Course Name" onKeyDown={(e) => (e.key == "Enter") && getSearchResults((e.target as HTMLInputElement).value, filters)}></input>
 			</div>
 			<div className="w-full overflow-y-auto">
 				{results.length > 0 && <>
