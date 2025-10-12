@@ -1,0 +1,95 @@
+import json
+import pandas as pd
+import numpy as np
+
+from thefuzz import process, fuzz
+
+# helper functions
+def convert_time_to_int(time_string: str) -> tuple:
+    individual_times = time_string.split(sep='-')
+    hour_minute = [time.split(':') for time in individual_times]
+    result = [int(hm[0]) + (int(hm[1])>=30) for hm in hour_minute]
+    return result
+
+# read data and clean it up for filtering and fuzzy search
+def read_and_process_json() -> pd.DataFrame:
+    with open('courses_2025W_en.json', encoding="utf8") as f:
+        data = json.load(f)
+        for el in data:
+            for keys, value in el['catalogue_data'].items():
+                el['catalogue_data'][keys]=el['catalogue_data'][keys].replace("\n", ' ')
+
+    df = pd.json_normalize(data)
+    df = df.fillna('')
+    df['lecturers'] = df['lecturers'].apply(lambda x: ', '.join(x))
+    df['main_schedule'] = df['classes'].apply(lambda lst: lst[0])
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    df['main_schedule_days_time'] = df['main_schedule'].apply(lambda dic: [(entry['day'].lower(), convert_time_to_int(entry['time'])) for entry in dic['schedule'] if entry['day'] in days])
+    df['program_section_pairs'] = df['offered_in'].apply(lambda dic: [(doc['program'], doc['section']) for doc in dic])
+
+    cols_to_combined = [
+        'course_id',
+        'title',
+        'lecturers',
+        'catalogue_data.description',
+        'catalogue_data.learning_objectives', 
+        'catalogue_data.content',
+        'catalogue_data.literature', 
+        'catalogue_data.lecture_notes',
+        'catalogue_data.prerequisites'
+    ]
+
+    df['combined_cols'] = df[cols_to_combined].agg(' '.join,axis=1)
+    return df
+
+# fuzzy search algorithm with weights: 1/3*title + 1/3*combined + 1/3*lecturer
+def fuzzy_search(df: pd.DataFrame, query: str) -> np.ndarray:
+    extract_title = np.array(process.extract(query, df['title'], scorer=fuzz.partial_ratio, limit=100))
+    extract_cols = np.array(process.extract(query, df['combined_cols'], scorer=fuzz.partial_ratio, limit=100))
+    extract_lecturers = np.array(process.extract(query, df['lecturers'], scorer=fuzz.partial_ratio, limit=100))
+
+    # Create score dictionaries
+    title_scores = {int(extract_title[i, 2]): float(extract_title[i, 1]) for i in range(len(extract_title))}
+    cols_scores = {int(extract_cols[i, 2]): float(extract_cols[i, 1]) for i in range(len(extract_cols))}
+    lecturers_scores = {int(extract_lecturers[i, 2]): float(extract_lecturers[i, 1]) for i in range(len(extract_lecturers))}
+
+    # Get all unique indices
+    all_indices = set(title_scores.keys()).union(set(cols_scores.keys())).union(set(lecturers_scores.keys()))
+
+    # Calculate weighted scores and create results
+    weighted_results = []
+    for idx in all_indices:
+        title_acc = title_scores.get(idx, 0)
+        cols_acc = cols_scores.get(idx, 0)
+        lecturers_acc = lecturers_scores.get(idx, 0)
+        
+        # Weighted average: title 33%, combined_cols 33%, lecturers 33%
+        weighted_acc = 0.33 * title_acc + 0.33 * cols_acc + 0.33 * lecturers_acc
+        
+        # Use title as the match string
+        match_str = df.iloc[idx]['title']
+        
+        weighted_results.append((match_str, weighted_acc, idx))
+
+    # Sort by weighted accuracy (descending)
+    weighted_results.sort(key=lambda x: x[1], reverse=True)
+    return np.array(weighted_results)[:,2]
+
+
+### Format for the filter
+#
+# filter_criteria = {
+#     'day': '',
+#     'hour': '',
+#     'programme': '',
+#     'section': '',
+#     'semester': ''
+# }
+#
+def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict):
+    pass
+
+
+# main function to be passed
+def search(query: str, filter_criteria: dict)-> str:
+    pass

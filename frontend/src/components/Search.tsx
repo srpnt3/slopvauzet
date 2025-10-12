@@ -50,26 +50,28 @@ export type Course = {
 };
 
 export type Filters = {
-  credits: number,
+  programme: string,
+  section: string,
 };
 
 function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void}) {
   const [results, setResults] = useState<Course[]>([]);
   const [recommendations, setRecommendations] = useState<Course[]>([]);
-  const [filters, _setFilters] = useState<Filters>({credits: 0});
+  const [filters, _setFilters] = useState<Filters>({programme: "", section: ""});
 
   useEffect(() => {
     getRecommendations();
   }, []);
 
   // TODO: hook up to backend, add filter params and stuff
-  const getSearchResults = (query: string, _filters: Filters) => {
+  const getSearchResults = async (query: string, filters: Filters) => {
     if (!query) {
       setResults([]);
       return;
     }
-    let dummyResults: Course[] = exampleCourses.slice(0, 100);
-    setResults(dummyResults);
+
+    let results = await fetch(`/api/search?query=${query}&filters=${JSON.stringify(filters)}`).then(res => res.json());
+    setResults(results.slice(0, 100));
   };
 
   const getRecommendations = () => {
