@@ -11,9 +11,11 @@ def convert_time_to_int(time_string: str) -> tuple:
     return result
 
 # read data and clean it up for filtering and fuzzy search
-def read_and_process_json() -> pd.DataFrame:
-    with open('./scraper/courses_2025W_en.json', encoding="utf8") as f:
+def read_and_process_json(semester_courses_path) -> pd.DataFrame:
+    with open(semester_courses_path, encoding="utf8") as f:
         data = json.load(f)
+        # logger.info(str(data))
+
         for el in data:
             for keys, value in el['catalogue_data'].items():
                 el['catalogue_data'][keys]=el['catalogue_data'][keys].replace("\n", ' ')
@@ -89,15 +91,15 @@ def fuzzy_search(df: pd.DataFrame, query: str) -> np.ndarray:
 def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict) -> pd.DataFrame:
     result = df
     # filter by programme
-    if filter_criteria['programme']:
+    if filter_criteria.get('programme', None) :
         result = result[[filter_criteria['programme'] in doc for doc in result['programs']]]
     
     # filter by (programme, section) pairs
-    if filter_criteria['section']:
+    if filter_criteria.get('section', None) :
         result = result[[(filter_criteria['programme'],filter_criteria['section']) in doc for doc in result['program_section_pairs']]]
     
     # filter by (day, [start,...]) pairs
-    if filter_criteria['day']:
+    if filter_criteria.get('day', None):
         truth_vec = [any([(filter_criteria['day'] == pair[0]) and (convert_time_to_int(filter_criteria['hour'])[0]==pair[1][0]) for pair in schedule]) for schedule in result['main_schedule_days_time']]
         result = result[truth_vec]
     
@@ -105,8 +107,7 @@ def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict) -> pd.DataFrame:
 
 
 # main function to be passed
-def search(query: str, filter_criteria: dict):
-   df = read_and_process_json()
+def search(df: pd.DataFrame, query: str, filter_criteria: dict):
    filtered = filter_by_criteria(df, filter_criteria=filter_criteria).reset_index(drop=True)
    indices = fuzzy_search(filtered, query=query)
    indexed = filtered.iloc[indices]

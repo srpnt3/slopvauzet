@@ -5,7 +5,8 @@ from os import getenv
 import json
 from pprint import pprint
 
-from slopathon.search_algo import search
+from slopathon.search_algo import search, read_and_process_json
+import logging 
 
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request, status
@@ -14,12 +15,14 @@ from pydantic import ValidationError
 from models import Course
 
 from fileConversionService.csv_vibe_converter import convert
+logger = logging.getLogger('uvicorn.error')
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
+app.df = read_and_process_json('scraper/courses_2025W_en.json')
 
 @app.get("/api/search", status_code=status.HTTP_200_OK)
 def apiSearch(query: str, filters: str):
-    course_dict = search(query=query, filter_criteria=json.loads(filters))
+    course_dict = search(df = app.df, query=query, filter_criteria=json.loads(filters))
     return course_dict
 
 
