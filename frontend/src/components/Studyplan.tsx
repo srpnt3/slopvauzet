@@ -2,7 +2,7 @@ import "./Studyplan.css";
 
 function Studyplan({info}: {info: string}) {
   return (
-    <div className="studyplan">
+    <div className="h-fit w-full p-4">
       <div className="column">
         <div className="info">{info}</div>
       </div>

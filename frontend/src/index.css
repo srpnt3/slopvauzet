@@ -78,6 +78,7 @@
 	--color-collision: #E12E5B;
 	--color-fg1: #000000;
 	--color-fg2: #858585;
+	--color-fg3: #FFFFFF;
 	--color-bor: #7E7E7E;
 }
 
@@ -88,6 +89,8 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	background-color: var(--color-bg1);
 }
 
 body {

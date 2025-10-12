@@ -57,11 +57,11 @@ function Timetable({courses, hoveredCourse}: {courses: Course[], hoveredCourse: 
     return cells;
   }
 
-  return (
-    <div className="timetable">
-      {renderTimetable()}
-    </div>
-  );
+	return (
+		<div className="timetable h-full p-2">
+			{renderTimetable()}
+		</div>
+	);
 }
 
 export default Timetable;
