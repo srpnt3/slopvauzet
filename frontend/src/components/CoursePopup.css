@@ -1,8 +1,4 @@
 .coursePopup {
-	width: 100%;
-	height: calc(100dvh - 5rem); /* i hate this :( */
-	padding: 4rem;
-	padding-top: 0;
 
 	.back {
 		padding: 0.5rem;
@@ -35,7 +31,7 @@
 	}
 
 	.body {
-		height: 60%;
+		/*height: 60%;*/
 		overflow-y: auto;
 	}
 }

@@ -6,23 +6,23 @@ function Navbar({level, setLevel, department, setDepartment, programme, setProgr
 	const programmes = ["Computer Science Bachelor"]
 
 	return (
-		<nav className={cn("h-14 flex flex-row items-center gap-16 justify-start w-full text-sm", level)}>
-			<span className={"font-extrabold w-32"}>VVZ++</span>
+		<nav className={cn("h-14 flex flex-row items-center gap-16 justify-start w-full text-base shrink-0", level)}>
+			<span className={"font-extrabold w-32"}>VVZ ++</span>
 			<div className="navselect">
 				<span className={"text-fg2"}>level : </span>
-				<select value={level} onChange={(e) => setLevel(e.target.value)}>
+				<select className={"font-medium"} value={level} onChange={(e) => setLevel(e.target.value)}>
 					{levels.map(s => <option value={s} key={s}>{s}</option>)}
 				</select>
 			</div>
 			<div className="m-0">
 				<span className={"text-fg2"}>department : </span>
-				<select value={department} onChange={(e) => setDepartment(e.target.value)}>
+				<select className={"font-medium"} value={department} onChange={(e) => setDepartment(e.target.value)}>
 					{departments.map(s => <option value={s} key={s}>{s}</option>)}
 				</select>
 			</div>
 			<div className="m-0">
 				<span className={"text-fg2"}>programme : </span>
-				<select value={programme} onChange={(e) => setProgramme(e.target.value)}>
+				<select className={"font-medium"} value={programme} onChange={(e) => setProgramme(e.target.value)}>
 					{programmes.map(s => <option value={s} key={s}>{s}</option>)}
 				</select>
 			</div>
