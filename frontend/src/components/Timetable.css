@@ -15,4 +15,33 @@
 	justify-content: center;
 	width: 16.66%;
 	height: 6.66%;
+
+	&.day {
+		color: #444444;
+	}
+
+	&.time {
+		color: #444444;
+	}
+
+	&.course {
+		background-color: black;
+		color: white;
+	}
+
+	&.conflict {
+		background-color: red;
+	}
+
+	&.hover {
+		background-color: gray;
+	}
+
+	&.hover.conflict {
+		background-color: orange;
+	}
+
+	&.hover.current {
+		background-color: darkslategray;
+	}
 }

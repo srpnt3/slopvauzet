@@ -68,7 +68,7 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCours
       setResults([]);
       return;
     }
-    let dummyResults: Course[] = exampleCourses.slice(0, 20);
+    let dummyResults: Course[] = exampleCourses.slice(0, 100);
     setResults(dummyResults);
   };
 
