@@ -28,8 +28,11 @@ def apiSearch(query: str, filters: str):
 
 @app.get("/api/programs", status_code=status.HTTP_200_OK)
 def apiSearch(department: str, level: str):
-    
-    if level == "" or not constants.program_mappings.get(level, None):
+    if level == "":
+        level = "None"
+    if department == "":
+        department = "None"
+    if not constants.program_mappings.get(level, None):
         return constants.only_programs
     
     if department == "" or not constants.program_mappings[level].get(department, None):
