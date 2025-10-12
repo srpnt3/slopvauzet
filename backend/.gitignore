@@ -1,4 +1,7 @@
 .venv
-fileConversionService/test.json
-fileConversionService/test2.json
+fileConvertionService/test_json.json
+fileConvertionService/test_json2.json
+fileConversionService/test_ics.json
+fileConversionService/test_ics.ics
+fileConversionService/testfn.py
 fileConversionService/timetable_out.csv

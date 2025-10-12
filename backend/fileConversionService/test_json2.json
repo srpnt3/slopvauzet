@@ -1,0 +1,203 @@
+[
+  {
+    "course_id": "752-4001-00L",
+    "title": "Microbiology",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "Some parts of the lecture will be taught in English.",
+    "lecturers": ["M. Schuppler", "M. Pilhofer", "S. Robinson", "G. Velicer"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "Teile der Vorlesung werden auf Englisch gehalten.Some parts of the lecture will be taught in English.",
+        "hours_per_week": 2,
+        "schedule": [
+          {
+            "venue": ["MLD 28"],
+            "day": "Mon",
+            "time": "08:15-10:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Teaching of basic knowledge in microbiology with main focus on the topics: Prokaryotic Diversity, Microbial Cell Structure and Function, Molecular Genetics, Microbial Growth, Metabolic Diversity, Phylogeny and Taxonomy, as well as applied aspects of Biotechnology and the Interaction of Humans and Microbes.",
+      "learning_objectives": "Subject-Specific Learning Objectives\nThe students\n- understand important concepts and theories of microbiology, relating to the structure of cells as well as their function and metabolism.\n- are familiar with methods and technologies in which microorganisms play an important role.\n- know how microorganisms interact with the human body.",
+      "content": "The focus is on the following topics:\n- Prokaryotic diversity\n- Bacterial cell biology\n- Molecular genetics\n- Growth physiology\n- Biochemical diversity\n- Phylogeny and taxonomy\n- Biotechnology\n- Interaction between humans and microorganisms",
+      "lecture_notes": "Presentation slides will be provided to students.",
+      "literature": "The topics are covered on the basis of the textbook Brock, Biology of Microorganisms."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "session examination",
+        "language_of_examination": "German",
+        "repetition": "The performance assessment is offered every session. Repetition possible without re-enrolling for the course unit.",
+        "examination": "written 90 minutes",
+        "additional_info": "Die Prüfungsfragen zu den auf Englisch unterrichteten Teilen werden auf Deutsch und Englisch gestellt.  \nThe exam questions related to the parts taught in English will be provided in German and English.\nAntworten sind auf Englisch und Deutsch erlaubt/Responses are allowed in English and German.",
+        "exam_aid": "Einfacher Taschenrechner",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Agricultural Sciences Bachelor",
+        "section": "Examination Block",
+        "type": "O"
+      },
+      {
+        "program": "Biology Teaching Diploma",
+        "section": "Course Units for Additional Admission Requirements",
+        "type": "E-"
+      },
+      {
+        "program": "Chemical Engineering Bachelor",
+        "section": "Examination Block IV",
+        "type": "O"
+      },
+      {
+        "program": "Interdisciplinary Sciences Bachelor",
+        "section": "Electives",
+        "type": "W"
+      },
+      {
+        "program": "Food Science and Nutrition Bachelor",
+        "section": "Examination Block",
+        "type": "O"
+      },
+      {
+        "program": "Environmental Engineering Bachelor",
+        "section": "Examination Block 2",
+        "type": "O"
+      },
+      {
+        "program": "Environmental Sciences Bachelor",
+        "section": "Examination Block 1",
+        "type": "O"
+      }
+    ]
+  },
+  {
+    "course_id": "999-9999-99L",
+    "title": "EduApp Course",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "every semester recurring course",
+    "language_of_instruction": "German",
+    "comment": "This course unit is not a genuine ETH course unit. It is used by LET and the Teaching Specialists for EduApp demonstration purposes.",
+    "lecturers": ["B. Volk"],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 1,
+        "schedule": [
+          {
+            "venue": ["HGE 15"],
+            "day": "Mon",
+            "time": "08:15-09:00"
+          }
+        ]
+      },
+      {
+        "type": "Exercise",
+        "notes": "Groups are selected in myStudies.",
+        "hours_per_week": 1,
+        "schedule": [
+          {
+            "venue": ["HGE 15"],
+            "day": "Mon",
+            "time": "09:15-10:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "",
+      "learning_objectives": ""
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 0,
+        "assessment_type": "no performance assessment",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "Humanities, Social and Political Sciences (General Courses)",
+        "section": "Specialized Continuing Education",
+        "type": "E-"
+      }
+    ]
+  },
+  {
+    "course_id": "447-0649-02L",
+    "title": "Applied Statistical Regression II",
+    "semester": "Autumn Semester 2025",
+    "periodicity": "two-yearly recurring course",
+    "language_of_instruction": "German",
+    "comment": "",
+    "lecturers": [
+      "C. Renaux"
+    ],
+    "classes": [
+      {
+        "type": "Lecture",
+        "notes": "",
+        "hours_per_week": 10,
+        "schedule": [
+          {
+            "venue": [
+              "HGD 1.1"
+            ],
+            "day": "Mon/2",
+            "time": "08:15-10:00"
+          }
+        ]
+      },
+      {
+        "type": "Exercise",
+        "notes": "",
+        "hours_per_week": 10,
+        "schedule": [
+          {
+            "venue": [
+              "HGE 19"
+            ],
+            "day": "Mon/2",
+            "time": "10:15-12:00"
+          }
+        ]
+      }
+    ],
+    "notes": "",
+    "catalogue_data": {
+      "description": "Generalized linear models (GLMs) and basic ideas of more advanced regression models.",
+      "learning_objectives": "Understanding the concept and flexibility of generalized linear models and correct interpretation of the corresponding model outputs."
+    },
+    "performance_assessment": [
+      {
+        "ects_credits": 2,
+        "assessment_type": "ungraded semester performance",
+        "language_of_examination": "German",
+        "repetition": "Repetition possible without re-enrolling for the course unit.",
+        "assessment_description": "Performance assessment as a semester course"
+      }
+    ],
+    "offered_in": [
+      {
+        "program": "CAS in Applied Statistical Data Science",
+        "section": "Further Courses",
+        "type": "Z"
+      },
+      {
+        "program": "DAS in Applied Statistical Data Science",
+        "section": "Electives",
+        "type": "W"
+      }
+    ]
+  }
+]
