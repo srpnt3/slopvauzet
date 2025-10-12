@@ -112,7 +112,7 @@ def search(df: pd.DataFrame, query: str, filter_criteria: dict):
    indices = fuzzy_search(filtered, query=query)
    og_keys = ['course_id', 'title', 'semester', 'periodicity',
       'language_of_instruction', 'comment', 'lecturers', 'classes', 'notes',
-      'performance_assessment', 'offered_in', 'catalogue_data']
+      'performance_assessment', 'offered_in', 'catalogue_data', 'tags']
    
    catalogue_prefix = 'catalogue_data.'
    catalogue_columns = [col for col in df.columns if col.startswith(catalogue_prefix)]
