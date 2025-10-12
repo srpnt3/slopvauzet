@@ -70,6 +70,8 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCours
     }
     let dummyResults: Course[] = exampleCourses.slice(0, 100);
     setResults(dummyResults);
+
+    fetch("/api/test").then(res => res.text()).then(text => console.log(text));
   };
 
   const getRecommendations = () => {
