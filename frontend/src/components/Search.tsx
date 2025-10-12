@@ -63,15 +63,14 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCours
   }, []);
 
   // TODO: hook up to backend, add filter params and stuff
-  const getSearchResults = (query: string, _filters: Filters) => {
+  const getSearchResults = async (query: string, filters: Filters) => {
     if (!query) {
       setResults([]);
       return;
     }
-    let dummyResults: Course[] = exampleCourses.slice(0, 100);
-    setResults(dummyResults);
 
-    fetch("/api/test").then(res => res.text()).then(text => console.log(text));
+    let results = await fetch(`/api/search?query=${query}&filters=${JSON.stringify(filters)}`).then(res => res.json());
+    setResults(results.slice(0, 100));
   };
 
   const getRecommendations = () => {
