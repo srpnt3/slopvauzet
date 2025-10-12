@@ -116,6 +116,6 @@ def search(df: pd.DataFrame, query: str, filter_criteria: dict):
       'performance_assessment', 'offered_in', 'catalogue_data.description',
       'catalogue_data.learning_objectives', 'catalogue_data.content',
       'catalogue_data.literature', 'catalogue_data.lecture_notes',
-      'catalogue_data.prerequisites']
+      'catalogue_data.prerequisites', 'tags']
 
    return [indexed[og_keys].iloc[i].to_dict() for i in range(len(indices))]

@@ -27,9 +27,7 @@ function Result({course, setCoursePopup, setCoursesChanged, setHoveredCourse}: {
         {course.title}
       </div>
       <div className="tags">
-        <div className="tag">performance</div>
-        <div className="tag">hardware</div>
-        <div className="tag">optimization</div>
+        {course.tags?.slice(0, 5).map(tag => <div className="tag" key={tag}>{tag}</div>)}
       </div>
     </div>
   );
