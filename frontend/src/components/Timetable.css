@@ -1,23 +1,12 @@
 .timetable {
-	width: 100%;
-	height: 60%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 }
 
 .cell {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 16.66%;
-	height: 6.66%;
 
 	&.day {
-		color: #444444;
-	}
-
-	&.time {
 		color: #444444;
 	}
 

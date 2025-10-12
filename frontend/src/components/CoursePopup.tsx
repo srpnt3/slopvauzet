@@ -1,4 +1,3 @@
-import "./CoursePopup.css";
 import type { Course } from "./Search";
 import Badge from "./Badge.tsx";
 import { Fragment, useMemo } from "react";
@@ -8,7 +7,7 @@ function CoursePopup({course, setCoursePopup}: { course: Course, setCoursePopup:
 	const courseData = useMemo(() => formatCouseData(course), [course]);
 
 	return (
-		<div className="coursePopup w-full h-full min-h-0">
+		<div className="w-full h-full min-h-0">
 			<button className="font-medium text-base mb-2" onClick={() => setCoursePopup(undefined)}>{"<-"} back</button>
 			<div className="font-medium text-[4rem] mb-6">{course.title}</div>
 			<div className="flex flex-row gap-2 mb-14">
