@@ -31,24 +31,51 @@ function CoursePopup({course, setCoursePopup}: { course: Course, setCoursePopup:
 	);
 }
 
-export function formatCouseData(course: Course): {
+type Section = {
 	sectionTitle?: string;
 	content: {
 		name: string;
 		data: string;
-	}[]
-}[] {
-	return [{
+	}[];
+};
+
+export function formatCouseData(course: Course): Section[] {
+	let sections: Section[] = [{
 		sectionTitle: "Catalogue Data",
 		content: [{
 			name: "Abstract",
-			data: "This lecture provides deeper knowledge on the possible applications of  virtual reality, its basic technolgy, and future research fields. The  goal is to provide a strong knowledge on Virtual Reality for a possible  future use in business processes."
-		},
-			{
-				name: "Abstract",
-				data: "This lecture provides deeper knowledge on the possible applications of  virtual reality, its basic technolgy, and future research fields. The  goal is to provide a strong knowledge on Virtual Reality for a possible  future use in business processes."
-			}]
-	}]
+			data: course.catalogue_data.description || "-",
+		}, {
+			name: "Learning objective",
+			data: course.catalogue_data.learning_objectives || "-",
+		}, {
+			name: "Content",
+			data: course.catalogue_data.content || "-",
+		}, {
+			name: "Literature",
+			data: course.catalogue_data.literature || "-",
+		}, {
+			name: "Lecturers",
+			data: course.lecturers.join(", ") || "-",
+		}],
+	}, {
+		sectionTitle: "Performance Assessment",
+		content: [{
+			name: "ECTS credits",
+			data: (course.performance_assessment[0]?.ects_credits ?? 0) + " credits",
+		}, {
+			name: "Assessment type",
+			data: course.performance_assessment[0]?.assessment_type || "-",
+		}, {
+			name: "Exam language",
+			data: course.performance_assessment[0]?.language_of_examination || "-",
+		}, {
+			name: "Exam aids",
+			data: course.performance_assessment[0]?.exam_aid || "-",
+		}],
+	}];
+
+	return sections;
 }
 
 export default CoursePopup;
