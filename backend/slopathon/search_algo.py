@@ -110,32 +110,33 @@ def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict) -> pd.DataFrame:
 def search(df: pd.DataFrame, query: str, filter_criteria: dict):
    filtered = filter_by_criteria(df, filter_criteria=filter_criteria).reset_index(drop=True)
    indices = fuzzy_search(filtered, query=query)
+   indexed = filtered.iloc[indices]
    og_keys = ['course_id', 'title', 'semester', 'periodicity',
       'language_of_instruction', 'comment', 'lecturers', 'classes', 'notes',
       'performance_assessment', 'offered_in', 'catalogue_data', 'tags']
    
    catalogue_prefix = 'catalogue_data.'
-   catalogue_columns = [col for col in df.columns if col.startswith(catalogue_prefix)]
+   catalogue_columns = [col for col in indexed.columns if col.startswith(catalogue_prefix)]
     
    if not catalogue_columns:
       print("No catalogue_data columns found with the specified prefix.")
-      return df
+      return indexed
    
    # Extract base column names (remove the prefix)
    base_columns = [col.replace(catalogue_prefix, '') for col in catalogue_columns]
    
    # Create a copy of the original dataframe to avoid modifying the original
-   result_df = df.copy()
-   
+   result_df = indexed.copy()
+
    # Reconstruct the catalogue_data object for each row
    catalogue_data_list = []
    
-   for idx, row in df.iterrows():
+   for idx, row in indexed.iterrows():
       catalogue_obj = {}
       
       for base_col in base_columns:
          full_col_name = f"{catalogue_prefix}{base_col}"
-         if full_col_name in df.columns and pd.notna(row[full_col_name]):
+         if full_col_name in indexed.columns and pd.notna(row[full_col_name]):
                catalogue_obj[base_col] = row[full_col_name]
       
       catalogue_data_list.append(catalogue_obj)
