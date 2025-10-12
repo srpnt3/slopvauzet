@@ -1,6 +1,6 @@
 
 
-export const listUniversityDegrees: Course[] = [
+export const listUniversityDegrees: string[] = [
     "Agricultural Sciences Bachelor",
     "Agricultural Sciences Master",
     "Agricultural Sciences TC",
