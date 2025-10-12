@@ -59,7 +59,7 @@ function App() {
 				</div>
 				<div className="w-[57%] overflow-hidden">
 					<button className="ml-auto" onClick={() => exportCsv(courses)}>export csv</button>
-					<Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse}></Search>
+					<Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} programme={programme}></Search>
 				</div>
 			</main>
 			{coursePopup && <CoursePopup course={coursePopup} setCoursePopup={setCoursePopup}></CoursePopup>}

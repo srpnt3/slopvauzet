@@ -53,12 +53,17 @@ export type Filters = {
 	programme: string,
 	section: string,
 	day: string,
+	hour: string,
 };
 
-function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: { setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void }) {
+function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}: { setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void, programme: string }) {
 	const [results, setResults] = useState<Course[]>([]);
 	const [recommendations, setRecommendations] = useState<Course[]>([]);
-	const [filters, _setFilters] = useState<Filters>({programme: "", section: "", day: ""});
+	const [filters, setFilters] = useState<Filters>({programme: "", section: "", day: "", hour: ""});
+
+	useEffect(() => {
+		setFilters({programme: programme, section: "", day: "", hour: ""});
+	}, [programme]);
 
 	useEffect(() => {
 		getRecommendations();

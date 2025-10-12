@@ -1,4 +1,35 @@
+export const levelz: string[] = [
+	"",
+	"Advanced Studies (CAS, DAS)",
+	"Bachelor's Degree Programme",
+	"Diploma Programme",
+	"Doctorate",
+	"Master of Advanced Studies",
+	"Master's Degree Programme",
+	"Mobility Students",
+	"Teaching Certificate",
+	"Teaching Diploma",
+]
 
+export const deps: string[] = [
+	"",
+	"D-ARCH",
+	"D-BAUG",
+	"D-BIOL",
+	"D-BSSE",
+	"D-CHAB",
+	"D-EAPS",
+	"D-GESS",
+	"D-HEST",
+	"D-INFK",
+	"D-ITET",
+	"D-MATH",
+	"D-MATL",
+	"D-MAVT",
+	"D-MTEC",
+	"D-PHYS",
+	"D-USYS"
+]
 
 export const listUniversityDegrees: string[] = [
     "Agricultural Sciences Bachelor",
