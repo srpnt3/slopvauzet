@@ -107,15 +107,44 @@ def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict) -> pd.DataFrame:
 
 
 # main function to be passed
-def search(df: pd.DataFrame, query: str, filter_criteria: dict):
+def search(query: str, filter_criteria: dict):
+   df = read_and_process_json()
    filtered = filter_by_criteria(df, filter_criteria=filter_criteria).reset_index(drop=True)
    indices = fuzzy_search(filtered, query=query)
-   indexed = filtered.iloc[indices]
    og_keys = ['course_id', 'title', 'semester', 'periodicity',
       'language_of_instruction', 'comment', 'lecturers', 'classes', 'notes',
-      'performance_assessment', 'offered_in', 'catalogue_data.description',
-      'catalogue_data.learning_objectives', 'catalogue_data.content',
-      'catalogue_data.literature', 'catalogue_data.lecture_notes',
-      'catalogue_data.prerequisites', 'tags']
+      'performance_assessment', 'offered_in', 'catalogue_data']
+   
+   catalogue_prefix = 'catalogue_data.'
+   catalogue_columns = [col for col in df.columns if col.startswith(catalogue_prefix)]
+    
+   if not catalogue_columns:
+      print("No catalogue_data columns found with the specified prefix.")
+      return df
+   
+   # Extract base column names (remove the prefix)
+   base_columns = [col.replace(catalogue_prefix, '') for col in catalogue_columns]
+   
+   # Create a copy of the original dataframe to avoid modifying the original
+   result_df = df.copy()
+   
+   # Reconstruct the catalogue_data object for each row
+   catalogue_data_list = []
+   
+   for idx, row in df.iterrows():
+      catalogue_obj = {}
+      
+      for base_col in base_columns:
+         full_col_name = f"{catalogue_prefix}{base_col}"
+         if full_col_name in df.columns and pd.notna(row[full_col_name]):
+               catalogue_obj[base_col] = row[full_col_name]
+      
+      catalogue_data_list.append(catalogue_obj)
+   
+   # Add the reconstructed catalogue_data column
+   result_df['catalogue_data'] = catalogue_data_list
+   
+   # Remove the flattened columns
+   result_df = result_df.drop(columns=catalogue_columns)
 
-   return [indexed[og_keys].iloc[i].to_dict() for i in range(len(indices))]
+   return [result_df[og_keys].iloc[i].to_dict() for i in range(len(indices))]
