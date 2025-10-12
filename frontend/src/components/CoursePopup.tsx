@@ -43,16 +43,16 @@ export function formatCouseData(course: Course): Section[] {
 		sectionTitle: "Catalogue Data",
 		content: [{
 			name: "Abstract",
-			data: course['catalogue_data.description'] || "-",
+			data: course.catalogue_data.description || "-",
 		}, {
 			name: "Learning objective",
-			data: course['catalogue_data.learning_objectives'] || "-",
+			data: course.catalogue_data.learning_objectives || "-",
 		}, {
 			name: "Content",
-			data: course['catalogue_data.content'] || "-",
+			data: course.catalogue_data.content || "-",
 		}, {
 			name: "Literature",
-			data: course['catalogue_data.literature'] || "-",
+			data: course.catalogue_data.literature || "-",
 		}, {
 			name: "Lecturers",
 			data: course.lecturers.join(", ") || "-",
