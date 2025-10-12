@@ -1,10 +1,20 @@
+import { useEffect, useState } from "react";
 import { cn } from "../util/cn.ts";
 import { deps, levelz, listUniversityDegrees } from "../util/uni_degrees.ts";
 
 function Navbar({level, setLevel, department, setDepartment, programme, setProgramme}: { level: string, setLevel: (level: string) => void, department: string, setDepartment: (department: string) => void, programme: string, setProgramme: (programme: string) => void }) {
 	const levels = levelz;
 	const departments = deps;
-	const programmes = listUniversityDegrees;
+	const [programmes, setProgrammes] = useState(listUniversityDegrees);
+
+	const getProgrammes = async () => {
+		let prog = await fetch(`/api/programs?department=${department}&level=${level}`).then(res => res.json());
+		setProgrammes(prog);
+	};
+
+	useEffect(() => {
+		getProgrammes();
+	}, [level, department]);
 
 	return (
 		<nav className={cn("h-14 flex flex-row items-center gap-16 justify-start w-full text-base shrink-0", level)}>
