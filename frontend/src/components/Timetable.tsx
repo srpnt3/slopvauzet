@@ -19,7 +19,7 @@ function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse:
 	}
 
 	return (
-		<div className="timetable h-full p-4">
+		<div className="timetable h-full p-2">
 			{renderTimetable()}
 		</div>
 	);

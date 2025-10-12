@@ -30,7 +30,7 @@ function App() {
 		<div className={cn("flex flex-col app px-16 gap-8 pb-12")}>
 			<Navbar level={level} setLevel={setLevel} department={department} setDepartment={setDepartment} programme={programme} setProgramme={setProgramme}></Navbar>
 			{!coursePopup && <main className="main w-full h-full min-h-0">
-				<div className="w-2/5 flex flex-col gap-6">
+				<div className="w-[45%] flex flex-col gap-6">
 					<Section title={"Study Profile"} action={"edit"} className={"w-full min-h-48"}>
 						<Studyplan info={level + ", " + department + ", " + programme}></Studyplan>
 					</Section>
@@ -38,7 +38,7 @@ function App() {
 						<Timetable courses={courses} hoveredCourse={hoveredCourse}></Timetable>
 					</Section>
 				</div>
-				<div className="w-3/5">
+				<div className="w-[55%]">
 					<Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse}></Search>
 				</div>
 			</main>}
