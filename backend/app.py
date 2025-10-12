@@ -35,7 +35,7 @@ def apiSearch(department: str, level: str):
     if not constants.program_mappings.get(level, None):
         return constants.only_programs
     
-    if department == "" or not constants.program_mappings[level].get(department, None):
+    if not constants.program_mappings[level].get(department, None):
         return constants.only_programs
     
     ids = constants.program_mappings[level][department]
