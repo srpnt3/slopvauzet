@@ -26,6 +26,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+import io
 
 
 WEEKDAYS: list[str] = ["Mon", "Tue", "Wed", "Thu", "Fri"]
@@ -144,6 +145,15 @@ def write_csv(grid: list[list[str]], output_path: str | Path) -> None:
         writer = csv.writer(f)
         for row in grid:
             writer.writerow(row)
+
+
+def convert(json_array: list[dict]) -> str:
+    grid = build_grid(json_array, start_hour=6, end_hour=22)
+    out = io.StringIO()
+    writer = csv.writer(out, lineterminator='\n')
+    for row in grid:
+        writer.writerow(row)
+    return out.getvalue()
 
 
 def convert_json_array_to_csv(json_array: list[dict], output_csv_path: str | Path, start_hour: int = 6, end_hour: int = 22) -> None:

@@ -3,12 +3,16 @@ from copy import deepcopy
 from datetime import datetime, timedelta
 from os import getenv
 import json
+from pprint import pprint
+
 
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request, status
 from pydantic import ValidationError
 
 from models import Course
+
+from fileConversionService.csv_vibe_converter import convert
 
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
@@ -29,12 +33,14 @@ def apiRecommend(request: Request):
     return ""
 
 
-@app.get("/api/convertcsv", status_code=status.HTTP_200_OK)
-def apiConvertCSV(request: Request):
-    return ""
+@app.post("/api/convertcsv", status_code=status.HTTP_200_OK)
+async def apiConvertCSV(request: Request):
+    courses = await request.json()
+    csv = convert(courses)
+    return csv
 
 
-@app.get("/api/convertics", status_code=status.HTTP_200_OK)
+@app.post("/api/convertics", status_code=status.HTTP_200_OK)
 def apiConvertICS(request: Request):
     return ""
 

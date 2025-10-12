@@ -26,6 +26,25 @@ function App() {
 		setCoursesChanged(0);
 	}, [coursesChanged]);
 
+	const exportCsv = async (courses: Course[]) => {
+		let csv = await fetch("/api/convertcsv", {
+			method: "POST",
+			body: JSON.stringify(courses),
+		}).then(res => res.text());
+
+		csv = csv.replaceAll("\\n", "\n");
+		csv = csv.replaceAll('\\"', '\"');
+		csv = csv.substring(1, csv.length - 2);
+
+		const file = new Blob([csv], {type: "text/csv"});
+		const a = document.createElement('a');
+		a.style.display = "none";
+		a.href = URL.createObjectURL(file);
+		a.download = `timetable.csv`;
+		document.body.appendChild(a);
+		a.click();
+	}
+
 	return (
 		<div className={cn("flex flex-col app px-16 gap-8 pb-12")}>
 			<Navbar level={level} setLevel={setLevel} department={department} setDepartment={setDepartment} programme={programme} setProgramme={setProgramme}></Navbar>
@@ -39,6 +58,7 @@ function App() {
 					</Section>
 				</div>
 				<div className="w-[60%] overflow-hidden">
+					<button className="ml-auto" onClick={() => exportCsv(courses)}>export csv</button>
 					<Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse}></Search>
 				</div>
 			</main>
