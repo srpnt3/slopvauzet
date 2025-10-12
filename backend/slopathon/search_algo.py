@@ -107,8 +107,7 @@ def filter_by_criteria(df: pd.DataFrame, filter_criteria: dict) -> pd.DataFrame:
 
 
 # main function to be passed
-def search(query: str, filter_criteria: dict):
-   df = read_and_process_json()
+def search(df: pd.DataFrame, query: str, filter_criteria: dict):
    filtered = filter_by_criteria(df, filter_criteria=filter_criteria).reset_index(drop=True)
    indices = fuzzy_search(filtered, query=query)
    og_keys = ['course_id', 'title', 'semester', 'periodicity',
