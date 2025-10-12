@@ -3,6 +3,7 @@ from copy import deepcopy
 from datetime import datetime, timedelta
 from os import getenv
 import json
+from slopathon.search_algo import search
 
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request, status
@@ -16,12 +17,10 @@ app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 def apiSearch(query: str, filters: str):
     filters = json.loads(filters)
 
-    # todo: call search function
+    course_dict = search(query=query, filter_criteria=filters)
 
-    with open("./scraper/courses_2025W_en.json", 'r') as file:
-        file_content = file.read()
-        file_json = json.loads(file_content)
-        return file_json
+    file_json = json.loads(course_dict)
+    return file_json
 
 
 @app.get("/api/recommend", status_code=status.HTTP_200_OK)
