@@ -5,6 +5,7 @@ import * as React from "react";
 import { cn } from "../util/cn.ts";
 
 function Timetable({courses, hoveredCourse}: { courses: Course[], hoveredCourse: Course | undefined }) {
+  console.log(hoveredCourse); // look its used
 
 	const renderTimetable = () => { // very cursed lol
 		let baseCells: JSX.Element[] = [];
