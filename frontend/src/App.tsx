@@ -49,15 +49,15 @@ function App() {
 		<div className={cn("flex flex-col app px-16 gap-8 pb-12")}>
 			<Navbar level={level} setLevel={setLevel} department={department} setDepartment={setDepartment} programme={programme} setProgramme={setProgramme}></Navbar>
 			<main className="main w-full h-full min-h-0">
-				<div className="w-[40%] overflow-hidden flex flex-col gap-6">
-					<Section title={"Study Profile"} action={"edit"} className={"w-full min-h-48"}>
+				<div className="w-[43%] overflow-hidden flex flex-col gap-6">
+					<Section title={"Study Profile"} action={"edit"} className={"w-full min-h-56"}>
 						<Studyplan info={level + ", " + department + ", " + programme}></Studyplan>
 					</Section>
-					<Section action={"show hidden"} title={"Timetable"} className={"h-full"}>
+					<Section action={"show hidden"} title={"Timetable"} className={"h-full overflow-hidden min-h-0"}>
 						<Timetable courses={courses} hoveredCourse={hoveredCourse}></Timetable>
 					</Section>
 				</div>
-				<div className="w-[60%] overflow-hidden">
+				<div className="w-[57%] overflow-hidden">
 					<button className="ml-auto" onClick={() => exportCsv(courses)}>export csv</button>
 					<Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse}></Search>
 				</div>
