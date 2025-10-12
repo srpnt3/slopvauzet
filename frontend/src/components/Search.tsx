@@ -50,13 +50,14 @@ export type Course = {
 };
 
 export type Filters = {
-  credits: number,
+  programme: string,
+  section: string,
 };
 
 function Search({setCoursePopup, setCoursesChanged, setHoveredCourse}: {setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void}) {
   const [results, setResults] = useState<Course[]>([]);
   const [recommendations, setRecommendations] = useState<Course[]>([]);
-  const [filters, _setFilters] = useState<Filters>({credits: 0});
+  const [filters, _setFilters] = useState<Filters>({programme: "", section: ""});
 
   useEffect(() => {
     getRecommendations();
