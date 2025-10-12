@@ -19,12 +19,8 @@ app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
 
 @app.get("/api/search", status_code=status.HTTP_200_OK)
 def apiSearch(query: str, filters: str):
-    filters = json.loads(filters)
-
-    course_dict = search(query=query, filter_criteria=filters)
-
-    file_json = json.loads(course_dict)
-    return file_json
+    course_dict = search(query=query, filter_criteria=json.loads(filters))
+    return course_dict
 
 
 @app.get("/api/recommend", status_code=status.HTTP_200_OK)

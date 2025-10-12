@@ -12,7 +12,7 @@ def convert_time_to_int(time_string: str) -> tuple:
 
 # read data and clean it up for filtering and fuzzy search
 def read_and_process_json() -> pd.DataFrame:
-    with open('courses_2025W_en.json', encoding="utf8") as f:
+    with open('./scraper/courses_2025W_en.json', encoding="utf8") as f:
         data = json.load(f)
         for el in data:
             for keys, value in el['catalogue_data'].items():
