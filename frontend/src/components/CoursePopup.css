@@ -1,4 +1,8 @@
 .coursePopup {
+	position: fixed;
+	inset: 4rem;
+	background-color: var(--color-bg1);
+	padding-top: 2rem;
 
 	.back {
 		padding: 0.5rem;
