@@ -4,7 +4,7 @@ import Symbol from "./Symbol";
 
 function CoursePopup({course, setCoursePopup}: {course: Course, setCoursePopup: (course: Course | undefined) => void}) {
   return (
-    <div className="coursePopup">
+    <div className="coursePopup w-full h-full min-h-0">
       <button className="back" onClick={() => setCoursePopup(undefined)}><Symbol>arrow_back</Symbol> back</button>
       <div className="title">{course.title}</div>
       <div className="info">
@@ -12,7 +12,7 @@ function CoursePopup({course, setCoursePopup}: {course: Course, setCoursePopup: 
         <span className="item">{course.offered_in[0].section}</span>
         <span className="item">{course.performance_assessment[0].ects_credits}KP</span>
       </div>
-      <div className="body">
+      <div className="body overflow-y-scroll">
         {JSON.stringify(course)}
       </div>
     </div>
