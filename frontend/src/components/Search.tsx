@@ -56,7 +56,7 @@ export type Filters = {
 	hour: string,
 };
 
-function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}: { setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void, programme: string }) {
+function Search({ courses, setCourses, setCoursePopup, setHoveredCourse, programme}: { courses: Course[], setCourses: (courses: Course[]) => void, setCoursePopup: (course: Course | undefined) => void, setHoveredCourse: (course: Course | undefined) => void, programme: string }) {
 
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [results, setResults] = useState<Course[]>([]);
@@ -99,11 +99,11 @@ function Search({setCoursePopup, setCoursesChanged, setHoveredCourse, programme}
 			<div className="w-full overflow-y-auto">
 				{results.length > 0 && <>
 					<h2 className="text-xs text-fg2 pb-3">course number / category / kp / course name / tags</h2>
-					{results.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} key={i}></Result>)}
+					{results.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setHoveredCourse={setHoveredCourse} courses={courses} setCourses={setCourses} key={i}></Result>)}
 				</>}
 				{recommendations.length > 0 && <>
 					<h2 className={"text-base font-medium pb-2 mt-8"}>Recommendations</h2>
-					{recommendations.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} key={i}></Result>)}
+					{recommendations.map((course, i) => <Result course={course} setCoursePopup={setCoursePopup} setHoveredCourse={setHoveredCourse} courses={courses} setCourses={setCourses} key={i}></Result>)}
 				</>}
 			</div>
 		</div>

@@ -1,24 +1,21 @@
-import { addCurrentCourse, inCurrentCourses, removeCurrentCourse } from "../util/courses";
 import "./Result.css";
 import type { Course } from "./Search";
 import Badge from "./Badge.tsx";
 import { ArrowUpRightIcon, MinusIcon, PlusIcon } from "@phosphor-icons/react";
 import { cn } from "../util/cn.ts";
 
-function Result({course, setCoursePopup, setCoursesChanged, setHoveredCourse}: { course: Course, setCoursePopup: (course: Course | undefined) => void, setCoursesChanged: (i: number) => void, setHoveredCourse: (course: Course | undefined) => void }) {
-	const toggleAddCourse = (course: Course) => {
-		if (!inCurrentCourses(course.course_id)) {
-			addCurrentCourse(course);
-			setCoursesChanged(Math.random());
+function Result({course, setCoursePopup, setHoveredCourse, courses, setCourses}: { course: Course, setCoursePopup: (course: Course | undefined) => void, setHoveredCourse: (course: Course | undefined) => void, courses: Course[], setCourses: (courses: Course[]) => void }) {
+	const toggleAddCourse = (course: Course, added: boolean) => {
+		if (!added) {
+			setCourses([...courses, course]);
 		} else {
-			removeCurrentCourse(course.course_id);
-			setCoursesChanged(Math.random());
+			setCourses(courses.filter(c => c.course_id != course.course_id));
 		}
 	};
 
-	console.log(course.tags)
+	// console.log(course.tags)
 
-	const added = inCurrentCourses(course.course_id);
+	const added = courses.map(c => c.course_id).includes(course.course_id);
 
 	return (
 		<div className="flex flex-col py-4 gap-2 border-t border-bor mr-3" onMouseEnter={() => setHoveredCourse(course)} onMouseLeave={() => setHoveredCourse(undefined)}>
@@ -30,7 +27,7 @@ function Result({course, setCoursePopup, setCoursesChanged, setHoveredCourse}: {
 				</div>
 				<span className={"grow"}></span>
 				<div className={"flex flex-row gap-4"}>
-					<button onClick={() => toggleAddCourse(course)} className={cn("h-6 w-6 flex justify-center items-center rounded-2", added ? "border border-bor" : "bg-bg3 text-fg3")}>{added ? <MinusIcon weight={"bold"} size={16}/> : <PlusIcon weight={"bold"} size={16}/>}</button>
+					<button onClick={() => toggleAddCourse(course, added)} className={cn("h-6 w-6 flex justify-center items-center rounded-2", added ? "border border-bor" : "bg-bg3 text-fg3")}>{added ? <MinusIcon weight={"bold"} size={16}/> : <PlusIcon weight={"bold"} size={16}/>}</button>
 					<button onClick={() => setCoursePopup(course)} className={"h-6 w-6 flex justify-center items-center"}><ArrowUpRightIcon weight={"regular"} size={24}/></button>
 				</div>
 			</div>

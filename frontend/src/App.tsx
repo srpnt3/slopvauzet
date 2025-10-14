@@ -5,26 +5,33 @@ import Navbar from "./components/Navbar";
 import Studyplan from "./components/Studyplan";
 import CoursePopup from "./components/CoursePopup";
 import Timetable from "./components/Timetable";
-import { getCurrentCourses } from "./util/courses";
 import { cn } from "./util/cn.ts";
 import Section from "./components/Section.tsx";
 
 function App() {
-	const [courses, setCourses] = useState<Course[]>([]);
+	const [courses, setCourses] = useState<Course[]>(JSON.parse(localStorage.getItem("courses") || "[]"));
 	const [coursePopup, setCoursePopup] = useState<Course | undefined>(undefined);
-	const [coursesChanged, setCoursesChanged] = useState<number>(1); // set to nonzero to force rerender with new localstorage courses
 	const [hoveredCourse, setHoveredCourse] = useState<Course | undefined>(undefined);
 
-	// todo: persist in localstorage
-	const [level, setLevel] = useState<string>("Bachelor");
-	const [department, setDepartment] = useState<string>("D-INFK");
-	const [programme, setProgramme] = useState<string>("Computer Science Bachelor");
+	const [level, setLevel] = useState<string>(localStorage.getItem("level") ?? "Bachelor's Degree Programme");
+	const [department, setDepartment] = useState<string>(localStorage.getItem("department") ?? "D-INFK");
+	const [programme, setProgramme] = useState<string>(localStorage.getItem("programme") ?? "Computer Science Bachelor");
 
 	useEffect(() => {
-		if (coursesChanged == 0) return;
-		setCourses(getCurrentCourses());
-		setCoursesChanged(0);
-	}, [coursesChanged]);
+		localStorage.setItem("courses", JSON.stringify(courses));
+	}, [courses]);
+
+	useEffect(() => {
+		localStorage.setItem("level", level);
+	}, [level]);
+
+	useEffect(() => {
+		localStorage.setItem("department", department);
+	}, [department]);
+
+	useEffect(() => {
+		localStorage.setItem("programme", programme);
+	}, [programme]);
 
 	const exportCsv = async (courses: Course[]) => {
 		let csv = await fetch("/api/convertcsv", {
@@ -58,7 +65,7 @@ function App() {
 					</Section>
 				</div>
 				<div className="w-[57%] overflow-hidden">
-					<Search setCoursePopup={setCoursePopup} setCoursesChanged={setCoursesChanged} setHoveredCourse={setHoveredCourse} programme={programme}></Search>
+					<Search courses={courses} setCourses={setCourses} setCoursePopup={setCoursePopup} setHoveredCourse={setHoveredCourse} programme={programme}></Search>
 				</div>
 			</main>
 			{coursePopup && <CoursePopup course={coursePopup} setCoursePopup={setCoursePopup}></CoursePopup>}
