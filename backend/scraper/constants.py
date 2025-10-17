@@ -557,6 +557,8 @@ program_mappings = {
         "D-PHYS": 
             ["117374"],
         "D-USYS": 
+            ["117374"],
+        "None": 
             ["117374"]
     },
     "Teaching Certificate": {
